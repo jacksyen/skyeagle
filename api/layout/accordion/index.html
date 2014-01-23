@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'accordion',
+						content : ['基于jqueryUI，accordion组件是一个抽屉式布局，一次只能打开一个抽屉']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['disabled', 'Boolean', '是否禁用组件。如果禁用，则不可以进行任何操作。', 'false'],
+								['active','Selector, Element, jQuery, Boolean, Number',
+									'指初始化后默认打开哪个header对应的内容面板','第一个子元素'],
+								['animated', 'Boolean, String', '动画效果.', '"slide"'],
+								['autoHeight', 'Boolean', '自适应高度.', 'true'],
+								['clearStyle', 'Boolean', '如果设置，清除结束后动画的高度溢出风格.', 'false'],
+								['collapsible', 'Boolean', '是否可以一次关闭所有的部分.', 'false'],
+								['event', 'String', '手风琴触发的事件', '"click"'],
+								['fillSpace', 'Boolean', '是否自适应父元素的高度', 'false'],
+								['header', 'Selector, jQuery', '选择器头部元素.', '"> li > :first-child,> :not(li):even"'],
+								['icons', 'Object', '选择器头部图标的样式', '{ "header": "ui-icon-triangle-1-e", "headerSelected": "ui-icon-triangle-1-s" }'],
+								['navigation', 'Boolean', '如果设置，使用锚点匹配localtion.href并激活它.使用navigationFilter来实现自己的匹配', 'false'],
+								['navigationFilter', 'Function', '覆盖与自己匹配的默认的location.href-匹配.', 'false']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['destroy', 'null', '完全移除一个可拖动控件, 使其回退到该元素被初始化成可拖动控件之前的状态.', ''],
+								['enable', 'null', '将可拖动控件样式改变为允许, 与disable对应.', ''],
+								['disable', 'null', '将可拖动控件样式改变成为失效, 与enable对应.', ''],
+								['option', 'optionName , [value]', '获取或设置可拖动控件的选项, 第二个参数是选项名, 第三个参数是值. 如果不指定值, 就是获取, 指定值, 就是设置.', ''],
+								['option', 'options', '给拖动控件设置多个属性', ''],
+								['widget', 'null', '返回 .ui-accordion元素.', ''],
+								['activate', 'index', '激活抽屉', ''],
+								['resize', 'null', '重置手风琴大小.', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['create', 'event, ui', '被创建时触发'],
+								['change', 'event, ui', '触发手风琴变化后触发'],
+								['changestart', 'event, ui', '触发手风琴变化开始时触发']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

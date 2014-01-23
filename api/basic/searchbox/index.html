@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+		
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'searchbox',
+						content : ['基于jqueryUI，搜索框组件']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : ['button', 'menu', 'menubutton']
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['width', 'Integer', '设置组件宽度', 'auto'],
+								['prompt','String','显示在搜索框的提醒信息','""'],
+								['value', 'String', '搜索框的默认值.', '""'],
+								['menu', 'Selector', '搜索类型下拉菜单', 'null']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['getOptions', 'null', '返回搜索框属性对象.', ''],
+								['menu', 'null', '返回搜索类型菜单对象.', ''],
+								['textbox', 'null', '返回文本框对象.', ''],
+								['getValue', 'null', '返回当前搜索关键字.', ''],
+								['setValue', 'value', '设置新的搜索关键字.', ''],
+								['getName', 'null', '返回当前搜索类型.', ''],
+								['destroy', 'null', '清除搜索框组件.', ''],
+								['resize', 'width', '重置搜索框组建的宽度.', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['onSearcher', 'event, data', '当用户点击搜索按钮或者按下ENTER键的时候搜索函数将被调用,<br/>' +
+									'data.value : 搜索框值,<br/>' +
+									'data.name  : 搜索类型']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

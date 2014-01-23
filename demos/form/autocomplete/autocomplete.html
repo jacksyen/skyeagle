@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>autocomplete</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.combo.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.autocomplete.js"></script>
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.combo.css" />
+		<script>
+			$(document).ready(function() {
+				var s = {
+					total : 9,
+					data : [
+						'中国',
+						'密码',
+						'是中。。。',
+						'dddd',
+						'eeee',
+						'f#ff',
+						'asdxzcv',
+						'abaasl',
+						'a!asd'
+					]
+				};
+				// alert(s.data[0]);
+				$('#autocomplete1').autocomplete({
+					data : s
+				});
+				$('#destroy').click(function (){
+					$('#autocomplete1').autocomplete('destroy');
+				});
+				$('#resize').click(function (){
+					$('#autocomplete1').autocomplete('resize', 200);
+				});
+				$('#disable').click(function (){
+					$('#autocomplete1').autocomplete('disable');
+				});
+				$('#enable').click(function (){
+					$('#autocomplete1').autocomplete('enable');
+				});
+				
+				$('#autocomplete2').autocomplete({
+					data : s
+				});
+				
+			});
+
+		</script>
+	</head>
+	<body>
+		<input type='text' readonly="readonly" autocomplete="off" />
+		<div>
+			<p>
+				22
+			</p>
+			<p>
+				22
+			</p>
+			<button id="destroy">destroy</button>
+			<button id="resize">resize</button>
+			<button id="disable">disable</button>
+			<button id="enable">enable</button>
+		</div>
+
+		<div id="autocomplete1">
+			<!-- <div class="sp">Java</div>
+			<div class="sp">C#</div>
+			<div class="sp">Ruby</div>
+			<div class="sp">Basic</div>
+			<div class="sp">Fortran</div> -->
+		</div>
+		<br />
+		<br />
+		<br />
+		<br />
+		<div id="autocomplete2">
+			<!-- <div class="sp">Java</div>
+			<div class="sp">C#</div>
+			<div class="sp">Ruby</div>
+			<div class="sp">Basic</div>
+			<div class="sp">Fortran</div> -->
+		</div>
+	
+	</body>
+</html>

@@ -1,0 +1,56 @@
+/* slider.scss*/
+@import "include.scss";
+
+.ui-slider {
+	position: $pos-re;
+	text-align: left;
+	@include basic-bd(#99BBE8);
+	background: #fafafa;
+	border-radius: 3px;
+	z-index: $z-axis;
+	.ui-slider-handle {
+	  @include Func-bg( 'slider/slider_handle.png');
+    border: 0;
+    position: $pos-ab;
+    z-index: $z-axis;
+    width: 1.6em;
+    height: 1.6em;
+    cursor: default;
+	}
+	.ui-slider-range {
+	  position: $pos-ab;
+    z-index: $z-axis;
+    font-size: .7em;
+    display: $dis-bl;
+    border: 0;
+    background-position: 0 0;
+	}
+}
+.ui-slider-horizontal {
+	height: .8em;
+	.ui-slider-handle {
+	  top: -.4em;
+    margin-left: -.6em;
+	}
+	.ui-slider-range {
+	  top: 0;
+    height: 100%;
+	}
+	.ui-slider-range-min { left: 0;}
+  .ui-slider-range-max { right: 0;}
+}
+.ui-slider-vertical {
+	width: .8em;
+	height: 100px;
+	.ui-slider-handle {
+    left: -.3em;
+    margin-left: 0;
+    margin-bottom: -.6em;
+  }
+  .ui-slider-range {
+    left: 0;
+    width: 100%;
+  }
+  .ui-slider-range-min { bottom: 0;}
+  .ui-slider-range-max { top: 0;}
+}

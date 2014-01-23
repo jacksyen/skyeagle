@@ -1,0 +1,58 @@
+/* resizable.scss*/
+@import "include.scss";
+//
+$num--5: -5px;
+$num-7: 7px;
+$num-1: 1px;
+$num-12: 12px;
+$num-9: 9px;
+$num-0: 0;
+$per-100: 100%;
+//
+
+
+.ui-resizable {
+	position: $pos-re;
+}
+.ui-resizable-handle {
+	position: $pos-ab;
+	font-size: .1px;
+	display: $dis-bl;
+}
+.ui-resizable-disabled, .ui-resizable-autohide {
+  .ui-resizable-handle {
+    display: $dis-no;
+  }
+}
+.ui-resizable-n {
+  cursor: n-resize;
+  @include around($per-100, $num-7, $num--5, $none, $none, $num-0);
+}
+.ui-resizable-s {
+  cursor: s-resize;
+  @include around($per-100, $num-7, $none, $none, $num--5, $num-0);
+}
+.ui-resizable-e {
+  cursor: e-resize;
+  @include around($num-7, $per-100, $num-0, $num--5, $none, $none);
+}
+.ui-resizable-w {
+  cursor: w-resize;
+  @include around($num-7, $per-100, $num-0, $none, $none, $num--5);
+}
+.ui-resizable-se {
+  cursor: se-resize;
+  @include around($num-12, $num-12, $none, $num-1, $num-1, $none);
+}
+.ui-resizable-sw {
+  cursor: sw-resize;
+  @include around($num-9, $num-9, $none, $none, $num--5, $num--5);
+}
+.ui-resizable-nw {
+  cursor: nw-resize;
+  @include around($num-9, $num-9, $num--5, $none, $none, $num--5);
+}
+.ui-resizable-ne {
+  cursor: ne-resize;
+  @include around($num-9, $num-9, $num--5, $num--5, $none, $none);
+}

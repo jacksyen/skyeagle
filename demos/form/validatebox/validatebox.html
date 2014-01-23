@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>validatebox</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" />
+		<style>
+			
+		</style>
+		<script>
+			$(document).ready(function (){
+				$('#v_box').validatebox({
+					required : true,
+					width    : 400
+				});
+				$('#v2').validatebox({
+					required : true,
+					tipwidth : 100,
+					missMsg  : '阿萨德客户疯狂撒娇货到付款是弗兰克撒谎的疯狂撒娇哈的分开了还是阿第克封杀李开复萨拉肯德基'
+				});
+				
+				$('#destroy').click(function (){
+					$('#v_box').validatebox('destroy');
+				});
+				$('#resize').click(function (){
+					$('#v_box').validatebox('resize', 100);
+				});
+				$('#disable').click(function (){
+					$('#v_box').validatebox('disable');
+				});
+				$('#enable').click(function (){
+					$('#v_box').validatebox('enable');
+				});
+				$('#validate').click(function (){
+					var validate = $('#v_box').validatebox('validate');
+					alert('validate:' + validate);
+				});
+				$('#clear').click(function (){
+					$('#v_box').validatebox('clear');
+				});
+ 				$('#getValue').click(function (){
+					var val = $("#v_box").validatebox('getValue');
+					alert('getVlaue :' + val);
+				});
+				$('#setValue').click(function (){
+					var val = $('#v_box').validatebox('setValue','sdsadfasd');
+				});
+				
+				
+				
+			});
+		</script>
+	</head>
+	<body>
+		
+		<br />
+		<br />
+		<button id="destroy">destroy</button>
+		<button id="resize">resize</button>
+		<button id="disable">disable</button>
+		<button id="enable">enable</button>
+		<button id="validate">validate</button>
+		<button id="clear">clear</button>
+		<button id="getValue">getValue</button>
+		<button id="setValue">setValue</button>
+		<br />
+		<br />
+		
+		
+		<input type="text" id="v_box" />
+		<br/>
+		
+		<br/><br />
+		
+		<input type="text" id="v2" />
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<!-- <script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.panel.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.layout.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.accordion.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.menu.js"></script> -->
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<!-- <link rel="stylesheet" href="../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.tabs.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.layout.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.accordion.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.menu.css" /> -->
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'validatebox',
+						content : ['基于jqueryUI，基本的验证框，验证输入内容']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['required','Boolean','验证框是否需要输入，不需要则无空输入错误提示','false'],
+								['tipwidth','Integer','错误提示信息的宽度限制','null'],
+								['missMsg','String','验证失败提示信息','"输入框不能为空"'],
+								['width','Integer','整个框体的宽度','null']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['getOptions', 'null', '返回选项属性 .', ''],
+								['destroy', 'null', '销毁整个验证框', ''],
+								['resize', 'options', '重置整个验证框的宽度尺寸', ''],
+								['disable', 'null', '禁用整个验证框', ''],
+								['enable', 'null', '启用整个验证框', ''],
+								['validate', 'null', '是否验证成功', ''],
+								['clear', 'null', '清空验证框内的内容', ''],
+								['getValue', 'null', '获取验证框内的内容', ''],
+								['setValue', 'val', '给验证框重新赋值', '']]
+						},
+						{
+							id : 'events',
+							content : []
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

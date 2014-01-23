@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.draggable.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script> -->
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		<script>
+			$(document).ready(function() {
+				/**
+				 * demo 1 
+				 */
+				$("#draggable1").draggable({
+
+				});
+
+				/**
+				 * demo 2 
+				 */
+				var $start_counter = $("#event-start"), $drag_counter = $("#event-drag"), $stop_counter = $("#event-stop"), counts = [0, 0, 0];
+
+				$("#draggable2").draggable({
+					start : function() {
+						counts[0]++;
+						updateCounterStatus($start_counter, counts[0]);
+					},
+					drag : function() {
+						counts[1]++;
+						updateCounterStatus($drag_counter, counts[1]);
+					},
+					stop : function() {
+						counts[2]++;
+						updateCounterStatus($stop_counter, counts[2]);
+					}
+				});
+
+				function updateCounterStatus($event_counter, new_count) {
+					// first update the status visually...
+					if(!$event_counter.hasClass("ui-state-hover")) {
+						$event_counter.addClass("ui-state-hover").siblings().removeClass("ui-state-hover");
+					}
+					// ...then update the numbers
+					$("span.count", $event_counter).text(new_count);
+				}
+				
+				/**
+				 * demo 3 
+				 */
+				$("#draggable3").draggable({
+					axis : "y" // 限制只能在Y轴移动
+				});
+				
+				/**
+				 * demo4 
+				 */
+				$("#draggable4").draggable({
+					axis : "x" // 限制只能在Y轴移动
+				});
+				
+				/**
+				 * demo 5 
+				 */
+				$("#draggable5").draggable({
+					containment : ".wrap",
+					scroll : false
+				});
+				
+				/**
+				 * demo6 
+				 */
+				$("#draggable6").draggable({
+					containment : "#demo-frame"
+				});
+				
+				/**
+				 * demo7 
+				 */
+				$("#draggable7").draggable({
+					containment : "parent"
+				});
+
+				// 代码高亮
+				DlHighlight.HELPERS.highlightByName("draggable", "pre");
+			});
+		</script>
+		<style>
+			.demo {
+				border: 1px solid #dd906a;
+				width: 150px;
+				height: 150px;
+				line-height: 150px;
+				text-align: center;
+			}
+			#draggable2 {
+				line-height: normal;
+			}
+			#draggable2 ul li {
+				margin: 1em 0;
+				padding: 0.5em 0;
+			}
+			#draggable2 ul li span.ui-icon {
+				float: left;
+			}
+			#draggable2 ul li span.count {
+				font-weight: bold;
+			}
+
+			.wrap {
+				width: 800px;
+				height: 300px;
+				border: 1px solid #ccc;
+			}
+			.wrap div {
+				float: left;
+				margin: 5px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+							<li><a href="#demo2">事件示例</a></li>
+							<li><a href="#demo3">限制拖动示例</a></li>
+							<!-- <li><a href="delay-start.html">延迟、偏移拖动示例</a></li>
+							<li><a href="snap-to.html">吸附、网格拖动示例</a></li>
+							<li><a href="scroll.html">自动添加滚动条</a></li>
+							<li><a href="revert.html">拖动还原、clone拖动示例</a></li>
+							<li><a href="visual-feedback.html">设置拖动时样式、分组</a></li>
+							<li><a href="handle.html">设置拖动元素控件</a></li>
+							<li><a href="cursor-style.html">设置移动时鼠标样式</a></li>
+							<li><a href="sortable.html">Draggable + Sortable</a></li> -->
+						</ul>
+					</div>
+					<div class="block" id="demo1">
+						<h1>示例一（默认功能）</h1>
+						<div class="line-block">
+							<div id="draggable1" class="demo">
+								点击我拖动
+							</div>
+							<div class="code">
+<pre name="draggable" class="js">
+$("#draggable1").draggable({}); // 默认功能
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo1 -->
+
+					<div class="block" id="demo2">
+						<h1>示例二（调用事件）</h1>
+						<div class="line-block">
+							<div id="draggable2" class="demo">
+								<p>
+									点击我拖动调用事件
+								</p>
+
+								<ul class="ui-helper-reset">
+									<li id="event-start" class="ui-state-default ui-corner-all">
+										<span class="ui-icon ui-icon-play"></span>调用start事件 <span class="count">0</span>x
+									</li>
+									<li id="event-drag" class="ui-state-default ui-corner-all">
+										<span class="ui-icon ui-icon-arrow-4"></span>调用drag事件<span class="count">0</span>x
+									</li>
+									<li id="event-stop" class="ui-state-default ui-corner-all">
+										<span class="ui-icon ui-icon-stop"></span>调用stop事件<span class="count">0</span>x
+									</li>
+								</ul>
+							</div>
+							<div class="code">
+<pre name="draggable" class="js">
+var $start_counter = $("#event-start"), $drag_counter = $("#event-drag"), $stop_counter = $("#event-stop"), counts = [0, 0, 0];
+
+$("#draggable2").draggable({
+	// 开始拖动事件
+	start : function() {
+		counts[0]++;
+		updateCounterStatus($start_counter, counts[0]);
+	},
+	// 拖动事件
+	drag : function() {
+		counts[1]++;
+		updateCounterStatus($drag_counter, counts[1]);
+	},
+	// 停止拖动事件
+	stop : function() {
+		counts[2]++;
+		updateCounterStatus($stop_counter, counts[2]);
+	}
+});
+
+function updateCounterStatus($event_counter, new_count) {
+	// first update the status visually...
+	if(!$event_counter.hasClass("ui-state-hover")) {
+		$event_counter.addClass("ui-state-hover").siblings().removeClass("ui-state-hover");
+	}
+	// ...then update the numbers
+	$("span.count", $event_counter).text(new_count);
+}
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo2 -->
+					<div class="block" id="demo3">
+						<h1>示例三（限制拖动）</h1>
+						<div class="line-block">
+							<div id="draggable3" class="demo">
+								只能Y轴移动
+							</div>
+							<div class="code">
+<pre name="draggable" class="js">
+$("#draggable3").draggable({
+	axis : "y" // 限制只能在Y轴移动
+});
+</pre>
+							</div>
+							<div id="draggable4" class="demo">
+								只能X轴移动
+							</div>
+							<div class="code">
+<pre name="draggable" class="js">
+$("#draggable4").draggable({
+	axis : "x" // 限制只能在X轴移动
+});
+</pre>
+							</div>
+							<div style="clear:both;"></div>
+							<div class="wrap">
+								<div id="draggable5" class="demo">
+									dragg5 只能在父容器内移动
+								</div>
+								<div id="draggable6" class="demo">
+									dragg6 在窗口内随便移动
+								</div>
+								<div class="demo" >
+									<div id="draggable7" style="width: 60px; height:60px; border:1px solid #ccc; line-height:normal;"> 
+										dragg7 只能在parent内移动
+									</div>
+								</div>
+							</div>
+							<div class="code">
+<pre name="draggable" class="js">
+$("#draggable5").draggable({
+	containment : "#wrap",
+	scroll : false
+});
+$("#draggable6").draggable({
+	containment : "#demo-frame"
+});
+$("#draggable7").draggable({
+	containment : "parent"
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo3 -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

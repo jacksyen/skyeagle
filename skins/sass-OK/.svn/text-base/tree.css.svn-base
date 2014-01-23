@@ -1,0 +1,152 @@
+/* tree.scss*/
+.tree {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  .tree li {
+    white-space: nowrap; }
+    .tree li ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0; }
+
+.tree-node {
+  height: 18px;
+  white-space: nowrap;
+  cursor: pointer; }
+
+.tree-indent {
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  vertical-align: middle; }
+
+.tree-hit {
+  cursor: pointer; }
+
+.tree-expanded {
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  vertical-align: middle;
+  background: url("../images/tree/tree_arrows.gif") no-repeat -18px 0 transparent scroll; }
+
+.tree-expanded-hover {
+  background: url("../images/tree/tree_arrows.gif") no-repeat -50px 0 transparent scroll; }
+
+.tree-collapsed {
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  vertical-align: middle;
+  background: url("../images/tree/tree_arrows.gif") no-repeat 0 0 transparent scroll; }
+
+.tree-collapsed-hover {
+  background: url("../images/tree/tree_arrows.gif") no-repeat -32px 0 transparent scroll; }
+
+.tree-lines .tree-expanded {
+  background: url("../images/tree/tree_elbow.png") no-repeat -36px -54px transparent scroll; }
+.tree-lines .tree-collapsed {
+  background: url("../images/tree/tree_elbow.png") no-repeat 0 -36px transparent scroll; }
+.tree-lines .tree-node-last .tree-expanded {
+  background: url("../images/tree/tree_elbow.png") no-repeat -18px 0 transparent scroll; }
+.tree-lines .tree-node-last .tree-collapsed {
+  background: url("../images/tree/tree_elbow.png") no-repeat -36px -36px transparent scroll; }
+.tree-lines .tree-root-first .tree-expanded {
+  background: url("../images/tree/tree_elbow.png") no-repeat -18px -54px transparent scroll; }
+.tree-lines .tree-root-first .tree-collapsed {
+  background: url("../images/tree/tree_elbow.png") no-repeat -18px -36px transparent scroll; }
+.tree-lines .tree-root-one .tree-expanded {
+  background: url("../images/tree/tree_elbow.png") no-repeat 0 -18px transparent scroll; }
+.tree-lines .tree-root-one .tree-collapsed {
+  background: url("../images/tree/tree_elbow.png") no-repeat 0 -72px transparent scroll; }
+
+.tree-line {
+  background: url("../images/tree/tree_elbow.png") no-repeat 0 -54px transparent scroll; }
+
+.tree-join {
+  background: url("../images/tree/tree_elbow.png") no-repeat -18px -18px transparent scroll; }
+
+.tree-joinbottom {
+  background: url("../images/tree/tree_elbow.png") no-repeat 0 0 transparent scroll; }
+
+.tree-folder {
+  display: inline-block;
+  background: url("../images/tree/tree_folder.gif") no-repeat 0 0 transparent scroll;
+  width: 16px;
+  height: 18px;
+  vertical-align: middle; }
+
+.tree-folder-open {
+  background: url("../images/tree/tree_folder_open.gif") no-repeat 0 0 transparent scroll; }
+
+.tree-file {
+  display: inline-block;
+  background: url("../images/tree/tree_leaf.gif") no-repeat 0 0 transparent scroll;
+  width: 16px;
+  height: 18px;
+  vertical-align: middle; }
+
+.tree-loading {
+  background: url("../images/tree/tree_loading.gif") no-repeat 0 0 transparent scroll; }
+
+.tree-title {
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle;
+  padding: 1px 2px 1px 2px;
+  white-space: nowrap; }
+
+.tree-node-hover {
+  border-color: #ddd;
+  background-color: #efefef; }
+
+.tree-node-selected {
+  border-color: #a3bae9;
+  background-color: #dfe8f6 !important; }
+
+.tree-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  vertical-align: middle; }
+
+.tree-checkbox0 {
+  background: url("../images/tree/tree_checkbox_0.gif") no-repeat 0 0 transparent scroll; }
+
+.tree-checkbox1 {
+  background: url("../images/tree/tree_checkbox_1.gif") no-repeat 0 0 transparent scroll; }
+
+.tree-checkbox2 {
+  background: url("../images/tree/tree_checkbox_2.gif") no-repeat 0 0 transparent scroll; }
+
+.tree-node-proxy {
+  font-size: 12px;
+  padding: 1px 2px 1px 18px;
+  background: #fafafa;
+  border: 1px solid #cccccc;
+  z-index: 9900000; }
+
+.tree-dnd-yes {
+  background: url("../images/tree/tree_dnd_yes.png") no-repeat 0 center transparent scroll; }
+
+.tree-dnd-no {
+  background: url("../images/tree/tree_dnd_no.png") no-repeat 0 center transparent scroll; }
+
+.tree-node-top {
+  border-top: 1px dotted red; }
+
+.tree-node-bottom {
+  border-bottom: 1px dotted red; }
+
+.tree-node-append .tree-title {
+  border: 1px dotted red; }
+
+.tree-editor {
+  border: 1px solid #cccccc;
+  font-size: 12px;
+  line-height: 16px;
+  width: 80px;
+  position: absolute;
+  top: 0; }

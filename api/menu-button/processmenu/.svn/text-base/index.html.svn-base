@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'processmenu',
+						content : ['基于jqueryUI，流程菜单插件']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : ['validatebox', 'form']
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['data', 'String', '传进来的form表单等数据', ''],
+								['width','Integer', '流程菜单的宽度','600'],
+								['height', 'Integer', '流程菜单的长度', '500']]
+						},
+						{
+							id : 'methods',
+							content : []
+						},
+						{
+							id : 'events',
+							content : [
+								['onNext', 'index', '流程菜单进入下一步菜单之前执行'],
+								['onEnd', 'null', '流程菜单结束事件，点击完成按钮执行']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

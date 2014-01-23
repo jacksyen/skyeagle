@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>生成Java类</title>
+		<script type="text/javascript" language="JavaScript" src="../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="init.js"></script>
+		<link rel="stylesheet" href="init.css" />
+		<script>
+			function init(){
+				new InitJava().init();
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div>
+			<!-- 顶部输入层 -->
+			<div class="topInput">
+				<p>信息录入:</p>
+				<div class="info">
+					<p>作者：</p>
+					<p>说明：</p>
+					<p>包名： </p>
+					<p>表名： </p>
+					<p>主键字段名：</p>
+					<p>其他字段集合：</p>
+				</div>
+				<div class="input">
+					<p><input type="input" id="author" /> </p>
+					<p><input type="input" id="desc"/></p>
+					<p><input type="input" id="packName" value="com.skyeagle.oa.purview" /> </p>
+					<p><input type="input" id="tableName" /> </p>
+					<p><input type="input" id="pColumn"/></p>
+					<p>
+						<textarea id="oColumn" rows="9"></textarea>
+						<button style="width:100px; height:50px;" onclick="init()">生成</button>
+					</p>
+				</div>
+			</div>
+			<!-- 生成层 -->
+			<div class="init">
+				<!-- vo -->
+				<div class="vo">
+					VO:<br/>
+					<textarea id="vo" rows="14" cols="60"></textarea>
+				</div>
+				<!-- bean -->
+				<div class="bean">
+					Bean:<br/>
+					<textarea id="bean" rows="14" cols="60"></textarea>
+				</div>
+				<!-- dao -->
+				<div class="dao">
+					Dao:<br/>
+					<textarea id="dao" rows="14" cols="60"></textarea>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

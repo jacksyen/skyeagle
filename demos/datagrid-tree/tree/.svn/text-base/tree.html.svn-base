@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery UI Tree - Default functionality</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.draggable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.droppable.js"></script>
+		<!-- <script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.position.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.button.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+
+		-->
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.tree.js"></script>
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<!-- <link rel="stylesheet" href="../../../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.button.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" /> -->
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.tree.css" />
+		<style>
+		</style>
+
+		<script>
+			$(document).ready(function() {
+				
+				$('#tt').tree({
+					checkbox : true,
+					animate : true,
+					dnd : true,
+					url : 'tree_data.json',
+					// onClick : function (event, node){
+					// alert('onClick:' + 'id:'+node.id+',text:'+node.text+',checked:'+node.checked+',attributes:'+node.attributes
+					// + 'target:' + node.target);
+					// },
+					onDblClick : function(event, node) {
+						alert('onDblClick:' + 'id:' + node.id + ',text:' + node.text + ',checked:' + node.checked + ',attributes:' + node.attributes + 'target:' + node.target);
+					},
+					onContextMenu : function(event, node) {
+						alert('onContextMenu:' + 'id:' + node.id + ',text:' + node.text + ',checked:' + node.checked + ',attributes:' + node.attributes + 'target:' + node.target);
+					}
+					// onBeforeLoad : function (event, ui){
+					// alert('onBeforeLoad:' + //'ui.node.id:'+ ui.node.id+',ui.node.text:' + ui.node.text+
+					// 'ui.param' + ui.param);
+					// return true;
+					// },
+					// onLoadSuccess : function (event, ui){
+					// alert('onLoadSuccess:' + 'ui.data'+ui.data);
+					// },
+					// onLoadError : function (event, ui){
+					// alert(ui[0]);
+					// },
+					// onBeforeExpand : function (event, node){
+					// alert('onBeforeExpand:' + 'id:'+node.id+',text:'+node.text+',checked:'+node.checked+',attributes:'+node.attributes
+					// + 'target:' + node.target);
+					// return true;
+					// },
+					// onExpand : function (event, node){
+					// alert('onExpand:' + 'id:'+node.id+',text:'+node.text+',checked:'+node.checked+',attributes:'+node.attributes
+					// + 'target:' + node.target);
+					// },
+					// onBeforeCollapse : function (event, node){
+					// alert('onBeforeCollapse:' + 'id:'+node.id+',text:'+node.text+',checked:'+node.checked+',attributes:'+node.attributes
+					// + 'target:' + node.target);
+					// return true;
+					// },
+					// onCollapse : function (event, node){
+					// alert('onCollapse:' + 'id:'+node.id+',text:'+node.text+',checked:'+node.checked+',attributes:'+node.attributes
+					// + 'target:' + node.target);
+					// },
+					// onCheck : function (event, ui){
+					// alert('onCheck:' + 'ui.node.id:' + ui.node.id +',ui.node.text:' + ui.node.text +
+					// ',ui.checked:' + ui.checked);
+					// },
+				});
+				$('#beginEdit').click(function() {
+					var node = $('#tt').tree('getSelected');
+					$('#tt').tree('beginEdit', node.target);
+				});
+				$('#dd').click(function (e) {
+					alert(e.pageX);
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<button id="beginEdit">
+			beginEdit
+		</button>
+		<ul id="tt"></ul>
+		<div onclick=""  style="padding-left:300px;" id="dd">
+			<object  classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="130" height="257" align="middle">
+				<param name="allowFullScreen" value="false">
+				<param name="movie" value="http://www.flashbuttons.com/images/sample1.swf?divId=sample1&amp;autoWidth=0&amp;autoHeight=0">
+				<param name="quality" value="high">
+				<param name="scale" value="noscale">
+				<param name="salign" value="lt">
+				<param name="wmode" value="transparent">
+				<param name="allowScriptAccess" value="always">
+				<embed src="http://www.flashbuttons.com/images/sample1.swf?divId=sample1&amp;autoWidth=0&amp;autoHeight=0" quality="high" width="130" height="257" wmode="transparent" align="middle" scale="noscale" salign="LT" allowfullscreen="false" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+			</object>
+		</div>
+	</body>
+</html>

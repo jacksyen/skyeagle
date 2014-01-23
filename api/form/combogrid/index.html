@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<!-- <script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.panel.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.layout.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.accordion.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.menu.js"></script> -->
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<!-- <link rel="stylesheet" href="../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.tabs.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.layout.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.accordion.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.menu.css" /> -->
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'combogrid',
+						content : ['基于jqueryUI，组合数据网格，继承combo和datagrid的所有属性和事件']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : ['panel', 'validatebox', 'numberbox', 'datepicker', 'pagination', 'toolbar', 'combo', 'grid']
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['idField', 'String', '选择数据网格的内容后在input框显示的内容', '"name"']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['destroy', 'null', '销毁整个组合数据网格', ''],
+								['resize', 'options', '重置整个组合数据网格的宽度尺寸', ''],
+								['disable', 'null', '禁用整个组合数据网格', ''],
+								['enable', 'null', '启用整个组合数据网格', ''],
+								['getValue', 'null', '获取输入组合数据网格内的内容', ''],
+								['setValue', 'val', '给输入组合数据网格重新赋值', '']]
+						},
+						{
+							id : 'events',
+							content : []
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

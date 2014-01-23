@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.menu.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../../js/main.js"></script> -->
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.menu.css" />
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				
+				
+				$('.html').each(function(index) {
+					
+				  	var html = document.getElementById('mm').outerHTML.replace(/</g,'&lt;');
+				  	$(this).append(html);
+				});
+				
+				
+				/**
+				 * demo 1 
+				 */
+				$('#mm').menu({
+					// left : 100,
+					// top  : 100,
+					onShow : function (){
+						//alert('show');
+					}
+				});
+				
+				$('#show').bind('click',function (e){
+					$('#mm').menu('show',{
+						left : e.pageX,
+						top  : e.pageY
+					});
+				});
+				
+				$('#hiden').bind('click',function (e){
+					$('#mm').menu('hide');
+				});
+				
+				// 代码高亮
+				DlHighlight.HELPERS.highlightByName("menu", "pre");
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+						</ul>
+					</div>
+					<div class="block" id="demo1">
+						<h1>示例一（默认功能）</h1>
+						<div class="line-block" >
+<div id="mm" class="easyui-menu" style="width:120px;">
+	<div onclick="javascript:alert('new')">
+		New
+	</div>
+	<div>
+		<span>Open</span>
+		<div style="width:150px;">
+			<div>
+				<b>Word</b>
+			</div>
+			<div>
+				Excel
+			</div>
+			<div>
+				PowerPoint
+			</div>
+			<div>
+				<span>M1</span>
+				<div style="width:120px;">
+					<div>
+						sub1
+					</div>
+					<div>
+						sub2
+					</div>
+					<div>
+						<span>Sub</span>
+						<div style="width:80px;">
+							<div onclick="javascript:alert('sub21')">
+								sub21
+							</div>
+							<div>
+								sub22
+							</div>
+							<div>
+								sub23
+							</div>
+						</div>
+					</div>
+					<div>
+						sub3
+					</div>
+				</div>
+			</div>
+			<div>
+				<span>Window Demos</span>
+				<div style="width:120px;">
+					<div href="window.html">
+						Window
+					</div>
+					<div href="dialog.html">
+						Dialog
+					</div>
+					<div>
+						<a href="http://www.jeasyui.com" target="_blank">EasyUI</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div iconCls="icon-save">
+		Save
+	</div>
+	<div class="menu-sep"></div>
+	<div>
+		Exit
+	</div>
+</div>
+<button id="show">显示菜单项</button>
+<button id="hide">隐藏菜单项</button>
+							<div class="code">
+<pre name="menu" class="html">
+&lt;!-- 生成menu所需HTML-->
+</pre>
+<br/>
+<pre name="menu" class="js">
+// 初始化menu
+$('#mm').menu({
+	// left : 100,
+	// top  : 100,
+	onShow : function (){
+		//alert('show');
+	}
+});
+
+// 绑定显示按钮事件
+$('#show').bind('click',function (e){
+	$('#mm').menu('show',{
+		left : e.pageX,
+		top  : e.pageY
+	});
+});
+
+// 绑定隐藏按钮事件
+$('#hiden').bind('click',function (e){
+	$('#mm').menu('hide');
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo1 -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

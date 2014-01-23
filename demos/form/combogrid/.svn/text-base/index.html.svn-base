@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.button.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.numberbox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.combo.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.datepicker.js"></script>
+		
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.pagination.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.toolbar.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.datagrid.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.combogrid.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script> -->
+
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.button.css" />
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" /> 
+		<link rel="stylesheet" href="../../../skins/jquery.ui.combo.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.datepicker.css" />
+		
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.pagination.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.toolbar.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.datagrid.css" />
+
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				/**
+				 * demo 1 
+				 */
+				$('#combogrid1').combogrid({
+					// combo
+					width : 300,
+					panelWidth : 600,
+					// datagrid
+					pagination : true,
+					pageSize : 10,
+					pageList : [5,10],
+					rownumbers: true,
+					singleSelect : true,
+					sortName : 'code',
+					sortOrder : 'desc',
+					url : 'datagrid_data.json',
+					columns:[[{
+							title : '合并列',
+							colspan : 2
+						},{
+							field:'code',
+							title:'Code',
+							width:80,
+							rowspan: 2,
+							editor : {type: 'numberbox' }
+						}
+					],[
+						{
+							field:'name',
+							title:'Name',
+							width:120,
+							editor : {type: 'combo' }
+						},
+						{
+							field:'addr',
+							title:'Addr',
+							width:80,
+							align:'right',
+							sortable : true,
+							sorter : function(a, b) {
+								return (a > b ? 1 : -1);
+							}
+						}
+					]]
+				});
+				/**
+				 * demo 2
+				 */
+				$('#combogrid2').combogrid({
+					// combo
+					width : 300,
+					panelWidth : 600,
+					// datagrid
+					pagination : true,
+					pageSize : 10,
+					pageList : [5,10],
+					rownumbers: true,
+					singleSelect : true,
+					sortName : 'code',
+					sortOrder : 'desc',
+					url : 'datagrid_data.json',
+					columns:[[{
+							title : '合并列',
+							colspan : 2
+						},{
+							field:'code',
+							title:'Code',
+							width:80,
+							rowspan: 2,
+							editor : {type: 'numberbox' }
+						}
+					],[
+						{
+							field:'name',
+							title:'Name',
+							width:120,
+							editor : {type: 'combo' }
+						},
+						{
+							field:'addr',
+							title:'Addr',
+							width:80,
+							align:'right',
+							sortable : true,
+							sorter : function(a, b) {
+								return (a > b ? 1 : -1);
+							}
+						}
+					]]
+				});
+				$('#destroy').click(function (){
+					$('#combogrid2').combogrid('destroy');
+				});
+				$('#resize').click(function (){
+					$('#combogrid2').combogrid('resize',{
+						width : 300
+					});
+				});
+				$('#disable').click(function (){
+					$('#combogrid2').combogrid('disable');
+				});
+				$('#enable').click(function (){
+					$('#combogrid2').combogrid('enable');
+				});
+				$('#getValue').click(function (){
+					var val = $('#combogrid2').combogrid('getValue');
+					alert('getVlaue :' + val);
+				});
+				$('#setValue').click(function (){
+					var val = $('#combogrid2').combogrid('setValue','File1');
+				});
+				
+				// 代码高亮
+				DlHighlight.HELPERS.highlightByName("combogrid", "pre");
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+<!-- 							<li><a href="#demo2">多选示例</a></li> -->
+							<li><a href="#demo2">方法示例</a></li>
+						</ul>
+					</div>
+					<div class="block" id="demo1">
+						<h1>示例一（默认功能）</h1>
+						<div class="line-block" >
+							<div id="combogrid1">
+								
+							</div>
+							<div class="code">
+<pre name="combogrid" class="js">
+$('#combogrid1').combogrid({
+	width : 300,	// combo的宽度
+	panelWidth : 600,	// panel和grid的宽度
+	pagination : true,	// 是否分页
+	pageSize : 10,		// 每页条数
+	pageList : [5,10],	
+	rownumbers: true,
+	singleSelect : true,
+	sortName : 'code',
+	sortOrder : 'desc',
+	url : 'datagrid_data.json',		// 传入的json数据
+	columns:[[{
+			title : '合并列',
+			colspan : 2
+		},{
+			field:'code',
+			title:'Code',
+			width:80,
+			rowspan: 2,
+			editor : {type: 'numberbox' }
+		}
+	],[
+		{
+			field:'name',
+			title:'Name',
+			width:120,
+			editor : {type: 'combo' }
+		},
+		{
+			field:'addr',
+			title:'Addr',
+			width:80,
+			align:'right',
+			sortable : true,
+			sorter : function(a, b) {
+				return (a > b ? 1 : -1);
+			}
+		}
+	]]
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo1 -->
+					<div class="block" id="demo2">
+						<h1>示例三（方法示例）</h1>
+						<div class="line-block" >
+							<div id="combogrid2">
+								
+							</div>
+							<div class="code">
+<button id="destroy">destroy</button>
+<button id="resize">resize</button>
+<button id="disable">disable</button>
+<button id="enable">enable</button>
+<button id="getValue">getValue</button>	
+<button id="setValue">setValue</button>							
+<pre name="combogrid" class="js">
+$('#combogrid2').combogrid({
+	width : 300,	// combo的宽度
+	panelWidth : 600,	// panel和grid的宽度
+	pagination : true,	// 是否分页
+	pageSize : 10,		// 每页条数
+	pageList : [5,10],	
+	rownumbers: true,
+	singleSelect : true,
+	sortName : 'code',
+	sortOrder : 'desc',
+	url : 'datagrid_data.json',		// 传入的json数据
+	columns:[[{
+			title : '合并列',
+			colspan : 2
+		},{
+			field:'code',
+			title:'Code',
+			width:80,
+			rowspan: 2,
+			editor : {type: 'numberbox' }
+		}
+	],[
+		{
+			field:'name',
+			title:'Name',
+			width:120,
+			editor : {type: 'combo' }
+		},
+		{
+			field:'addr',
+			title:'Addr',
+			width:80,
+			align:'right',
+			sortable : true,
+			sorter : function(a, b) {
+				return (a > b ? 1 : -1);
+			}
+		}
+	]]
+});
+$('#destroy').click(function (){
+	$('#combogrid2').combogrid('destroy');
+});
+$('#resize').click(function (){
+	$('#combogrid2').combogrid('resize',{
+		width : 300
+	});
+});
+$('#disable').click(function (){
+	$('#combogrid2').combogrid('disable');
+});
+$('#enable').click(function (){
+	$('#combogrid2').combogrid('enable');
+});
+$('#getValue').click(function (){
+	var val = $('#combogrid2').combogrid('getValue');
+	alert('getVlaue :' + val);
+});
+$('#setValue').click(function (){
+	var val = $('#combogrid2').combogrid('setValue','Name 1');
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo2 -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

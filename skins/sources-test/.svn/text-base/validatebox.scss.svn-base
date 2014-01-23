@@ -1,0 +1,39 @@
+/* validatebox.scss*/
+@import "include.scss";
+
+.validate-text {
+	position: $pos-re;
+	z-index: $z-axis;
+}
+.validatebox-invalid {
+	@include Func-bg( 'validate/validatebox_warning.png', no-repeat, right 1px, #FFFFEE);
+}
+.validatebox-tip {
+	position: $pos-ab;
+	width: 200px;
+	height: auto;
+	display: $dis-no;
+	z-index: $z-axis;
+}
+.validatebox-tip-content{
+	display: $dis-il;
+	position: $pos-ab;
+	top: 0;
+	left: 10px;
+	padding: 3px 5px;
+	@include basic-bd(#CC9933);
+	background: #FFFFCC;
+	z-index: 9991;
+	font-size: 12px;
+	word-break: break-all;
+}
+.validatebox-tip-pointer{
+	@include Func-bg( 'validate/validatebox_pointer.gif', no-repeat, left top);
+	display: $dis-il;
+	width: 10px;
+	height: 19px;
+	position: $pos-ab;
+	left: 1px;
+	top: 0;
+	z-index: 9992;
+}

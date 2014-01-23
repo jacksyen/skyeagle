@@ -1,0 +1,64 @@
+/* toolbar.scss*/
+@import "include.scss";
+
+.toolbar {
+	@include Func-bg( 'toolbar/toolbar-bg.gif', repeat-x, left top, #D9E5F3, scroll);
+	@include basic-bd(#99BCE8);
+	heigth: 26px;
+	padding: 2px 3px;
+	overflow: $of-hi;
+	position: $pos-re;
+	.toolbar-scroll-left {
+    @include Func-bg( 'tabs/tabs_leftarrow.gif');
+    height: 24px;
+    left: 0;
+    position: $pos-ab;
+    top: 1px;
+    width: 18px;
+    cursor: $cur-po;
+    z-index: 100;
+    &:hover { background-position: -18px 0;}
+  }
+  .toolbar-scroll-right {
+    @include Func-bg( 'tabs/tabs_rightarrow.gif');
+    height: 24px;
+    right: 0;
+    position: $pos-ab;
+    top: 1px;
+    width: 18px;
+    cursor: $cur-po;
+    z-index: 100;
+    &:hover { background-position: -18px 0;}
+  }
+  .toolbar-scroll-disabled {
+    background-position: 0 0 !important;
+    cursor: default;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+  }
+  .ui-button {
+    @include basic-bd(#99BCE8);
+  }
+  .ui-button-text-only {
+    background: url('');
+    &:hover {
+      @include Func-bg( 'tabs/tabs_enable.gif', repeat-x, 0 0, #DEECFD, scroll);
+      @include basic-bd(#99BCE8);
+    }
+    .ui-button-text {
+      padding: 1px 0.9em;
+    }
+  }
+  .line-separator {
+    border-left: 1px solid #9AC6FF;
+    border-right: 1px solid white;
+    height: 18px;
+    margin: 0 8px 1px;
+  }
+}
+.toolbar-items {
+	width: 5000px;
+	font-size: 12px;
+	position: $pos-re;
+}

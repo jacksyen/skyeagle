@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<charts>
+	<!-- chart图配置信息 -->
+	<chart>
+		<!-- 基础配置 -->
+		<basic>
+			<width>500</width>
+			<height>400</height>
+			<title></title>
+			<subTitle></subTitle>
+			<!-- 显示类型 -->
+			<type></type>
+		</basic>
+		<!-- X轴配置-->
+		<xAxis>
+			<title></title>
+			<!-- 数据 -->
+			<categories>100, 200, 300, 400, 500, 600</categories>
+			<!-- 这里是否要考虑连接data字段 -->
+		</xAxis>
+		<!-- Y轴配置-->
+		<yAxis>
+			<title></title>
+			<!-- 数据 -->
+			<categories>100, 200, 300, 400, 500, 600</categories>
+			<!-- 这里是否要考虑连接data字段 -->
+		</yAxis>
+		<!-- 工具标签 -->
+		<tooltip>
+			
+		</tooltip>
+		<!-- 报表数据 -->
+		<series>
+			<!-- 对应数据库名称字段-->
+			<nameField></nameField>
+			<!-- 对应数据库值字段-->
+			<valueField></valueField>
+			<!-- 手动配置数据 -->
+			<datas>
+				<data>
+					<name></name>
+					<value></value>
+				</data>
+			</datas>
+		</series>
+	</chart>
+</charts>

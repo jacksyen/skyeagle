@@ -1,0 +1,7 @@
+http = require('http');
+http.createServer(function (request, response){
+	console.log('client request');
+	response.writeHead(200,{'Content-Type' : 'text/plain'});
+	response.write('true');
+	response.end();
+}).listen(8888);

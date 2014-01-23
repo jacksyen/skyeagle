@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.button.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.numberbox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.combo.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.datepicker.js"></script>
+		
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.pagination.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.toolbar.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.datagrid.js"></script>
+
+		
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script> -->
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.button.css" />
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" /> 
+		<link rel="stylesheet" href="../../../skins/jquery.ui.combo.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.datepicker.css" />
+		
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.pagination.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.toolbar.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.datagrid.css" />
+		
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		<script>
+			
+			$(document).ready(function (){
+				
+				$('.html').each(function(index) {
+				  	var html = document.getElementById('mm1').outerHTML.replace(/</g,'&lt;');
+				  	$(this).append(html);
+				  	html = document.getElementById('toolbar1').outerHTML.replace(/</g,'&lt;');
+				  	$(this).append(html);
+				});
+				
+				/**
+				 * demo 1 
+				 */
+				$('#tt').datagrid({
+					// 显示分页栏
+					pagination : true,
+					// 显示每页记录数
+					pageSize : 10,
+					// 显示每页记录数列表
+					pageList : [5,10],
+					// width : 700,
+					// height: 500,
+					// 工具栏
+					toolbar : [
+						{type : 'button', options : {
+							label : '选择全部', 
+							onClick : function (){
+								$('#tt').datagrid('selectAll');
+							}}, line : true },
+						{type : 'button', options : {
+							label : '取消选择', 
+							onClick : function (){
+								$('#tt').datagrid('unselectAll');
+							}}, line : true },
+						{type : 'button', options : {
+							label : '开始编辑第一条数据', 
+							onClick : function (){
+								$('#tt').datagrid('beginEdit', 0);
+							}}, line : true },
+						{type : 'button', options : {
+							label : '结束编辑第一条数据', 
+							onClick : function (){
+								$('#tt').datagrid('endEdit', 0);
+							}}, line : true },
+						{type : 'button', options : {
+							label : '获取选择项', 
+							onClick : function (){
+								var rows = $('#tt').datagrid('getSelections');
+				  				alert('rows.length:'+rows.length);
+							}}, line : true },
+						{type : 'button', options : {
+							label : '追加行数据', 
+							onClick : function (){
+								$('#tt').datagrid('appendRow',{
+									code : '999',
+							  		name : 'new',
+							  		addr : 'new addr'
+								});
+							}}, line : true },	
+						{type : 'button', options : {
+							label : '第三行插入行数据', 
+							onClick : function (){
+								$('#tt').datagrid('insertRow',{
+									index : 2,
+									row   : {
+										code : '999',
+								  		name : 'insertRow',
+								  		addr : 'insertRow'
+									}
+								});
+							}}, line : true },
+						{type : 'button', options : {
+							label : '隐藏Name列', 
+							onClick : function (){
+								$('#tt').datagrid('hideColumn','name');
+							}}, line : true },
+						{type : 'button', options : {
+							label : '显示Name列', 
+							onClick : function (){
+								$('#tt').datagrid('showColumn','name');
+							}}, line : true },
+						{type : 'button', options : {
+							label : '删除第一行', 
+							onClick : function (){
+								$('#tt').datagrid('deleteRow', 0);
+							}}, line : true },
+						{type : 'button', options : {
+							label : '验证第一行', 
+							onClick : function (){
+								var result = $('#tt').datagrid('validateRow', 0);
+								alert('validate result:' + result);
+							}}, line : true },
+						{type : 'button', options : {label : 'button2'} }
+					],
+					// 数据列配置对象
+					columns:[[{
+							title : '合并列',
+							colspan : 2
+						},{
+							field:'code',
+							title:'Code',
+							width:80,
+							rowspan: 2,
+							editor : {type: 'numberbox' }
+						}
+					],[
+						{
+							field:'name',
+							title:'Name',
+							width:120,
+							editor : {type: 'combo' }
+						},
+						{
+							field:'addr',
+							title:'Addr',
+							width:80,
+							align:'right',
+							sortable : true,
+							sorter : function(a, b) {
+								return (a > b ? 1 : -1);
+							}
+						}
+					]],
+					// 行背景交替显示
+					striped : true,
+					// 标题
+					title : 'datagrid title',
+					// 显示行号
+					rownumbers: true,
+					// 初始化以'code'列排序
+					sortName : 'code',
+					// 排序为倒序
+					sortOrder : 'desc',
+					// 远程数据请求URL
+					url : 'datagrid_data.json',
+					onLoadSuccess : function (event, data) {
+					  	
+					},
+					onBeforeLoad : function (event, param){
+						return true;
+					},
+					onSortColumn : function (event, ui){
+						alert('onSortColumn,sort:' + ui.sort +',order:' + ui.order);
+					},
+					onResizeColumn : function (event, ui){
+						alert('onResizeColumn,field:' + ui.field +',width:' + ui.width);
+					},
+					onSelectAll : function (event, ui){
+						alert('onSelectAll,ui.rows.length:' + ui.rows.length);
+					},
+					onUnselectAll : function (event, ui){
+						alert('onUnselectAll,ui.rows.length:' + ui.rows.length);
+					}
+				});
+				
+				
+				// 代码高亮
+				DlHighlight.HELPERS.highlightByName("datagrid", "pre");
+			});
+		</script>
+		<style>
+			.demo {
+				border: 1px solid #dd906a;
+				width: 150px;
+				height: 150px;
+				line-height: 150px;
+				text-align: center;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+							<!-- <li><a href="#demo2">类型搜索框示例</a></li>
+							<li><a href="#demo3">事件示例</a></li> -->
+						</ul>
+					</div>
+					<div class="block" id="demo1">
+						<h1>示例一（默认功能）</h1>
+						<div class="line-block">
+							<table id='tt'></table>
+							<div class="code">
+<pre name="datagrid" class="js">
+$('#tt').datagrid({
+	// 显示分页栏
+	pagination : true,
+	// 显示每页记录数
+	pageSize : 10,
+	// 显示每页记录数列表
+	pageList : [5,10],
+	// width : 700,
+	// height: 500,
+	// 工具栏
+	toolbar : [
+		{type : 'button', options : {
+			label : '选择全部', 
+			onClick : function (){
+				$('#tt').datagrid('selectAll');
+			}}, line : true },
+		{type : 'button', options : {
+			label : '取消选择', 
+			onClick : function (){
+				$('#tt').datagrid('unselectAll');
+			}}, line : true },
+		{type : 'button', options : {
+			label : '开始编辑第一条数据', 
+			onClick : function (){
+				$('#tt').datagrid('beginEdit', 0);
+			}}, line : true },
+		{type : 'button', options : {
+			label : '结束编辑第一条数据', 
+			onClick : function (){
+				$('#tt').datagrid('endEdit', 0);
+			}}, line : true },
+		{type : 'button', options : {
+			label : '获取选择项', 
+			onClick : function (){
+				var rows = $('#tt').datagrid('getSelections');
+  				alert('rows.length:'+rows.length);
+			}}, line : true },
+		{type : 'button', options : {
+			label : '追加行数据', 
+			onClick : function (){
+				$('#tt').datagrid('appendRow',{
+					code : '999',
+			  		name : 'new',
+			  		addr : 'new addr'
+				});
+			}}, line : true },	
+		{type : 'button', options : {
+			label : '第三行插入行数据', 
+			onClick : function (){
+				$('#tt').datagrid('insertRow',{
+					index : 2,
+					row   : {
+						code : '999',
+				  		name : 'insertRow',
+				  		addr : 'insertRow'
+					}
+				});
+			}}, line : true },
+		{type : 'button', options : {
+			label : '隐藏Name列', 
+			onClick : function (){
+				$('#tt').datagrid('hideColumn','name');
+			}}, line : true },
+		{type : 'button', options : {
+			label : '显示Name列', 
+			onClick : function (){
+				$('#tt').datagrid('showColumn','name');
+			}}, line : true },
+		{type : 'button', options : {
+			label : '删除第一行', 
+			onClick : function (){
+				$('#tt').datagrid('deleteRow', 0);
+			}}, line : true },
+		{type : 'button', options : {
+			label : '验证第一行', 
+			onClick : function (){
+				var result = $('#tt').datagrid('validateRow', 0);
+				alert('validate result:' + result);
+			}}, line : true },
+		{type : 'button', options : {label : 'button2'} }
+	],
+	// 数据列配置对象
+	columns:[[{
+			title : '合并列',
+			colspan : 2
+		},{
+			field:'code',
+			title:'Code',
+			width:80,
+			rowspan: 2,
+			editor : {type: 'numberbox' }
+		}
+	],[
+		{
+			field:'name',
+			title:'Name',
+			width:120,
+			editor : {type: 'combo' }
+		},
+		{
+			field:'addr',
+			title:'Addr',
+			width:80,
+			align:'right',
+			sortable : true,
+			sorter : function(a, b) {
+				return (a > b ? 1 : -1);
+			}
+		}
+	]],
+	// 行背景交替显示
+	striped : true,
+	// 标题
+	title : 'datagrid title',
+	// 显示行号
+	rownumbers: true,
+	// 初始化以'code'列排序
+	sortName : 'code',
+	// 排序为倒序
+	sortOrder : 'desc',
+	// 远程数据请求URL
+	url : 'datagrid_data.json',
+	onLoadSuccess : function (event, data) {
+	  	
+	},
+	onBeforeLoad : function (event, param){
+		return true;
+	},
+	onSortColumn : function (event, ui){
+		alert('onSortColumn,sort:' + ui.sort +',order:' + ui.order);
+	},
+	onResizeColumn : function (event, ui){
+		alert('onResizeColumn,field:' + ui.field +',width:' + ui.width);
+	},
+	onSelectAll : function (event, ui){
+		alert('onSelectAll,ui.rows.length:' + ui.rows.length);
+	},
+	onUnselectAll : function (event, ui){
+		alert('onUnselectAll,ui.rows.length:' + ui.rows.length);
+	}
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo1 -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

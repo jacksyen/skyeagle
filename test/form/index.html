@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/form/jquery.ui.calendar.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/form/jquery.ui.combo.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/form/jquery.ui.numberbox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/form/jquery.ui.numberspinner.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/form/jquery.ui.slider.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/form/jquery.ui.timespinner.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/jquery.ui.button.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/form/jquery.ui.datepicker.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/form/jquery.ui.datetimepicker.js"></script>
+
+		<link rel="stylesheet" href="../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../skins/jquery.ui.validatebox.css" />
+		<link rel="stylesheet" href="../../skins/jquery.ui.calendar.css" />
+		<link rel="stylesheet" href="../../skins/jquery.ui.combo.css" />
+		<link rel="stylesheet" href="../../skins/jquery.ui.numberspinner.css" />
+		<link rel="stylesheet" href="../../skins/jquery.ui.slider.css" />
+		<link rel="stylesheet" href="../../skins/jquery.ui.button.css" />
+		<link rel="stylesheet" href="../../skins/jquery.ui.datepicker.css" />
+		<link rel="stylesheet" href="../../skins/jquery.ui.datetimepicker.css" />
+
+		<script>
+			$(document).ready(function() {
+				/**
+				 * demo 1
+				 */
+				$('#validatebox1').validatebox({
+					// 验证能否为空
+					required : true,
+					// 提示框宽度
+					tipwidth : null,
+					// 验证失败提示信息
+					missMsg : '输入框不能为空'
+				});
+
+				$('#calendar1').datepicker({
+
+				});
+
+				$('#combo').combo({
+					width : 150,
+					// tipwidth : 50,
+					editable : true,
+					radioable : false,
+					multiable : true,
+					required : true,
+					value : 'Java',
+					missMsg : 'mfgggmm',
+					onShowPanel : function() {
+
+					},
+					onHidePanel : function() {
+
+					},
+					onChange : function() {
+
+					}
+				});
+
+				$('#numberbox1').numberbox({
+					max : 100, // 设置能显示的最大值
+					min : 1, // 设置能显示的最小值
+					precision : 2, // 精度设置
+					parseable : true	// 是否需要处理精度
+				});
+
+				$('#numberspinner1').numberspinner({
+					// 设置初始值
+					initnumber : null,
+					// 增量
+					addnumber : 2,
+					// 精度
+					precision : 2,
+					// 是否需要处理精度
+					parseable : true
+				});
+
+				$('#slider1').slider({
+
+				});
+				
+				$('#timespinner1').timespinner({
+					Separator : ':'	// 分隔符
+				});
+				
+				$('#datepicker1').datepicker({
+					
+				});
+				
+				$('#datetimepicker1').datetimepicker({
+					
+				});
+			});
+		</script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<p>
+			validatebox:
+			<input type="text" id="validatebox1" />
+		</p>
+		<p>
+			calendar:
+			<div id="calendar1"></div>
+		</p>
+
+		combo:
+		<div id="combo">
+			<div class="select">
+				Select a language
+			</div>
+			<div class="sp">
+				Java
+			</div>
+			<div class="sp">
+				C#
+			</div>
+			<div class="sp">
+				Ruby
+			</div>
+			<div class="sp">
+				Basic
+			</div>
+			<div class="sp">
+				Fortran
+			</div>
+		</div>
+
+		<p>
+			numberbox:
+			<input type="text" id="numberbox1" />
+		</p>
+		<p>
+			numberspinner:
+			<input type="text" id="numberspinner1" />
+		</p>
+
+		<p>
+			slider:
+			<div id="slider1" style="margin-left:200px; margin-right: 200px;">
+			</div>
+		</p>
+		
+		<p>
+			timespinner:
+			<input type="text" id="timespinner1" />
+		</p>
+		
+		<p>
+			datepicker:
+			<input type="text" id="datepicker1">
+		</p>
+		
+		<p>
+			datetimepicker:
+			<input type="text" id="datetimepicker1">
+		</p>
+	</body>
+</html>

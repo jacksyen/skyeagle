@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery UI Draggable - Default functionality</title>
+		<script type="text/javascript" language="JavaScript" src="../../../../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../../plugins/jquery-ui/jquery.ui.draggable.js"></script>
+		<style>
+			#draggable {
+				width: 150px;
+				height: 150px;
+				padding: 0.5em;
+			}
+		</style>
+
+		<link rel="stylesheet" href="../../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../../skins/jquery.ui.theme.css" />
+
+		<script>
+			$(function() {
+				$("#draggable").draggable({
+					
+				});
+			});
+		</script>
+		<style>
+			#draggable{
+				width : 200px;
+				height: 200px;
+				border: 1px solid #ccc;
+				background-color : #86A3C4;
+				cursor: move;
+				line-height: 200px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="draggable">
+			点击移动我
+		</div>
+	</body>
+</html>

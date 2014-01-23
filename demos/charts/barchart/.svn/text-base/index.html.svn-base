@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/charts/skyeagle.charts.src.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="index.js"></script>
+		
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script> -->
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.tabs.css" />
+		
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		<style>
+			.demo {
+				border: 1px solid #dd906a;
+				width: 150px;
+				height: 150px;
+				line-height: 150px;
+				text-align: center;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- <div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+							<li><a href="#demo2">类型搜索框示例</a></li>
+							<li><a href="#demo3">事件示例</a></li>
+						</ul>
+					</div> -->
+					<div class="block" id="demo1">
+<!-- 						<h1>示例一（默认功能）</h1> -->
+						<div class="line-block">
+							<div id="tabs1">
+								<ul>
+									<li>
+										<a href="#tabs-1">基础柱形横向功能</a>
+									</li>
+									<li>
+										<a href="#tabs-2">基础柱形竖向</a>
+									</li>
+									<li>
+										<a href="#tabs-3">柱形负值示例</a>
+									</li>
+									<li>
+										<a href="#tabs-4">标签栏旋转示例</a>
+									</li>
+								</ul>
+								<div id="tabs-1">
+									<div id="demo1Container">
+										
+									</div>
+									<div class="code">
+<pre name="barchart" class="js">
+new Highcharts.Chart({
+	// chart主体配置
+	chart : {
+		// 在哪个DOM
+		renderTo : 'demo1Container',
+		// chart图类型为区域图
+		type : 'bar'
+	},
+	// 主标题
+	title : {
+		text : '基础横向chart',
+		x : 0
+	},
+	// 副标题
+	subtitle : {
+		text : '副标题',
+		x : 0
+	},
+	// X轴
+	xAxis : {
+		categories: ['一', '二', '三', '四', '五'],
+		title: {
+            text: null
+        }
+	},
+	// Y轴
+	yAxis : {
+		min : 0,
+		title : {
+			text : '纵轴标题',
+			align: 'high'
+		}
+	},
+	plotOptions : {
+		bar : {
+			dataLabels: {
+                enabled: true
+			}
+		}
+	},
+	// 签名档是否显示
+	credits: {
+        enabled: false
+    },
+	// 数据
+	series: [{
+        name: 'bar 1',
+        data: [107, 31, 635, 203, 2]
+    }, {
+        name: 'bar 2',
+        data: [133, 156, 947, 408, 6]
+    }, {
+        name: 'bar 3',
+        data: [973, 914, 4054, 732, 34]
+    }]
+});
+</pre>
+							</div>
+								</div>
+								<div id="tabs-2">
+									<div id="demo2Con"></div>
+									<div class="code">
+<pre name="barchart" class="js">
+new Highcharts.Chart({
+	// chart主体配置
+	chart : {
+		// 在哪个DOM
+		renderTo : 'demo2Con',
+		// chart图类型
+		type : 'column'
+	},
+	// 主标题
+	title : {
+		text : '基础柱形竖向',
+		x : 0
+	},
+	// 副标题
+	subtitle : {
+		text : '副标题',
+		x : 0
+	},
+	// X轴
+	xAxis : {
+		// 类别
+		categories : ['1975', '1800', '1850', '1900', '1950', '1999', '2050']
+	},
+	// Y轴
+	yAxis : {
+		title : {
+			text : '纵轴标题'
+		},
+		min : 0
+	},
+	// 其他配置参数
+	plotOptions : {
+		// 列配置
+		column : {
+			// 坐标边距
+			pointPadding : 0.2,
+			// 边框宽度
+			borderWidth  : 1,
+			borderColor  : '#CEFF66'
+		}
+	},
+	// 数据
+	series: [{
+        name: 'column 1',
+        data: [502, 635, 809, 947, 1402, 3634, 5268]
+    }, {
+        name: 'column 2',
+        data: [106, 107, 111, 133, 221, 767, 1766]
+    }]
+});
+</pre>
+	</div>
+								</div><!-- end of demo2 -->
+								<div id="tabs-3">
+									<div id="demo3Con"></div>
+										<div class="code">
+<pre name="barchart" class="js">
+new Highcharts.Chart({
+	// chart主体配置
+	chart : {
+		// 在哪个DOM
+		renderTo : 'demo3Con',
+		// chart图类型
+		type : 'column'
+	},
+	// 主标题
+	title : {
+		text : '柱形负值示例',
+		x : 0
+	},
+	// 副标题
+	subtitle : {
+		text : '副标题',
+		x : 0
+	},
+	// X轴
+	xAxis : {
+		// 类别
+		categories : ['1975', '1800', '1850', '1900', '1950', '1999', '2050']
+	},
+	// Y轴
+	yAxis : {
+		title : {
+			text : '纵轴标题'
+		}
+	},
+	// 其他配置参数
+	plotOptions : {
+		// 列配置
+		column : {
+		}
+	},
+	// 数据
+	series: [{
+        name: 'column 1',
+        data: [502, 635, 809, -247, 1402, 3634, -268]
+    }, {
+        name: 'column 2',
+        data: [106, -107, 111, 133, 221, -767, 1266]
+    }]
+});
+</pre>
+										</div>
+								</div><!-- end of demo3 -->
+								
+								<div id="tabs-4">
+									<div id="demo4Con"></div>
+										<div class="code">
+<pre name="barchart" class="js">
+new Highcharts.Chart({
+	// chart主体配置
+	chart : {
+		// 在哪个DOM
+		renderTo : 'demo4Con',
+		// chart图类型
+		type : 'column'
+	},
+	// 主标题
+	title : {
+		text : '标签栏旋转示例',
+		x : 0
+	},
+	// 副标题
+	subtitle : {
+		text : '副标题',
+		x : 0
+	},
+	// X轴
+	xAxis : {
+		// 类别
+		categories : ['1975', '1800', '1850', '1900', '1950', '1999', '2050'],
+		// 标签样式
+		labels : {
+			// 旋转角度
+			rotation : -45,
+			align : 'right',
+			style : {
+				color : '#99B566',
+				fontSize : '13px'
+			}
+			
+		}
+	},
+	// Y轴
+	yAxis : {
+		title : {
+			text : '纵轴标题'
+		}
+	},
+	// 其他配置参数
+	plotOptions : {
+		// 列配置
+		column : {
+		}
+	},
+	tooltip : {
+		enabled : false
+	},
+	// 数据
+	series: [{
+        name: 'column 1',
+        data: [502, 635, 809, 247, 1402, 3634, 4268],
+        // 数据标签样式
+        dataLabels : {
+        	enabled : true,
+        	rotation : -90,
+        	color : '#ccc',
+        	align : 'center'
+        }
+    }]
+});
+</pre>
+										</div>
+								</div><!-- end of demo4 -->
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

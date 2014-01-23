@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery UI Dialog - Default functionality</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.button.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.numberbox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.combo.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.datepicker.js"></script>
+		
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.pagination.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.toolbar.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.datagrid.js"></script>
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.button.css" />
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" /> 
+		<link rel="stylesheet" href="../../../skins/jquery.ui.combo.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.datepicker.css" />
+		
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.pagination.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.toolbar.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.datagrid.css" />
+		
+		<style>
+		</style>
+
+		<script>
+			$(document).ready(function() {
+				// var that = $('#tt');
+				// var panel = $('<div id="panel"></div>').insertAfter(that);
+				// panel.panel({
+					// doSize : false
+				// });
+// 				
+				// panel.panel({
+					// title : 'xxx',
+					// doSize : false
+				// });
+				
+				$('#tt').datagrid({
+					pagination : true,
+					pageSize : 10,
+					pageList : [5,10],
+					width : 500,
+					height: 200,
+					toolbar : [
+						{type : 'button', options : {
+							label : '选择全部', 
+							onClick : function (){
+								$('#tt').datagrid('selectAll');
+							}}, line : true },
+						{type : 'button', options : {
+							label : '取消选择', 
+							onClick : function (){
+								$('#tt').datagrid('unselectAll');
+							}}, line : true },
+						{type : 'button', options : {
+							label : '开始编辑第一条数据', 
+							onClick : function (){
+								$('#tt').datagrid('beginEdit', 0);
+							}}, line : true },
+						{type : 'button', options : {
+							label : '结束编辑第一条数据', 
+							onClick : function (){
+								$('#tt').datagrid('endEdit', 0);
+							}}, line : true },
+						{type : 'button', options : {
+							label : '获取选择项', 
+							onClick : function (){
+								var rows = $('#tt').datagrid('getSelections');
+				  				alert('rows.length:'+rows.length);
+							}}, line : true },
+						{type : 'button', options : {
+							label : '追加行数据', 
+							onClick : function (){
+								$('#tt').datagrid('appendRow',{
+									code : '999',
+							  		name : 'new',
+							  		addr : 'new addr'
+								});
+							}}, line : true },	
+						{type : 'button', options : {
+							label : '第三行插入行数据', 
+							onClick : function (){
+								$('#tt').datagrid('insertRow',{
+									index : 2,
+									row   : {
+										code : '999',
+								  		name : 'insertRow',
+								  		addr : 'insertRow'
+									}
+								});
+							}}, line : true },
+						{type : 'button', options : {
+							label : '隐藏Name列', 
+							onClick : function (){
+								$('#tt').datagrid('hideColumn','name');
+							}}, line : true },
+						{type : 'button', options : {
+							label : '显示Name列', 
+							onClick : function (){
+								$('#tt').datagrid('showColumn','name');
+							}}, line : true },
+						{type : 'button', options : {
+							label : '删除第一行', 
+							onClick : function (){
+								$('#tt').datagrid('deleteRow', 0);
+							}}, line : true },
+						{type : 'button', options : {
+							label : '验证第一行', 
+							onClick : function (){
+								var result = $('#tt').datagrid('validateRow', 0);
+								alert('validate result:' + result);
+							}}, line : true },
+						{type : 'button', options : {
+							label : 'realod',
+							onClick : function (){
+								$('#tt').datagrid('reload', {});
+							}
+							} }
+					],
+					striped : true,
+					title : 'bbbb',
+					rownumbers:true,
+					sortName : 'code',
+					sortOrder : 'desc',
+					url : 'datagrid_data.json',
+					onLoadSuccess : function (event, data) {
+					  	
+					},
+					onBeforeLoad : function (event, param){
+						return true;
+					},
+					onSortColumn : function (event, ui){
+						alert('onSortColumn,sort:' + ui.sort +',order:' + ui.order);
+					},
+					onResizeColumn : function (event, ui){
+						alert('onResizeColumn,field:' + ui.field +',width:' + ui.width);
+					},
+					onSelectAll : function (event, ui){
+						alert('onSelectAll,ui.rows.length:' + ui.rows.length);
+					},
+					onUnselectAll : function (event, ui){
+						alert('onUnselectAll,ui.rows.length:' + ui.rows.length);
+					},
+					
+					// onDblClickRow : function (event, ui){
+						// alert('rowIndex:' + ui.rowIndex +',rowData:' + ui.rowData.code);
+					// },
+					// onClickRow : function (event, ui){
+						// alert('rowIndex:' + ui.rowIndex +',rowData:' + ui.rowData.code);
+					// },
+					// onClickCell : function (e, ui){
+						// alert('rowIndex:'+ui.rowIndex+',field:'+ui.field+',value:'+ui.value);
+					// },
+					// onSelect : function (e, ui){
+						// alert('rowIndex:' + ui.rowIndex + ',rowData.code:' + ui.rowData.code);
+					// },
+					// onUnselect : function (e, ui){
+						// alert('rowIndex:' + ui.rowIndex + ',rowData.code:' + ui.rowData.code);
+					// },
+					
+					// columns:[[
+						// {field:'code',title:'Code',width:80,sortable : true,
+						// sorter : function(a, b) {
+							// return (a > b ? 1 : -1);
+						// }},
+						// {field:'name',title:'Name',width:120},
+						// {field:'addr',title:'Addr',width:80,align:'right',sortable : true,
+						// sorter : function(a, b) {
+							// return (a > b ? 1 : -1);
+						// }},
+						// {field:'col4',title:'Col4',width:80,align:'right'}
+					// ]]
+					
+					columns:[[{
+							title : '合并列',
+							colspan : 2
+						},{
+							field:'code',
+							title:'Code',
+							width:80,
+							rowspan: 2,
+							editor : {type: 'numberbox' }
+						}
+					],[
+						{
+							field:'name',
+							title:'Name',
+							width:120,
+							editor : {type: 'combo' }
+						},
+						{
+							field:'addr',
+							title:'Addr',
+							width:80,
+							align:'right',
+							sortable : true,
+							sorter : function(a, b) {
+								return (a > b ? 1 : -1);
+							}
+						}
+					]]
+				});
+				
+				// $('#tt2').datagrid({
+					// width : 700,
+					// height: 200,
+					// collapsible : false,
+					// rownumbers : false,
+					// column : [
+						// {title : "movie", align: 'left', width: '100px', field: 'movie'},
+						// {title : "music", align: 'right', width: '120px', field: 'music'}],
+					// datasources : {
+						// total : 8,
+						// rows  : [
+							// {'movie': '马达s加斯加sss', 'music': 'Dj Remix'},
+							// {'movie': 'fdsfasd', 'music': 'girl of bye'},
+							// {'movie': 'ssfdsaf', 'music': 'Dj Remix'},
+							// {'movie': 'fsdavzz', 'music': 'girld of bye'},
+							// {'movie': 'xxxx', 'music': 'Dj Remix'},
+							// {'movie': 'fdsfsd', 'music': 'girld of bye'},
+							// {'movie': 'zfreeee', 'music': 'Dj Remix'},
+							// {'movie': '哈利波特', 'music': 'girld of bye'}
+						// ]
+					// }
+				// });
+				
+				
+			});
+		</script>
+	</head>
+	<body>
+		<table id='tt'></table>
+		<br/>
+		<p>
+			<hr size="1px" style="border:0px; border-bottom: 1px dashed #ccc; height:1px" />
+		</p>
+		<br />
+		<table id='tt2'></table>
+	</body>
+</html>

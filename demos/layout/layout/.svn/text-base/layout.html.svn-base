@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.layout.2.0.js"></script>
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.layout.css" />
+		<style>
+			body {
+				width: 100%;
+				height: 500px;
+			}
+		</style>
+		<script>
+			$(document).ready(function() {
+
+				//alert($('#page').parent().outerWidth())
+				var element = $('#page').layout({
+					fit : true,
+					
+					panels : [{
+						id : "north-panel",
+						title : "This is north panel",
+						region : "north",
+						resizable : true,
+						collapsible : true,
+						closable : true,
+						height : 100
+					}, {
+						id : "south-panel",
+						title : "This is south panel",
+						region : "south",
+						resizable : true,
+						collapsible : true,
+						height : 80
+					}, {
+						id : "center-panel",
+						header : false,
+						region : "center"
+					}, {
+						id : "west-panel",
+						resizable : true,
+						collapsible : true,
+						title : "This is west panel",
+						region : "west",
+						width : 250
+					}, {
+						id : "east-panel",
+						resizable : true,
+						collapsible : true,
+						title : "This is east panel",
+						region : "east",
+						width : 150
+					}]
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="page">
+
+			<div id="north-panel">
+				north
+			</div>
+
+			<div id="center-panel">
+				center
+			</div>
+
+			<div id="east-panel">
+				east
+			</div>
+
+			<div id="west-panel">
+				west
+			</div>
+
+			<div id="south-panel">
+				sorth
+			</div>
+		</div>
+
+	</body>
+</html>

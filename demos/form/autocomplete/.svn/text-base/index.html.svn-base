@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.combo.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.autocomplete.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script> -->
+
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.combo.css" />
+
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				/**
+				 * demo 1 
+				 */
+				var s = {
+					total : 9,
+					data : [
+						'中国',
+						'密码',
+						'是中。。。',
+						'dddd',
+						'eeee',
+						'f#ff',
+						'asdxzcv',
+						'abaasl',
+						'a!asd'
+					]
+				};
+				$('#autocomplete1').autocomplete({
+					data : s
+				});
+				
+				$('#autocomplete2').autocomplete({
+					data : s
+				});
+				$('#destroy').click(function (){
+					$('#autocomplete2').autocomplete('destroy');
+				});
+				$('#resize').click(function (){
+					$('#autocomplete2').autocomplete('resize', 300);
+				});
+				$('#disable').click(function (){
+					$('#autocomplete2').autocomplete('disable');
+				});
+				$('#enable').click(function (){
+					$('#autocomplete2').autocomplete('enable');
+				});
+				
+				// $('#validate').click(function (){
+					// var validate = $('#autocomplete1').autocomplete('validate');
+					// alert('validate:' + validate);
+				// });
+				// $('#clear').click(function (){
+					// $('#autocomplete1').autocomplete('clear');
+				// });
+				// $('#setValue').click(function (){
+					// var val = $('#autocomplete1').autocomplete('setValue','56');
+				// });
+				
+				
+				// 代码高亮
+				DlHighlight.HELPERS.highlightByName("autocomplete", "pre");
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+							<li><a href="#demo2">方法示例</a></li>
+							<!-- <li><a href="#demo3">显示按钮</a></li> -->
+						</ul>
+					</div>
+					<div class="block" id="demo1">
+						<h1>示例一（默认功能）</h1>
+						<div class="line-block" >
+								<div id="autocomplete1"></div>
+							<div class="code">
+<pre name="autocomplete" class="js">
+$('#autocomplete1').autocomplete({
+	data : s		// 传入的数据
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo1 -->
+					<div class="block" id="demo2">
+						<h1>示例二（方法示例）</h1>
+						<div class="line-block" >
+								<div id="autocomplete2"></div>
+							<div class="code">
+<button id="destroy">destroy</button>
+<button id="resize">resize</button>
+<button id="disable">disable</button>
+<button id="enable">enable</button>								
+<pre name="autocomplete" class="js">
+$('#autocomplete2').autocomplete({
+	data : s		// 传入的数据
+});
+$('#destroy').click(function (){
+	$('#autocomplete2').autocomplete('destroy');
+});
+$('#resize').click(function (){
+	$('#autocomplete2').autocomplete('resize', 300);
+});
+$('#disable').click(function (){
+	$('#autocomplete2').autocomplete('disable');
+});
+$('#enable').click(function (){
+	$('#autocomplete2').autocomplete('enable');
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo2 -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

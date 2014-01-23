@@ -1,0 +1,17 @@
+/*!
+ * jQuery UI Progressbar @VERSION
+ *
+ * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Progressbar#theming
+ */
+.ui-progressbar { height:18px; text-align: left; overflow: hidden; }
+.ui-progressbar .ui-progressbar-value {
+/*	margin: -1px; */
+	height:100%; 
+}
+.ui-progressbar .ui-widget-header {
+	background : url(images/progressbar/progressbar-header.gif) repeat-x scroll 0 0;
+}

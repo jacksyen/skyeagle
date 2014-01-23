@@ -1,0 +1,46 @@
+/* numberspinner.scss*/
+@import "include.scss";
+
+.numberspinner {
+  position: $pos-re;
+	@include basic-bd(#A4BED4);
+	display: $dis-il;
+	z-index: $z-axis;
+	.numsp {
+    font-size: 12px;
+    border: 0;
+    line-height: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  .spinner-arrow {
+    display: $dis-il;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+    .spinner-arrow-up {
+      display: $dis-bl;
+      @include Func-bg( 'numberspinner/spinner_arrow_up.gif', no-repeat, 5px 2px, #E0ECF9);
+      height: 10px;
+      font-size: 1px;
+      cursor: $cur-po;
+      opacity: .6;
+      margin: 0;
+      padding: 2px 0 0 0;
+      &:hover { opacity: 1.0;}
+    }
+    .spinner-arrow-down {
+      display: $dis-bl;
+      @include Func-bg( 'numberspinner/spinner_arrow_down.gif', no-repeat, 5px 2px, #E0ECF9);
+      height: 10px;
+      font-size: 1px;
+      vertical-align: top;
+      cursor: $cur-po;
+      opacity: .6;
+      margin: 0;
+      padding: 0;
+      &:hover { opacity: 1.0;}
+    }
+  }
+}

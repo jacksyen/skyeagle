@@ -1,0 +1,68 @@
+/* combo.scss*/
+@import "include.scss";
+
+.comboBox {
+	position: $pos-re;
+	z-index: $z-axis;
+}
+.combo {
+	@include basic-bd(#A4BED4);
+	display: $dis-il;
+	white-space: nowrap;
+	z-index: $z-axis;
+	.combo-input {
+	  font-size: 12px;
+    border: 0;
+    line-height: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    display: $dis-il;
+    float: $flo-le;
+    z-index: $z-axis;
+	}
+	.combo-warn {
+    @include Func-bg( 'combo/validatebox_warning.png', no-repeat, right, #FFE);
+    float: $flo-le;
+  }
+  .combo-arrow {
+    @include Func-bg( 'combo/combo_arrow.gif', no-repeat, 3px 4px, #E0ECF9);
+    height: 20px;
+    overflow: $of-hi;
+    vertical-align: top;
+    cursor: $cur-po;
+    opacity: .6;
+    display: $dis-il;
+    float: $flo-ri;
+    padding: 0;
+    margin: 0;
+  }
+}
+.tip {
+	display: $dis-no;
+	width: 200px;
+	height: auto;
+	font-size: 12px;
+	position: $pos-ab;
+	.tip-content {
+    display: $dis-il;
+    padding: 1px 5px;
+    @include basic-bd(#C93);
+    border-left-width: 0;
+    background: #FFC;
+  }
+  .tip-pointer {
+    @include Func-bg( 'combo/validatebox_pointer.gif', no-repeat, left top);
+    width: 10px;
+    height: 20px;
+    float: $flo-le;
+  }
+}
+.select {
+	color: #99BBE8;
+	background: #fafafa;
+	padding: 5px;
+}
+.heightlight {
+	background-color : #00ff00;
+}

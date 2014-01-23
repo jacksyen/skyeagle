@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<!-- <script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.panel.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.layout.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.accordion.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.menu.js"></script> -->
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<!-- <link rel="stylesheet" href="../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.tabs.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.layout.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.accordion.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.menu.css" /> -->
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'tree',
+						content : ['基于jqueryUI，树形菜单插件']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['url', 'String', '用以载入远程数据的超链接地址', 'null'],
+								['method','String', '请求远程数据时的方法','"get"'],
+								['animate', 'Boolean', '定义当节点打开或关闭时是否显示动画效果.', 'false'],
+								['checkbox', 'Boolean', '定义是否在每个节点之前显示复选框', 'false'],
+								['cascadeCheck', 'Boolean', '是否支持级联选择.', 'true'],
+								['onlyLeafCheck', 'Boolean', '定义是否只在叶子节点之前显示复选框.', 'false'],
+								['lines', 'Boolean', '是否显示节点之前的连接线', 'false'],
+								['dnd', 'Boolean', '定义是否支持拖放.', 'false'],
+								['data', 'Array', '将被载入的节点数据.', 'null'],
+								['loader', 'function(param,success,error)', '加载数据时执行，reutrn false终止操作.', ''],
+								['loadFilter', 'function(data,parent)', '加载数据时的过滤器.', '']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['getOptions', 'null', '返回树形菜单属性对象 .', ''],
+								['loadData', 'data', '载入树形菜单数据.', ''],
+								['getNode', 'target', '获取特定的节点对象.', ''],
+								['getData', 'target', '获取特定的节点数据，包括它的子节点.', ''],
+								['reload', 'target', '重新载入树形菜单数据', ''],
+								['getRoot', 'null', '获取根节点，返回节点对象 .', ''],
+								['getRoots', 'null', '获取根节点，返回节点数组  .', ''],
+								['getParent', 'target', '获取父节点，target是一个节点DOM对象 .', ''],
+								['getChildren', 'target', '获取子节点，target参数是一个节点DOM对象  .', ''],
+								['getChecked', 'null', '获取所有被选择的节点 .', ''],
+								['getSelected', 'null', '获取被选择的节点并返回，如果没有节点被选择则返回null .', ''],
+								['isLeaf', 'target', '判断指定的节点是否是叶子节点，target参数是一个节点DOM对象  .', ''],
+								['find', 'id', '查找指定的节点并返回节点对象  .', ''],
+								['select', 'target', '选择一个节点，target参数是一个节点DOM对象.', ''],
+								['check', 'target', '设置指定的节点为已选择状态.', ''],
+								['uncheck', 'target', '设置指定的节点为未选择状态.', ''],
+								['collapse', 'target', '关闭节点，target参数是一个节点DOM对象.', ''],
+								['expand', 'target', '打开节点，target参数是一个节点DOM对象.', ''],
+								['collapseAll', 'target', '关闭所有的节点.', ''],
+								['expandAll', 'target', '打开所有的节点.', ''],
+								['expandTo', 'target', '打开从根节点到指定节点之间的所有节点.', ''],
+								['append', 'param', '添加若干子节点到一个父节点，param参数有2个属性:<br/>' +
+									'parent：DOM对象，将要被添加子节点的父节点，如果未指定，子节点将被添加至根节点<br/>' +
+									'data：数组，节点数据', ''],
+								['toggle', 'target', '打开或关闭节点的触发器，target参数是一个节点DOM对象.', ''],
+								['insert', 'param', '在一个指定节点之前或之后插入节点，"param"参数包含如下属性：<br/>' +
+									'before：DOM对象，在某个节点之前插入<br/>' +
+									'after: DOM对象，在某个节点之后插入<br/>' +
+									'data：对象，节点数据', ''],
+								['remove', 'target', '移除一个节点和它的子节点，target参数是一个节点DOM对象.', ''],
+								['pop', 'target', '移除一个节点和它的子节点，该方法跟remove方法一样，不同的是它将返回被移除的节点数据  .', ''],
+								['update', 'param', '更新指定的节点，param参数有如下属性：<br/> ' +
+									'target(DOM对象，将被更新的目标节点)，id，text，iconCls，checked等。', ''],
+								['enableDnd', 'null', '启用拖动特性.', ''],
+								['disableDnd', 'null', '禁用拖动特性.', ''],
+								['beginEdit', 'nodeEl', '开始编辑节点.', ''],
+								['endEdit', 'nodeEl', '结束编辑节点 .', ''],
+								['cancelEdit', 'nodeEl', '取消编辑节点 .', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['onClick', 'event, ui', '当用户点击节点时触发，node参数包含如下属性：<br/>' +
+									'id：节点id。<br/>' + 
+									'text：显示在节点上的文本。<br/>' + 
+									'checked：节点是否被选择。<br/>' + 
+									'attributes：节点的自定义属性。<br/>' + 
+									'target：被点击的目标DOM对象。'],
+								['onDblClick', 'event, node', '当用户双击节点时触发,，node参数包含如下属性：<br/>' +
+									'id：节点id。<br/>' + 
+									'text：显示在节点上的文本。<br/>' + 
+									'checked：节点是否被选择。<br/>' + 
+									'attributes：节点的自定义属性。<br/>' + 
+									'target：被点击的目标DOM对象。'],
+								['onBeforeLoad', 'event, ui', '在请求载入数据之前触发，返回false将取消载入。<br/>' +
+									'ui.node.id: 节点ID<br/>' + 
+									'ui.node.text：显示在节点上的文本。<br/>' + 
+									'ui.node.checked：节点是否被选择。<br/>' + 
+									'ui.node.attributes：节点的自定义属性。<br/>' + 
+									'ui.node.target：被点击的目标DOM对象。<br/>' + 
+									'ui.param: 请求参数'],
+								['onLoadSuccess', 'event, ui', '当数据载入成功时触发<br/>' +
+									'ui.node.id: 节点ID<br/>' + 
+									'ui.node.text：显示在节点上的文本。<br/>' + 
+									'ui.node.checked：节点是否被选择。<br/>' + 
+									'ui.node.attributes：节点的自定义属性。<br/>' + 
+									'ui.node.target：被点击的目标DOM对象。<br/>' + 
+									'ui.data: 返回数据'],
+								['onLoadError', 'event, ui', '当数据载入失败时触发<br/>' +
+									'ui.arguments参数跟jQuery.ajax的"error"函数一样'],
+								['onBeforeExpand', 'event, ui', '在节点打开之前触发，返回false将取消打开 <br/>' +
+									'ui.id：节点id。<br/>' + 
+									'ui.text：显示在节点上的文本。<br/>' + 
+									'ui.checked：节点是否被选择。<br/>' + 
+									'ui.attributes：节点的自定义属性。<br/>' + 
+									'ui.target：被点击的目标DOM对象。'],
+								['onExpand', 'event, ui', '在节点被打开时触发<br/>' +
+									'ui.id：节点id。<br/>' + 
+									'ui.text：显示在节点上的文本。<br/>' + 
+									'ui.checked：节点是否被选择。<br/>' + 
+									'ui.attributes：节点的自定义属性。<br/>' + 
+									'ui.target：被点击的目标DOM对象。'],
+								['onBeforeCollapse', 'event, ui', '在节点被关闭之前触发，返回false将取消关闭<br/>' +
+									'ui.id：节点id。<br/>' + 
+									'ui.text：显示在节点上的文本。<br/>' + 
+									'ui.checked：节点是否被选择。<br/>' + 
+									'ui.attributes：节点的自定义属性。<br/>' + 
+									'ui.target：被点击的目标DOM对象。'],
+								['onCollapse', 'event, ui', '当节点被关闭时触发 <br/>' +
+									'ui.id：节点id。<br/>' + 
+									'ui.text：显示在节点上的文本。<br/>' + 
+									'ui.checked：节点是否被选择。<br/>' + 
+									'ui.attributes：节点的自定义属性。<br/>' + 
+									'ui.target：被点击的目标DOM对象。'],
+								['onCheck', 'event, ui', '当用户点击复选框时触发 <br/>' +
+									'ui.node.id: 节点ID<br/>' + 
+									'ui.node.text：显示在节点上的文本。<br/>' + 
+									'ui.node.checked：节点是否被选择。<br/>' + 
+									'ui.node.attributes：节点的自定义属性。<br/>' + 
+									'ui.node.target：被点击的目标DOM对象。<br/>' + 
+									'ui.checked: 是否选中'],
+								['onBeforeSelect', 'event, ui', '在节点被选择之前触发，返回false将取消选择 <br/>' +
+									'ui.id：节点id。<br/>' + 
+									'ui.text：显示在节点上的文本。<br/>' + 
+									'ui.checked：节点是否被选择。<br/>' + 
+									'ui.attributes：节点的自定义属性。<br/>' + 
+									'ui.target：被点击的目标DOM对象。'],
+								['onSelect', 'event, ui', '当节点被选择时触发 <br/>' +
+									'ui.id：节点id。<br/>' + 
+									'ui.text：显示在节点上的文本。<br/>' + 
+									'ui.checked：节点是否被选择。<br/>' + 
+									'ui.attributes：节点的自定义属性。<br/>' + 
+									'ui.target：被点击的目标DOM对象。'],
+								['onContextMenu', 'event, ui', '当节点被鼠标右键点击时触发  <br/>' +
+									'ui.id：节点id。<br/>' + 
+									'ui.text：显示在节点上的文本。<br/>' + 
+									'ui.checked：节点是否被选择。<br/>' + 
+									'ui.attributes：节点的自定义属性。<br/>' + 
+									'ui.target：被点击的目标DOM对象。'],
+								['onDrop', 'event, ui', '当节点位置被（拖动）更换时触发  <br/>' +
+									'ui.target: DOM对象，需要被拖动动的目标节点。<br/>' + 
+									'ui.source: 原始节点 <br/>' + 
+									'ui.point : 指明拖动方式，可选值："append"，"top"或者"bottom"'],
+								['onBeforeEdit', 'event, ui', '在编辑节点之前触发  <br/>' +
+									'ui.id：节点id。<br/>' + 
+									'ui.text：显示在节点上的文本。<br/>' + 
+									'ui.checked：节点是否被选择。<br/>' + 
+									'ui.attributes：节点的自定义属性。<br/>' + 
+									'ui.target：被点击的目标DOM对象。'],
+								['onAfterEdit', 'event, ui', '在编辑节点之后触发  <br/>' +
+									'ui.id：节点id。<br/>' + 
+									'ui.text：显示在节点上的文本。<br/>' + 
+									'ui.checked：节点是否被选择。<br/>' + 
+									'ui.attributes：节点的自定义属性。<br/>' + 
+									'ui.target：被点击的目标DOM对象。'],
+								['onCancelEdit', 'event, ui', '当取消编辑时触发  <br/>' +
+									'ui.id：节点id。<br/>' + 
+									'ui.text：显示在节点上的文本。<br/>' + 
+									'ui.checked：节点是否被选择。<br/>' + 
+									'ui.attributes：节点的自定义属性。<br/>' + 
+									'ui.target：被点击的目标DOM对象。']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'menu',
+						content : ['基于jqueryUI，菜单插件']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['zIndex', 'Integer', '菜单的z-index样式,从第一个菜单开始递增', '110000'],
+								['left', 'Integer', '菜单的左边距', '0'],
+								['top', 'Integer', '菜单的顶边距', '0']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['getItem', 'itemEl', '获取菜单项数据并将其返回, 数据包含以下属性：<br/>' +
+									'	target：DOM对象，菜单项目<br/>' +
+									'	id：字符串，分配给元素的ID<br/>' +
+									'	text：字符串，菜单项的文本<br/>' +
+									'	href：字符串，超链接地址<br/>' +
+									'	disabled：布尔型，菜单项是启用还是禁用<br/>' +
+									'	onclick：函数, 当用户点击菜单时将要执行的函数<br/>' +
+									'	iconCls：字符串，图标css类<br/>', ''],
+								['findItem', 'text', '查找特定的菜单项，和getItem方法返回的对象相同.', ''],
+								['show', 'pos', '在一个特定的位置显示菜单,pos参数有2个属性：left/top.', ''],
+								['hide', 'null', '隐藏一个菜单.', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['onClick', 'event, item', '当一个菜单被点击时触发,item返回值和getItem内容一致'],
+								['onShow', 'event, ui', '当一个菜单被显示后触发'],
+								['onHide', 'event, ui', '在一个菜单被隐藏后触发']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

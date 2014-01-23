@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>numberspinner</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.numberbox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.numberspinner.js"></script>
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.numberspinner.css" />
+		<style>
+		</style>
+		<script>
+			$(document).ready(function() {
+				$('#n_spinner1').numberspinner({
+					initnumber : 10,
+					addnumber  : 2,
+					parseable  : true,
+					precision : 2,
+					width : 300
+				});
+				$('#v2').numberspinner({
+					initnumber : 50,
+					addnumber  : 4,
+					width : 150
+				});
+				$('#v3').numberspinner({
+					initnumber : 100,
+					addnumber  : 1,
+					width : 150
+				});
+				$('#v4').numberspinner({
+					initnumber : 500,
+					addnumber  : 10,
+					width : 150
+				});
+				
+				
+				$('#destroy').click(function (){
+					$('#n_spinner1').numberspinner('destroy');
+				});
+				$('#resize').click(function (){
+					$('#n_spinner1').numberspinner('resize', 100);
+				});
+				$('#disable').click(function (){
+					$('#n_spinner1').numberspinner('disable');
+				});
+				$('#enable').click(function (){
+					$('#n_spinner1').numberspinner('enable');
+				});
+				// $('#validate').click(function (){
+					// var validate = $('#n_spinner1').numberspinner('validate');
+					// alert('validate:' + validate);
+				// });
+				$('#clear').click(function (){
+					$('#n_spinner1').numberspinner('clear');
+				});
+ 				$('#getValue').click(function (){
+					var val = $("#n_spinner1").numberspinner('getValue');
+					alert('getVlaue :' + val);
+				});
+				// $('#setValue').click(function (){
+					// var val = $('#n_spinner1').numberspinner('setValue','15');
+				// });
+				
+				
+				
+				
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		<br />
+		<br />
+		<br />
+		<button id="destroy">destroy</button>
+		<button id="resize">resize</button>
+		<button id="disable">disable</button>
+		<button id="enable">enable</button>
+<!-- 		<button id="validate">validate</button> -->
+		<button id="clear">clear</button>
+		<button id="getValue">getValue</button>
+<!-- 		<button id="setValue">setValue</button> -->
+		<br />
+		<br />
+		<br />
+		<input type="text" id="n_spinner1"  />
+		<br/>
+
+		<br/>
+		<br />
+		<input type="text" id="v2" />
+		<br /><br /><br /><br /><br />
+		<input type="text" id="v3" />
+		<br /><br /><br /><br /><br />
+		<input type="text" id="v4" />
+	</body>
+</html>

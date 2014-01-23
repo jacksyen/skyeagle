@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<!-- <script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.panel.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.layout.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.accordion.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.menu.js"></script> -->
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<!-- <link rel="stylesheet" href="../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.tabs.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.layout.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.accordion.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.menu.css" /> -->
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'progressbar',
+						content : ['基于jqueryUI，进度条插件']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['disabled', 'Boolean', '是否禁用组件。如果禁用，则不可以进行任何操作。', 'false'],
+								['value','Integer', '进度条百分比数值','0']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['destroy', 'null', '完全移除一个进度条控件, 使其回退到该元素被初始化成进度条控件之前的状态.', ''],
+								['enable', 'null', '将进度条控件样式改变为允许, 与disable对应.', ''],
+								['disable', 'null', '将进度条控件样式改变成为失效, 与enable对应.', ''],
+								['option', 'optionName , [value]', '获取或设置进度条控件的选项, 第二个参数是选项名, 第三个参数是值. 如果不指定值, 就是获取, 指定值, 就是设置.', ''],
+								['option', 'options', '给进度条控件设置多个属性', ''],
+								['widget', 'null', '返回 .ui-progressbar元素.', ''],
+								['value', 'value', '得到进度条数值，传递 value 参数时设置数值.', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['create', 'event, ui', '被创建时触发'],
+								['change', 'event, ui', '进度条数值改变时触发'],
+								['complete', 'event, ui', '进度条达到最大值或达到100时触发']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,115 @@
+/* layout.scss*/
+@import "include.scss";
+
+$bd-style: 5px solid gray;
+
+.sy-borderlayout-resizable-helper-e {
+	border-right: $bd-style;
+}
+.sy-borderlayout-resizable-helper-w {
+	border-left: $bd-style;
+}
+.sy-borderlayout-resizable-helper-n {
+	border-top: $bd-style;
+}
+.sy-borderlayout-resizable-helper-s {
+	border-bottom: $bd-style;
+}
+.sy-borderlayout {
+	position: $pos-re;
+	overflow: $of-hi;
+	.sy-panel-body { padding: 0;}
+	.sy-borderlayout-region-header {
+	  .ui-icon {
+	    @include Func-bg('layout/tools.gif');
+      width: 15px;
+      height: 15px;
+	  }
+	}
+	.sy-borderlayout-proxy {
+	  .ui-icon {
+	    @include Func-bg('layout/tools.gif');
+      width: 15px;
+      height: 15px;
+	  }
+	}
+}
+
+.sy-borderlayout-mask {
+	left: 0;
+	top: 0;
+	@include Func-bg( none, repeat, 0 0, #FAFAFA, scroll);
+	opacity: .1;
+	filter: Alpha(Opacity=10);
+	position: $pos-ab;
+}
+.sy-borderlayout-region {
+	position: $pos-ab;
+	overflow: $of-vis;
+	.sy-borderlayout-region-header {
+	  .sy-panel-tool-close { background-#{$bg-pos}: 0 0;}
+	  .sy-panel-tool-close-hover { background-#{$bg-pos}: -15px 0;}
+	}
+}
+.sy-borderlayout-region-center {
+  overflow: $of-hi;
+}
+.sy-borderlayout-region-south {
+	left: 0;
+	.panel-tool-collapse { background-#{$bg-pos}: 0 -45px;}
+	.panel-tool-collapse-hover { background-#{$bg-pos}: -15px -45px;}
+}
+.sy-borderlayout-region-north {
+	top: 0;
+	left: 0;
+	.panel-tool-collapse { background-#{$bg-pos}: 0 -60px;}
+	.panel-tool-collapse-hover { background-#{$bg-pos}: -15px -60px;}
+}
+.sy-borderlayout-region-west {
+	left: 0;
+	.panel-tool-collapse { background-#{$bg-pos}: 0 -30px;}
+	.panel-tool-collapse-hover { background-#{$bg-pos}: -15px -30px;}
+}
+.sy-borderlayout-region-east {
+	right: 0;
+	.panel-tool-collapse { background-#{$bg-pos}: 0 -15px;}
+	.panel-tool-collapse-hover { background-#{$bg-pos}: -15px -15px;}
+}
+
+.sy-borderlayout-proxy {
+	position: $pos-ab;
+	cursor: $cur-po;
+	background-color: #D2E0F2;
+	@include basic-bd(#86A3C4);
+	z-index: 100;
+	display: $none;
+}
+.sy-borderlayout-proxy-north {
+	height: 26px;
+	left: 0;
+	top: 0;
+	.panel-tool-expand { background-#{$bg-pos}: 0 -45px;}
+	.panel-tool-expand-hover { background-#{$bg-pos}: -15px -45px;}
+}
+.sy-borderlayout-proxy-south {
+	height: 26px;
+	left: 0;
+	bottom: 0;
+	.panel-tool-expand { background-#{$bg-pos}: 0 -60px;}
+	.panel-tool-expand-hover { background-#{$bg-pos}: -15px -60px;}
+}
+.sy-borderlayout-proxy-west {
+	left: 0;
+	width: 26px;
+	.panel-tool-expand { background-#{$bg-pos}: 0 -15px;}
+	.panel-tool-expand-hover { background-#{$bg-pos}: -15px -15px;}
+}
+.sy-borderlayout-proxy-east {
+	right: 0;
+	width: 26px;
+	.panel-tool-expand { background-#{$bg-pos}: 0 -30px;}
+	.panel-tool-expand-hover { background-#{$bg-pos}: -15px -30px;}
+}
+.sy-borderlayout-proxy-hover {
+	background-color: #D9E8FB;
+}

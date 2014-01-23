@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'panel',
+						content : ['基于jqueryUI，控制面板插件']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['title', 'String', '显示在控制面板顶部的标题文本', 'null'],
+								['iconCls','String','在控制面板标题前显示一个16x16大小图标的CSS类。','null'],
+								['width', 'Integer', '设置控制面板的宽度。', '"auto"'],
+								['height', 'Integer', '设置控制面板的高度.', '"auto"'],
+								['left', 'Integer', '设置控制面板的左边距.', 'null'],
+								['top', 'Integer', '设置控制面板的顶边距.', 'null'],
+								['cls', 'String', '对控制面板引用一个CSS类', 'null'],
+								['headerCls', 'String', '对控制面板头部引用一个CSS类.', 'null'],
+								['bodyCls', 'String', '对控制面板主体引用一个CSS类.', 'null'],
+								['style', 'Object', '给控制面板添加一个自定义的样式,添加CSS元素', '{}'],
+								['href', 'Integer', '载入远程数据的超链接，载入的数据将显示在控制面板中.', 'null'],
+								['cache', 'Boolean', '如果设置为true，从超链接载入的数据将被缓存.', 'true'],
+								['fit', 'Boolean', '设置为true时，控制面板的大小将铺满它所在的容器（浏览器）.', 'false'],
+								['border', 'Boolean', '定义是否显示控制面板边框.', 'true'],
+								['doSize', 'Boolean', '如果设置为true，在控制面板被创建时将被重置大小并且自动布局.', 'true'],
+								['noheader', 'Boolean', '如果设置为true，控制面板头部将不被创建.', 'false'],
+								['content', 'String', '控制面板主体的内容.', 'null'],
+								['collapsible', 'Boolean', '定义是否显示可折叠按钮.', 'true'],
+								['minimizable', 'Boolean', '定义是否显示最小化按钮.', 'false'],
+								['maximizable', 'Boolean', '定义是否显示最大化按钮.', 'false'],
+								['closable', 'Boolean', '定义是否显示关闭按钮.', 'false'],
+								['collapsed', 'Boolean', '定义在初始化的时候折叠面板.', 'false'],
+								['minimized', 'Boolean', '定义在初始化的时候最小化面板.', 'false'],
+								['maximized', 'Boolean', '定义在初始化的时候最大化面板', 'false'],
+								['closed', 'Boolean', '定义在初始化的时候关闭面板', 'false'],
+								['draggabled', 'Boolean', '定义面板是否可拖动', 'false'],
+								['tools', 'Array', '自定义工具栏，每一个工具都可以包含2个属性：图标类 和句柄.iconCls/handler', '[]'],
+								['loadingMsg', 'String', '在正在载入远程数据时显示在控制面板中的信息.', '"正在加载中..."']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['getOptions', 'null', '返回选项属性 .', ''],
+								['panel', 'null', '返回控制面板对象 .', ''],
+								['header', 'null', '返回控制面板头对象.', ''],
+								['body', 'null', '返回控制面板主体对象 .', ''],
+								['setTitle', 'String', '设置控制面板头部的标题文本', ''],
+								['open', 'forceOpen', '当forceOpen设置为true时，控制面板将被打开，不受onBeforeOpen回调函数的约束', ''],
+								['close', 'forceClose', '当forceClose设置为true时，控制面板将被关闭，不受onBeforeClose回调函数的约束', ''],
+								['destroy', 'forceDestroy', '当forceDestroy设置为true时，控制面板将被销毁，不受onBeforeDestroy回调函数的约束', ''],
+								['refresh', 'href', '当href属性被设置时，刷新控制面板以载入远程数据。 ', ''],
+								['resize', 'options', '重置控制面板的尺寸 <br/>' +
+									'width：   新的控制面板宽度<br/>' +
+									'height： 新的控制面板高度<br/>' +
+									'left：     新的控制面板左边距<br/>' +
+									'top： 	新的控制面板顶边距', ''],
+								['move', 'options', '移动控制面板到一个新的位置 <br/>' +
+									'left：     新的控制面板左边距<br/>' +
+									'top： 	新的控制面板顶边距', ''],
+								['maximize', 'null', '使控制面板铺满整个容器 ', ''],
+								['minimize', 'null', '最小化控制面板 ', ''],
+								['restore', 'null', '使最大化的控制面板重置为其初始化时的大小和位置 ', ''],
+								['collapse', 'animate', '折叠控制面板主体 ', ''],
+								['expand', 'animate', '扩展控制面板主体 ', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['onLoad', 'null', '在远程数据被载入时触发'],
+								['onBeforeOpen', 'null', '在控制面板被打开之前触发，返回false将停止打开 '],
+								['onOpen', 'null', '在控制面板被打开之后触发 '],
+								['onBeforeClose', 'null', '在控制面板被关闭之前触发，返回false将取消关闭 '],
+								['onClose', 'null', '在控制面板被关闭后触发 '],
+								['onBeforeDestroy', 'null', '在控制面板被注销前触发，返回false将取消注销 '],
+								['onDestroy', 'null', '在控制面板被注销后触发 '],
+								['onResize', 'event, ui', '在控制面板被缩放后触发 ,ui.width：   新的控制面板宽度, ui.height: 新的控制面板高度'],
+								['onMove', 'event, ui', '在控制面板被移动后触发, ui.left：新的控制面板左边距, ui.top：新的控制面板顶边距'],
+								['onMaximize', 'null', '在控制面板被最大化后触发'],
+								['onRestore', 'null', '在控制面板被重置为初始大小后触发'],
+								['onMinimize', 'null', '在控制面板被最小化后触发'],
+								['onBeforeCollapse', 'null', '在控制面板被折叠之前触发，返回false将停止折叠 '],
+								['onBeforeExpand', 'null', '在控制面板被扩展之前触发，返回false将停止扩展（这里应该是指扩展区域，宽、高等）'],
+								['onCollapse', 'null', '在控制面板被折叠之后触发'],
+								['onExpand', 'null', '在控制面板被扩展之后触发']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

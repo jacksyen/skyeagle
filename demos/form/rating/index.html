@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.ratingbox.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script> -->
+
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.ratingbox.css" />
+
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				/**
+				 * demo 1 
+				 */
+				$('#rating1').ratingbox({
+				});
+				
+				/**
+				 * demo 2 
+				 */
+				$('#rating2').ratingbox({
+				});
+				$('#destroy').click(function (){
+					$('#rating2').ratingbox('destroy');
+				});
+				$('#disable').click(function (){
+					$('#rating2').ratingbox('disable');
+				});
+				$('#enable').click(function (){
+					$('#rating2').ratingbox('enable');
+				});
+ 				$('#getValue').click(function (){
+					var val = $("#rating2").ratingbox('getValue');
+					alert('getVlaue :' + val);
+				});
+				$('#setValue').click(function (){
+					var val = $('#rating2').ratingbox('setValue','5');
+				});
+				
+				// 代码高亮
+				DlHighlight.HELPERS.highlightByName("rating", "pre");
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+							<li><a href="#demo2">方法示例</a></li>
+							<!-- <li><a href="#demo3">显示按钮</a></li> -->
+						</ul>
+					</div>
+					<div class="block" id="demo1">
+						<h1>示例一（默认功能）</h1>
+						<div class="line-block" >
+								<div id="rating1"></div>
+							<div class="code">
+<pre name="rating" class="js">
+$('#rating1').ratingbox({
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo2 -->
+					<div class="block" id="demo2">
+						<h1>示例二（方法示例）</h1>
+						<div class="line-block" >
+								<div id="rating2"></div>
+							<div class="code">
+<button id="destroy">destroy</button>
+<button id="disable">disable</button>
+<button id="enable">enable</button>
+<button id="getValue">getValue</button>
+<button id="setValue">setValue</button>	
+<pre name="rating" class="js">
+$('#rating2').ratingbox({
+});
+$('#destroy').click(function (){
+	$('#rating2').ratingbox('destroy');
+});
+$('#disable').click(function (){
+	$('#rating2').ratingbox('disable');
+});
+$('#enable').click(function (){
+	$('#rating2').ratingbox('enable');
+});
+$('#getValue').click(function (){
+	var val = $("#rating2").ratingbox('getValue');
+	alert('getVlaue :' + val);
+});
+$('#setValue').click(function (){
+	var val = $('#rating2').ratingbox('setValue','5');
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo2 -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

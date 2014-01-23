@@ -1,0 +1,91 @@
+* {
+	margin : 0;
+	padding: 0;
+}
+body, button, input, select, textarea {
+	font: 14px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
+}
+.body {
+	padding: 5px 5px;
+}
+.top {
+	height: 20px;
+}
+.leftColumn{
+	border: 1px solid #A4D3F2;
+	float : left;
+	width : 20%;
+	padding: 10px;
+	background-color: #F2F8FA;
+}
+.leftColumn .s-box{
+	
+}
+.mainColumn{
+	border-top: 1px solid #A4D3F2;
+	padding: 10px;
+	width : 75%;
+	float : left;
+}
+ul, ol {
+	list-style: none;
+}
+ul ul{
+	margin-left : 20px;
+}
+h1, h2{
+	padding: 8px 0;
+	font-family: tahoma, "Microsoft YaHei", sans-serif;
+	font-size: 18px;
+}
+a:link, a:visited {
+	color: #00A0E9;
+}
+a:hover, a:active{color:#f60; text-decoration: underline;}
+a {
+	text-decoration: none;
+}
+.s-box h2{
+	color : #888;
+}
+.s-box .s-box-bd{
+	overflow: hidden;
+}
+.leftColumn li{
+	white-space: nowrap;
+}
+/*th, td {
+	border: 1px solid #999;
+	padding: 0.25em 0.5em;
+	text-align: left;
+	vertical-align: top;
+	line-height: 16px;
+}
+table{
+	border-collapse: collapse;
+}*/
+pre.code{
+	margin: 5px;
+	color: #7A0202;
+}
+#demos-nav ul{
+	list-style:inside;
+}
+#demos-nav{
+	border: 1px solid #ccc;
+	font-size : 12px;
+	width : 200px;
+	margin: 20px;
+	padding : 8px;
+}
+#demos-nav ul li,#demos-nav li a{
+	margin : 5px 0px;
+	color :#CC9933;
+}
+
+.custom-icon {
+	background: url("images/ui-icons_2e83ff_256x240.png") no-repeat scroll 0 -192px transparent;
+    height: 16px;
+	margin: 0 5px;
+	width: 16px;
+}

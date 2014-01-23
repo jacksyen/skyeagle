@@ -1,0 +1,26 @@
+.mainColumn{
+	color : #444;
+}
+.mainColumn .general-info{
+	color : #c68213;
+}
+.general-info .line-block{
+	color : #dd906a;
+}
+.mainColumn .line-block{
+	margin-left : 30px;
+	font-size : 12px;
+}
+.definite-info .block{
+	margin-top : 10px;
+	margin-bottom : 10px;
+}
+.line-block table{
+	width : 96%;
+}
+.line-block table .tbl-header{
+	color : #147baa;
+	font-weight : bold;
+	font-size : 13px;
+	background-color : #a3e0ae;
+}

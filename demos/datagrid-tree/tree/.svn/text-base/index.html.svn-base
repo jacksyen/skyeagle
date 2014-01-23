@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.draggable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.droppable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.button.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.tree.js"></script>
+
+		
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script> -->
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.button.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.tree.css" />
+		
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		<script>
+			
+			$(document).ready(function (){
+				
+				$('.html').each(function(index) {
+				  	var html = document.getElementById('mm1').outerHTML.replace(/</g,'&lt;');
+				  	$(this).append(html);
+				  	html = document.getElementById('toolbar1').outerHTML.replace(/</g,'&lt;');
+				  	$(this).append(html);
+				});
+				
+				/**
+				 * demo 1 
+				 */
+				$('#tt').tree({
+					// 节点前面显示复选框
+					checkbox : true,
+					// 打开或关闭节点动画
+					animate : true,
+					// 支持拖放(此功能暂未实现)
+					dnd : true,
+					// 远程数据请求URL
+					url : 'tree_data.json',
+					// 双击节点事件
+					onDblClick : function(event, node) {
+						alert('onDblClick:' + 'id:' + node.id + ',text:' + node.text + ',checked:' + node.checked + ',attributes:' + node.attributes + ',target:' + node.target);
+					},
+					// 右击节点事件
+					onContextMenu : function(event, node) {
+						alert('onContextMenu:' + 'id:' + node.id + ',text:' + node.text + ',checked:' + node.checked + ',attributes:' + node.attributes + ',target:' + node.target);
+					}
+				});
+				$('#beginEdit').button({
+					onClick : function (){
+						// 编辑节点
+						var node = $('#tt').tree('getSelected');
+						if(!node){
+							alert('没有选择项');
+							return;
+						}
+						$('#tt').tree('beginEdit', node.target);
+					}
+				});
+				
+				
+				// 代码高亮
+				DlHighlight.HELPERS.highlightByName("tree", "pre");
+			});
+		</script>
+		<style>
+			.demo {
+				border: 1px solid #dd906a;
+				width: 150px;
+				height: 150px;
+				line-height: 150px;
+				text-align: center;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+							<!-- <li><a href="#demo2">类型搜索框示例</a></li>
+							<li><a href="#demo3">事件示例</a></li> -->
+						</ul>
+					</div>
+					<div class="block" id="demo1">
+						<h1>示例一（默认功能）</h1>
+						<div class="line-block">
+							<button id="beginEdit">编辑选择项</button>
+							<ul id="tt"></ul>
+							<div class="code">
+<pre name="tree" class="js">
+$('#tt').tree({
+	// 节点前面显示复选框
+	checkbox : true,
+	// 打开或关闭节点动画
+	animate : true,
+	// 支持拖放(此功能暂未实现)
+	dnd : true,
+	// 远程数据请求URL
+	url : 'tree_data.json',
+	// 双击节点事件
+	onDblClick : function(event, node) {
+		alert('onDblClick:' + 'id:' + node.id + ',text:' + node.text + ',checked:' + node.checked + ',attributes:' + node.attributes + ',target:' + node.target);
+	},
+	// 右击节点事件
+	onContextMenu : function(event, node) {
+		alert('onContextMenu:' + 'id:' + node.id + ',text:' + node.text + ',checked:' + node.checked + ',attributes:' + node.attributes + ',target:' + node.target);
+	}
+});
+$('#beginEdit').button({
+	onClick : function (){
+		// 编辑节点
+		var node = $('#tt').tree('getSelected');
+		if(!node){
+			alert('没有选择项');
+			return;
+		}
+		$('#tt').tree('beginEdit', node.target);
+	}
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo1 -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+/* pagination.scss*/
+@import "include.scss";
+
+@mixin m-w-h() {
+  width: 16px;
+  height: 16px;
+  margin: 0 5px;
+}
+
+.pagination {
+	zoom: 1;
+	.ui-button-text {
+    padding: 0 0;
+  }
+  table {
+    float: $flo-le;
+    height: 30px;
+  }
+  span {
+    font-size: 12px;
+  }
+}
+.pagination-btn-separator {
+	float: $flo-le;
+	height: 24px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #fff;
+	margin: 3px 1px;
+}
+.pagination-num {
+	@include basic-bd(#ccc);
+	margin: 0 2px;
+}
+.pagination-page-list {
+	margin: 0 6px;
+}
+.pagination-info {
+	float: $flo-ri;
+	padding-right: 6px;
+	padding-top: 8px;
+	font-size: 12px;
+}
+.pagination-first, .ui-widget-content .pagination-first {
+	@include Func-bg( 'pagination/pagination_first.gif');
+	@include m-w-h();
+}
+.pagination-prev, .ui-widget-content .pagination-prev {
+	@include Func-bg( 'pagination/pagination_prev.gif');
+	@include m-w-h();
+}
+.pagination-next, .ui-widget-content .pagination-next {
+	@include Func-bg( 'pagination/pagination_next.gif');
+	@include m-w-h();
+}
+.pagination-last, .ui-widget-content .pagination-last {
+	@include Func-bg( 'pagination/pagination_last.gif');
+	@include m-w-h();
+}
+.pagination-load, .ui-widget-content .pagination-load {
+	@include Func-bg( 'pagination/pagination_load.png');
+	@include m-w-h();
+}
+.pagination-loading, .ui-widget-content .pagination-loading {
+	@include Func-bg( 'pagination/pagination_loading.gif');
+	@include m-w-h();
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<!-- <script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.panel.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.layout.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.accordion.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.menu.js"></script> -->
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<!-- <link rel="stylesheet" href="../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.tabs.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.layout.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.accordion.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.menu.css" /> -->
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'resizable',
+						content : ['基于jqueryUI，重置DOM元素大小的插件']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['disabled', 'Boolean', '是否禁用组件。如果禁用，则不可以进行任何操作。', 'false'],
+								['alsoResize','Element,Selector,jQuery',
+									'用来指定需要同步更新大小的元素,这里不仅可以指定内部的元素, 也可以指定外部的元素','false'],
+								['animate', 'Boolean', '调整大小过程中, 原始的元素是不变的, 等放开鼠标之后, 以一个动态效果扩展或收缩到调整的新的大小.', 'false'],
+								['animateDuration', 'Integer, String', '设置为animate之后, 该选项用来确定滑动的快慢, 字符串是预定义速度, 整数则是我们自定义滑动持续时间的地方.<br/>'+
+									'字符串：<br/>' +
+									'slow: 慢速 ; normal: 中速; fast: 快速', '"slow"'],
+								['animateEasing', 'String', '用来设置滑动是的动作.', '"swing"'],
+								['aspectRatio', 'Boolean, Float', '用来设置resize之后的元素宽和高的比例,true: 使用初始化时候的宽高比, false: 不维持固定的官高比, 可以自由移动.', 'false'],
+								['autoHide', 'Boolean', '设置是否将标识是resizable的样式自动隐藏. 也就是右下角的小斑纹.', 'false'],
+								['cancel', 'Selector', '设置不能被渲染成resizable控件的选择器, 相当于一个过滤器的功能, 比如, <br/>' +
+									'在初始化的时候, 使用了$("div").resizable()的方式一次初始化多个, 那么可以用cancel来做过滤. ', '":input option"'],
+								['containment', 'String, Element, Selector', '限定resize动作只能在选择器限定的元素, 字符串描述的范围, 或直接指定的元素的范围内进行', 'false'],
+								['delay', 'Integer', '设置一个延时时间, 用来防止无意识的点击造成的resize, 也就是说鼠标按下必须等待delay设置的毫秒数之后, 移动才是有效的resize', '0'],
+								['distance', 'Integer', '设置一个延迟的距离, 用来防止无意识的点击造成的resize, 也就是说鼠标按下移动了distance指定的像素值之后, resize才是有效的.', '1'],
+								['ghost', 'Boolean', '用于设置在resize过程中, 是否呈现一个helper(关于helper可以查看draggable中解释) ', 'false'],
+								['grid', 'Array', '[x, y], x代表水平大小, y代表垂直大小, 单位是像素<br/>' +
+									'描述: 可重置控件重置大小时采用grid的方式缩放, 也就是说缩放过程中的单位是guid选项指定的数组描述的格子那么大.', 'false'],
+								['handles', 'String, Object', '设置改变大小的时候, 可以从哪些地方进行改变(控制resize的部件), 字符串的情况下, <br/>' +
+									'每个指定的字符串代表一个方向, 设定多个用逗号分割.', '"e, s, se"'],
+								['helper', 'String', '设置resize过程中, 辅助的helper控件显示的样式, 这里指定的是样式名称. 可以同时指定多个样式, 多个样式名称之间用空格隔开.', 'false'],
+								['maxHeight', 'Integer', '设置最大高度, 默认不限制 ', 'null'],
+								['maxWidth', 'Integer', '设置最大宽度, 默认不限制 .', 'null'],
+								['minHeight', 'Integer', '设置最小高度, 默认10像素 .', '10'],
+								['minWidth', 'Integer', '设置最小宽度, 默认10像素 ', '10']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['destroy', 'null', '完全移除一个可拖动控件, 使其回退到该元素被初始化成可拖动控件之前的状态.', ''],
+								['enable', 'null', '将可拖动控件样式改变为允许, 与disable对应.', ''],
+								['disable', 'null', '将可拖动控件样式改变成为失效, 与enable对应.', ''],
+								['option', 'optionName , [value]', '获取或设置可拖动控件的选项, 第二个参数是选项名, 第三个参数是值. 如果不指定值, 就是获取, 指定值, 就是设置.', ''],
+								['option', 'options', '给拖动控件设置多个属性', ''],
+								['widget', 'null', '返回 .ui-resizable元素.', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['create', 'event, ui', '被创建时触发'],
+								['start', 'event, ui', '缩放开始, 指鼠标按下, 开始移动'],
+								['resize', 'event, ui', '缩放过程中鼠标移动'],
+								['stop', 'event, ui', '缩放结束']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Dialog - Default functionality</title>
+	<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+	<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+	<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+	<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+	<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.draggable.js"></script>
+	<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.position.js"></script>
+	<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+	<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.button.js"></script>
+	<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.dialog.js"></script>
+	<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.messagebox.js"></script>
+	
+	<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+	<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+	<link rel="stylesheet" href="../../../skins/jquery.ui.resizable.css" />
+	<link rel="stylesheet" href="../../../skins/jquery.ui.button.css" />
+	<link rel="stylesheet" href="../../../skins/jquery.ui.dialog.css" />
+	<link rel="stylesheet" href="../../../skins/jquery.ui.messagebox.css" />
+	<style>
+		.alert{
+			
+		}
+		.alert .ui-dialog-buttonpane{
+			border : 0px;
+		}
+		.alert .ui-dialog-content .imgDiv-alert{
+			float : left;
+		}
+		.alert .ui-dialog-content .imgDiv-error{
+			float : left;
+			background : url()
+		}
+		.alert .ui-dialog-content .contextDiv{
+			float : right;
+		}
+		
+		
+	</style>
+	
+	<script>
+		function show(){
+			$.messagebox.show({
+				title : "标题",
+				msg : '内容提示',
+				onClose : function (){
+					//alert('xxx');
+				}
+			});
+		}
+		function alerts(target){
+			$.messagebox.alert("标题",'内容提示',$(target).html(),function (){
+				//alert('close');
+			});
+		}
+		
+		function confirm(){
+			$.messagebox.confirm("标题",'内容提示',function (cl){
+				alert(cl);
+			});
+		}
+		
+		function prompt(){
+			$.messagebox.prompt("标题",'内容提示',function (cl){
+				if(cl)
+					alert(cl);
+			});
+		}
+	</script>
+</head>
+<body>
+<div>
+	<button onclick="show()">Show</button>
+	<button onclick="alerts(this)">error</button>
+	<button onclick="alerts(this)">info</button>
+	<button onclick="alerts(this)">question</button>
+	<button onclick="alerts(this)">warning</button>
+	
+	<button onclick="confirm()">confirm</button>
+	
+	<button onclick="prompt()">prompt</button>
+</div>
+</body>
+</html>

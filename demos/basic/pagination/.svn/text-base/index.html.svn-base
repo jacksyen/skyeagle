@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.button.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.pagination.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script> -->
+
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.button.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.pagination.css" />
+
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				/**
+				 * demo 1 
+				 */
+				$('#pager1').pagination({
+					
+				});
+				
+				/**
+				 * demo 2 
+				 */
+				$('#pager2').pagination({
+					total : 50,
+					pageSize : 10,
+					pageNumber : 1,
+					pageList : [10, 20, 30, 50],
+					loading : false,
+					buttons : null,
+					onSelectPage:function(event, ui){
+						$(this).pagination('loading');
+						alert('pageNumber:'+ui.pageNumber+',pageSize:'+ui.pageSize);
+						$(this).pagination('loaded');
+					},
+					onBeforeRefresh : function (event, ui){
+						alert('onBeforeRefresh');
+					},
+					onRefresh : function (event, ui){
+						alert('onRefresh');
+					},
+					onChangePageSize : function (event, pageSize){
+						alert('pageSize:'+pageSize);
+					}
+				});
+				
+				/**
+				 * demo 3 
+				 */
+				$('#pager3').pagination({
+					buttons : [{
+						iconCls : 'custom-icon',
+						handler : function (){
+							alert('click custom button');
+						}
+					}]
+				});
+
+				// 代码高亮
+				DlHighlight.HELPERS.highlightByName("pager", "pre");
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+							<li><a href="#demo2">事件示例</a></li>
+							<li><a href="#demo3">自定义按钮</a></li>
+						</ul>
+					</div>
+					<div class="block" id="demo1">
+						<h1>示例一（默认功能）</h1>
+						<div class="line-block" >
+							<div id="pager1"></div>
+							<div class="code">
+<pre name="pager" class="js">
+$('#pager1').pagination({}); // 默认功能
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo1 -->
+					<div class="block" id="demo2">
+						<h1>示例二（事件示例）</h1>
+						<div class="line-block" >
+							<div id="pager2"></div>
+							<div class="code">
+<pre name="pager" class="js">
+$('#pager2').pagination({
+	total : 50, 	// 总条数
+	pageSize : 10,	// 每页显示多少条
+	pageNumber : 1, // 当前第几页
+	pageList : [10, 20, 30, 50], // 可选择的每页记录数
+	loading : false,// 是否正在载入状态 
+	buttons : null, // array类型，自定义按钮，每个按钮包含两个属性，iconCls,handler
+	/**
+	 * 当用户进行翻页时触发，回调函数包含2个参数: 
+	 * @param {Object} event	
+	 * @param {Object} ui	ui.pageNumber： 下一页的页码; ui.pageSize： 下一页的显示记录数
+	 */
+	onSelectPage:function(event, ui){
+		$(this).pagination('loading');
+		alert('pageNumber:'+ui.pageNumber+',pageSize:'+ui.pageSize);
+		$(this).pagination('loaded');
+	},
+	/**
+	 * 刷新之前触发, 返回false将取消刷新 
+	 * @param {Object} event
+	 * @param {Object} ui	ui.pageNumber： 下一页的页码; ui.pageSize： 下一页的显示记录数
+	 */
+	onBeforeRefresh : function (event, ui){
+		alert('onBeforeRefresh');
+	},
+	/**
+	 * 刷新之后触发
+	 * @param {Object} event
+	 * @param {Object} ui	ui.pageNumber： 下一页的页码; ui.pageSize： 下一页的显示记录数
+	 */
+	onRefresh : function (event, ui){
+		alert('onRefresh');
+	},
+	/**
+	 * 当用户修改每页显示记录数时触发
+	 * @param {Object} event
+	 * @param {Object} pageSize 下一页的显示记录数
+	 */
+	onChangePageSize : function (event, pageSize){
+		alert('pageSize:'+pageSize);
+	}
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo2 -->
+					<div class="block" id="demo3">
+						<h1>示例三（自定义按钮）</h1>
+						<div class="line-block" >
+							<div id="pager3"></div>
+							<div class="code">
+<pre name="pager" class="js">
+$('#pager3').pagination({
+	buttons : [{
+		iconCls : '',
+		handler : ''
+	}]
+}); // 默认功能
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo3 -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

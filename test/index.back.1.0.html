@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>总测试页面</title>
+		<script type="text/javascript" language="JavaScript" src="../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.draggable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.droppable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.layout.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.tree.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.ratingbox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.combo.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.autocomplete.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.slider.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.calendar.js"></script>
+
+		<link rel="stylesheet" href="../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.layout.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.tabs.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.tree.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.ratingbox.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.slider.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.validatebox.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.combo.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.calendar.css" />
+		<style>
+			body {
+				width: 100%;
+				height: 600px;
+			}
+		</style>
+		<script>
+			$(document).ready(function() {
+				// layout布局
+				var element = $('#page').layout({
+					fit : true,
+					
+					panels : [{
+						id : "north-panel",
+						title : "This is north panel",
+						region : "north",
+						resizable : true,
+						collapsible : true,
+						closable : true,
+						height : 50
+					}, {
+						id : "south-panel",
+						title : "This is south panel",
+						region : "south",
+						resizable : true,
+						collapsible : true,
+						height : 50
+					}, {
+						id : "center-panel",
+						header : false,
+						region : "center"
+					}, {
+						id : "west-panel",
+						resizable : true,
+						collapsible : true,
+						title : "This is west panel",
+						region : "west",
+						width : 250
+					}, {
+						id : "east-panel",
+						resizable : true,
+						collapsible : true,
+						title : "This is east panel",
+						region : "east",
+						width : 150
+					}]
+				});
+				// center中间添加tabs
+				$("#tabs").tabs({
+					//disabled: [1, 2],
+					collapsible : false,
+					closable : true,
+					height : 450
+				});
+				$('#tt').tree({
+					animate : true,
+					url : 'test_data.json',
+					onClick : function(event, ui) {
+						$('#tabs').tabs('add', {
+						    title : ui.text,
+						    content : '<div class="testContent'+ui.text+'" style="margin-left: 50px; margin-top: 50px;"></div>',
+						    closable : true
+						});
+						switch(ui.text){
+							case "autocomplete" : 
+								var autocomplete_data = {
+									total : 9,
+									data : [
+										'中国',
+										'密码',
+										'是中。。。',
+										'dddd',
+										'eeee',
+										'f#ff',
+										'asdxzcv',
+										'abaasl',
+										'a!asd'
+									]
+								};
+								$('<div id="autocomplete"></div>').autocomplete({
+									data : autocomplete_data
+								}).appendTo('.'+'testContent'+ui.text);
+								break;
+							case "calendar" : 
+								$('<div id="calendar"></div>').datepicker({
+									
+								}).appendTo('.'+'testContent'+ui.text);
+								break;
+							case "combo" : 
+								$('<div id="combo"><div class="select">Select a language</div><div class="sp">Java</div><div class="sp">C#</div><div class="sp">Ruby</div><div class="sp">Basic</div><div class="sp">Fortran</div></div>').combo({
+									width : 150,
+									panelWidth : 300,
+									// tipwidth : 50,
+									editable : true,
+									radioable : true,
+									multiable : false,
+									required : true,
+									value : 'Java'
+								}).appendTo('.'+'testContent'+ui.text);
+								break;
+							case "rating" : 
+								$('<div id="rating"></div>').ratingbox({
+									
+								}).appendTo('.'+'testContent'+ui.text);
+								break;
+							case "slider" : 
+								$('<div id="slider" style="margin-left:200px; margin-right: 200px; margin-bottom: 20px;"></div>').slider({
+									
+								}).appendTo('.'+'testContent'+ui.text);
+								break;
+							case "validatebox" : 
+								$('<input type="text" id="validatebox" />').validatebox({
+									required : true,
+									width    : 150
+								}).appendTo('.'+'testContent'+ui.text);
+								break;
+							case "panel" : 
+								$('<div id="panel"><p>sss</p></div>').panel({
+									title : 'hello',
+									minimizable : true,
+									maximizable : true,
+									closable : false
+								}).appendTo('.'+'testContent'+ui.text);
+								break;
+							default : 
+								alert('default');
+						}
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="page">
+
+			<div id="north-panel">
+				north
+			</div>
+
+			<div id="center-panel">
+				<div id="tabs">
+					<ul>
+						<li>
+							<a href="#tabs-1">Nunc tincidunt</a>
+						</li>
+					</ul>
+					<div id="tabs-1">
+						<p>
+							Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="east-panel">
+				east
+			</div>
+
+			<div id="west-panel">
+				<ul id="tt"></ul>
+			</div>
+
+			<div id="south-panel">
+				sorth
+			</div>
+		</div>
+
+	</body>
+</html>

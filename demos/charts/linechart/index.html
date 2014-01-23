@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/charts/skyeagle.charts.src.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="index.js"></script>
+		
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script> -->
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.tabs.css" />
+		
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		<style>
+			.demo {
+				border: 1px solid #dd906a;
+				width: 150px;
+				height: 150px;
+				line-height: 150px;
+				text-align: center;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- <div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+							<li><a href="#demo2">类型搜索框示例</a></li>
+							<li><a href="#demo3">事件示例</a></li>
+						</ul>
+					</div> -->
+					<div class="block" id="demo1">
+<!-- 						<h1>示例一（默认功能）</h1> -->
+						<div class="line-block">
+							<div id="tabs1">
+								<ul>
+									<li>
+										<a href="#tabs-1">基础功能</a>
+									</li>
+									<li>
+										<a href="#tabs-2">显示文字功能</a>
+									</li>
+									<li>
+										<a href="#tabs-3">纵轴线</a>
+									</li>
+									<li>
+										<a href="#tabs-4">对数轴示例</a>
+									</li>
+								</ul>
+								<div id="tabs-1">
+									<div id="basicContainer">
+										
+									</div>
+									<div class="code">
+<pre name="linechart" class="js">
+new Highcharts.Chart({
+	// chart主体配置
+	chart : {
+		// 在哪个DOM
+		renderTo : 'basicContainer',
+		// chart图类型
+		type : 'line',
+		// 右边距
+		marginRight : 90,
+		// 下边距
+		marginBottom: 25
+	},          
+	// 主标题
+	title : {
+		text : '基础线性chart',
+		x : 0
+	},
+	// 副标题
+	subtitle : {
+		text : '副标题',
+		x : 0
+	},
+	// X轴
+	xAxis : {
+		// 类别
+		categories : ['10', '20', '30', '40', '50', '60','70', '80', '90', '100']
+	},
+	// Y轴
+	yAxis : {
+		title : {
+			text : '纵轴标题'
+		}
+	},
+	// 图例
+	legend : {
+		layout : 'vertical',
+		align : 'right',
+		verticalAlign : 'top',
+		x : 0,
+		y : 0,
+		borderWidth : 0
+	},
+	// 数据
+	series : [{
+		name : 'line 1',
+		data : [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3]
+	},{
+		name : 'line2',
+		data : [11.0, 6.1, 3.5, 24.5, 8.2, 1.5, 5.2, 6.5, 3.3, 8.3]
+	}]
+});
+</pre>
+							</div>
+								</div>
+								<div id="tabs-2">
+									<div id="lableLineCon"></div>
+									<div class="code">
+<pre name="linechart" class="js">
+new Highcharts.Chart({
+	// chart主体配置
+	chart : {
+		// 在哪个DOM
+		renderTo : 'lableLineCon',
+		// chart图类型
+		type : 'line'
+	},
+	// 主标题
+	title : {
+		text : '显示文字功能',
+		x : 0
+	},
+	// 副标题
+	subtitle : {
+		text : '副标题',
+		x : 0
+	},
+	// X轴
+	xAxis : {
+		// 类别
+		categories : ['10', '20', '30', '40', '50', '60','70', '80', '90', '100']
+	},
+	// Y轴
+	yAxis : {
+		title : {
+			text : '纵轴标题'
+		}
+	},
+	// 图例
+	legend : {
+		layout : 'vertical',
+		align : 'right',
+		verticalAlign : 'top',
+		x : 0,
+		y : 0,
+		borderWidth : 0
+	},
+	// 其他配置参数
+	plotOptions : {
+		// 线性配置
+		line : {
+			// 启用文字标签内容
+			dataLabels : {
+				enabled : true
+			},
+			// 禁用鼠标滑过显示框事件 
+			enableMouseTracking : false
+		}
+	},
+	// 数据
+	series : [{
+		name : 'line 1',
+		data : [17.0, 16.9, 19.5, 7.5, 8.2, 11.5, 13.2, 16.5, 14.3, 16.2]
+	},{
+		name : 'line2',
+		data : [11.0, 6.1, 3.5, 24.5, 8.2, 1.5, 5.2, 6.5, 3.3, 8.3]
+	}]
+});
+</pre>
+	</div>
+								</div>
+								<div id="tabs-3">
+									<div id="splineCon"></div>
+										<div class="code">
+<pre name="linechart" class="js">
+new Highcharts.Chart({
+	// chart主体配置
+	chart : {
+		// 在哪个DOM
+		renderTo : 'splineCon',
+		// chart图类型
+		type : 'spline'
+	},
+	// 主标题
+	title : {
+		text : '纵轴线',
+		x : 0
+	},
+	// 副标题
+	subtitle : {
+		text : '副标题',
+		x : 0
+	},
+	// X轴
+	xAxis : {
+		// 类别
+		categories : ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100']
+	},
+	// Y轴
+	yAxis : {
+		title : {
+			text : '纵轴标题'
+		}
+	},
+	// 图例
+	legend : {
+		layout : 'vertical',
+		align : 'right',
+		verticalAlign : 'top',
+		x : 0,
+		y : 0,
+		borderWidth : 0
+	},
+	// 其他配置参数
+	plotOptions: {
+        spline: {
+            marker: {
+                radius: 4,
+                lineColor: '#666666',
+                lineWidth: 1
+            }
+        }
+    },
+    // 工具标签
+    tooltip : {
+    	// 显示十字线
+    	crosshairs : true
+    },
+	// 数据
+	series : [{
+		// 名称
+		name : 'line 1',
+		// 标记符号为方形
+		marker : {
+			symbol : 'square'
+		},
+		data : [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3]
+	}, {
+		name : 'line2',
+		// 标记符号为菱形
+		marker: {
+            symbol: 'diamond'
+        },
+		data : [11.0, 6.1, 3.5, 24.5, 8.2, 1.5, 5.2, 6.5, 3.3, 8.3]
+	}]
+});
+</pre>
+										</div>
+								</div><!-- end of demo3 -->
+								
+								<div id="tabs-4">
+									<div id="demo4Con">
+										
+									</div>
+									<div class="code">
+<pre name="linechart" class="js">
+new Highcharts.Chart({
+		// chart主体配置
+		chart : {
+			// 在哪个DOM
+			renderTo : 'demo4Con',
+			// chart图类型(默认为line)
+			//type : 'line'
+		},
+		// 主标题
+		title : {
+			text : '对轴线示例',
+			x : 0
+		},
+		// 副标题
+		subtitle : {
+			text : '副标题',
+			x : 0
+		},
+		// X轴
+		xAxis : {
+			// 时间间隔刻度
+			tickInterval : 1
+		},
+		// Y轴
+		yAxis : {
+			// 对轴类型
+			type : 'logarithmic',
+			// 次要的时间间隔刻度
+			minorTickInterval : 0.1
+		},
+        // 工具标签
+        tooltip : {
+        	// 显示十字线
+        	crosshairs : true,
+        	// 提示框头部格式
+        	headerFormat : '<b>{series.name}</b><br/>',
+        	// 坐标点格式
+        	pointFormat : 'x = {point.x}, y = {point.y}'
+        },
+		// 数据
+		series : [{
+			// 名称
+			name : 'line 1',
+			// 坐标点开始位置
+			pointStart : 1,
+			data : [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+		}]
+	});
+</pre>
+										</div>
+								</div><!-- end of demo4 -->
+								
+																
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

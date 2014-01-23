@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.combo.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.linkagebox.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script> -->
+
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.combo.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.linkagebox.css" />
+
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				/**
+				 * demo 1 
+				 */
+				var json = {
+					count : 4,	// 级联的层级
+					data : [
+						['美国', '中国', '英国'],			// data[0]
+						{								// data[1]
+							'美国' : ['华盛顿', '洛杉矶'],		
+							'中国' : ['安徽', '海南'],
+							'英国' : ['伦敦', '利物浦']
+						},
+						{								// data[2]
+							'华盛顿' : ['hua1', 'hua2'],
+							'洛杉矶' : ['lo1', 'lo2'],
+							'安徽' : ['合肥', '安庆'],
+							'海南' : ['三亚', '东方'],
+							'伦敦' : ['lun1', 'lun2'],
+							'利物浦' : ['li1', 'li2']
+						},
+						{
+							'合肥' : ['肥东', '肥西', '庐江', '长丰'],
+							'安庆' : ['望江', '太湖', '宿松', '潜山']
+						}
+					]
+				};
+				$('#linkagebox1').linkagebox({
+					data : json
+				});
+				
+				// $('#validate').click(function (){
+					// var validate = $('#autocomplete1').autocomplete('validate');
+					// alert('validate:' + validate);
+				// });
+				// $('#clear').click(function (){
+					// $('#autocomplete1').autocomplete('clear');
+				// });
+				// $('#setValue').click(function (){
+					// var val = $('#autocomplete1').autocomplete('setValue','56');
+				// });
+				$('#linkagebox2').linkagebox({
+					data : json
+				});
+				$('#destroy').click(function (){
+					$('#linkagebox2').linkagebox('destroy');
+				});
+				$('#resize').click(function (){
+					$('#linkagebox2').linkagebox('resize', 100);
+				});
+				$('#disable').click(function (){
+					$('#linkagebox2').linkagebox('disable');
+				});
+				$('#enable').click(function (){
+					$('#linkagebox2').linkagebox('enable');
+				});
+				
+				
+				// 代码高亮
+				DlHighlight.HELPERS.highlightByName("linkagebox", "pre");
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+							<li><a href="#demo2">方法示例</a></li>
+							<!-- <li><a href="#demo3">显示按钮</a></li> -->
+						</ul>
+					</div>
+					<div class="block" id="demo1">
+						<h1>示例一（默认功能）</h1>
+						<div class="line-block" >
+								请选择：
+								<div id="linkagebox1">
+									国家：<span></span>
+									省份：<span></span>
+									市区：<span></span>
+									地区：<span></span>
+								</div>
+							<div class="code">
+<pre name="linkagebox" class="js">
+$('#linkagebox1').linkagebox({
+	data : json		// 传入的数据
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo1 -->
+					<div class="block" id="demo2">
+						<h1>示例二（方法示例）</h1>
+						<div class="line-block" >
+								请选择：
+								<div id="linkagebox2">
+									国家：<span></span>
+									省份：<span></span>
+									市区：<span></span>
+									地区：<span></span>
+								</div>
+							<div class="code">
+<button id="destroy">destroy</button>
+<button id="resize">resize</button>
+<button id="disable">disable</button>
+<button id="enable">enable</button>								
+<pre name="linkagebox" class="js">
+$('#linkagebox2').linkagebox({
+	data : json		// 传入的数据
+});
+$('#destroy').click(function (){
+	$('#linkagebox2').linkagebox('destroy');
+});
+$('#resize').click(function (){
+	$('#linkagebox2').linkagebox('resize', 100);
+});
+$('#disable').click(function (){
+	$('#linkagebox2').linkagebox('disable');
+});
+$('#enable').click(function (){
+	$('#linkagebox2').linkagebox('enable');
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo2 -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

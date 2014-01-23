@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/charts/skyeagle.charts.src.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="index.js"></script>
+		
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script> -->
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.tabs.css" />
+		
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		<style>
+			.demo {
+				border: 1px solid #dd906a;
+				width: 150px;
+				height: 150px;
+				line-height: 150px;
+				text-align: center;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- <div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+							<li><a href="#demo2">类型搜索框示例</a></li>
+							<li><a href="#demo3">事件示例</a></li>
+						</ul>
+					</div> -->
+					<div class="block" id="demo1">
+<!-- 						<h1>示例一（默认功能）</h1> -->
+						<div class="line-block">
+							<div id="tabs1">
+								<ul>
+									<li>
+										<a href="#tabs-1">线性动态chart图</a>
+									</li>
+								</ul>
+								<div id="tabs-1">
+									<div id="demo1Container">
+										
+									</div>
+									<div class="code">
+<pre name="piechart" class="js">
+new Highcharts.Chart({
+	// chart主体配置
+	chart : {
+		// 在哪个DOM
+		renderTo : 'demo1Container',
+		// 类型
+		type : 'spline',
+		// 右边距
+		marginRight : 10,
+		// 事件
+		events : {
+			load : function (){
+				var series = this.series[0];
+				setInterval(function (){
+					var x = (new Date()).getTime(),
+						y = Math.random();
+					series.addPoint([x, y], true, true);
+				}, 1000)
+			}
+		}
+	},
+	// 主标题
+	title : {
+		text : '线性动态chart图',
+		x : 0
+	},
+	// 副标题
+	subtitle : {
+		text : '副标题',
+		x : 0
+	},
+	// X 轴
+	xAxis: {
+	    type: 'datetime',
+	    tickPixelInterval: 150
+	},
+	// Y 轴
+	yAxis: {
+	    title: {
+	        text: '值'
+	    },
+	    plotLines: [{
+	        value: 0,
+	        width: 1,
+	        color: '#808080'
+	    }]
+	},
+	tooltip : {
+		formatter : function (){
+			return '<b>' + this.series.name + '</b><br />' + 
+				Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +'<br/>'+
+	            Highcharts.numberFormat(this.y, 2);
+		}
+	},
+	// 标签是否显示
+	legend :{
+		enabled : false
+	},
+	exporting: {
+	    enabled: false
+	},
+	// 数据
+	series: [{
+	    name: '随机数据',
+	   	data: (function (){
+	   		var data = [],
+	   			time = (new Date()).getTime(),
+	   			i;
+	   		for(i = -19; i <= 0; i++){
+       			data.push({
+       				x : time + i * 1000,
+       				y : Math.random()
+       			})
+       		}
+   		return data;
+       	})()
+    }]
+});
+</pre>
+							</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

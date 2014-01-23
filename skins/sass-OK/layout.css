@@ -1,0 +1,119 @@
+/* layout.scss*/
+.sy-borderlayout-resizable-helper-e {
+  border-right: 5px solid gray; }
+
+.sy-borderlayout-resizable-helper-w {
+  border-left: 5px solid gray; }
+
+.sy-borderlayout-resizable-helper-n {
+  border-top: 5px solid gray; }
+
+.sy-borderlayout-resizable-helper-s {
+  border-bottom: 5px solid gray; }
+
+.sy-borderlayout {
+  position: relative;
+  overflow: hidden; }
+  .sy-borderlayout .sy-panel-body {
+    padding: 0; }
+  .sy-borderlayout .sy-borderlayout-region-header .ui-icon {
+    background: url("../images/layout/tools.gif") no-repeat 0 0 transparent scroll;
+    width: 15px;
+    height: 15px; }
+  .sy-borderlayout .sy-borderlayout-proxy .ui-icon {
+    background: url("../images/layout/tools.gif") no-repeat 0 0 transparent scroll;
+    width: 15px;
+    height: 15px; }
+
+.sy-borderlayout-mask {
+  left: 0;
+  top: 0;
+  background: url("../images/none") repeat 0 0 #fafafa scroll;
+  opacity: .1;
+  filter: Alpha(Opacity=10);
+  position: absolute; }
+
+.sy-borderlayout-region {
+  position: absolute;
+  overflow: visible; }
+  .sy-borderlayout-region .sy-borderlayout-region-header .sy-panel-tool-close {
+    background-position: 0 0; }
+  .sy-borderlayout-region .sy-borderlayout-region-header .sy-panel-tool-close-hover {
+    background-position: -15px 0; }
+
+.sy-borderlayout-region-center {
+  overflow: hidden; }
+
+.sy-borderlayout-region-south {
+  left: 0; }
+  .sy-borderlayout-region-south .panel-tool-collapse {
+    background-position: 0 -45px; }
+  .sy-borderlayout-region-south .panel-tool-collapse-hover {
+    background-position: -15px -45px; }
+
+.sy-borderlayout-region-north {
+  top: 0;
+  left: 0; }
+  .sy-borderlayout-region-north .panel-tool-collapse {
+    background-position: 0 -60px; }
+  .sy-borderlayout-region-north .panel-tool-collapse-hover {
+    background-position: -15px -60px; }
+
+.sy-borderlayout-region-west {
+  left: 0; }
+  .sy-borderlayout-region-west .panel-tool-collapse {
+    background-position: 0 -30px; }
+  .sy-borderlayout-region-west .panel-tool-collapse-hover {
+    background-position: -15px -30px; }
+
+.sy-borderlayout-region-east {
+  right: 0; }
+  .sy-borderlayout-region-east .panel-tool-collapse {
+    background-position: 0 -15px; }
+  .sy-borderlayout-region-east .panel-tool-collapse-hover {
+    background-position: -15px -15px; }
+
+.sy-borderlayout-proxy {
+  position: absolute;
+  cursor: pointer;
+  background-color: #D2E0F2;
+  border: 1px solid #86a3c4;
+  z-index: 100;
+  display: none; }
+
+.sy-borderlayout-proxy-north {
+  height: 26px;
+  left: 0;
+  top: 0; }
+  .sy-borderlayout-proxy-north .panel-tool-expand {
+    background-position: 0 -45px; }
+  .sy-borderlayout-proxy-north .panel-tool-expand-hover {
+    background-position: -15px -45px; }
+
+.sy-borderlayout-proxy-south {
+  height: 26px;
+  left: 0;
+  bottom: 0; }
+  .sy-borderlayout-proxy-south .panel-tool-expand {
+    background-position: 0 -60px; }
+  .sy-borderlayout-proxy-south .panel-tool-expand-hover {
+    background-position: -15px -60px; }
+
+.sy-borderlayout-proxy-west {
+  left: 0;
+  width: 26px; }
+  .sy-borderlayout-proxy-west .panel-tool-expand {
+    background-position: 0 -15px; }
+  .sy-borderlayout-proxy-west .panel-tool-expand-hover {
+    background-position: -15px -15px; }
+
+.sy-borderlayout-proxy-east {
+  right: 0;
+  width: 26px; }
+  .sy-borderlayout-proxy-east .panel-tool-expand {
+    background-position: 0 -30px; }
+  .sy-borderlayout-proxy-east .panel-tool-expand-hover {
+    background-position: -15px -30px; }
+
+.sy-borderlayout-proxy-hover {
+  background-color: #D9E8FB; }

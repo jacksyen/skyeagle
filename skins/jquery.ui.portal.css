@@ -1,0 +1,11 @@
+.portalRow {
+	float: left;
+}
+.shadow {
+	background-color: #ccc;
+	z-index: -100;
+/*	position: relative*/
+}
+.hidDiv {
+/*	display: none;*/
+}

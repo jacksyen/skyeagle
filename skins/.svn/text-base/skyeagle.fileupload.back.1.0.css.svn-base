@@ -1,0 +1,137 @@
+@charset 'UTF-8';
+/*
+ * jQuery File Upload UI Plugin CSS 6.3
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2010, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  margin-right: 4px;
+}
+.fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  border: solid transparent;
+  border-width: 0 0 100px 200px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -moz-transform: translate(-300px, 0) scale(4);
+  direction: ltr;
+  cursor: pointer;
+}
+.fileupload-buttonbar .btn,
+.fileupload-buttonbar .toggle {
+  margin-bottom: 5px;
+}
+.files .progress {
+  width: 200px;
+}
+.progress-animated .bar {
+  background: url(images/fileupload/progressbar.gif) !important;
+  filter: none;
+}
+/*.fileupload-loading {
+  position: absolute;
+  left: 50%;
+  width: 128px;
+  height: 128px;
+  background: url(images/fileupload/loading.gif) center no-repeat;
+  display: none;
+}*/
+.fileupload-processing .fileupload-loading {
+  display: block;
+}
+
+/* Fix for IE 6: */
+*html .fileinput-button {
+  line-height: 22px;
+  margin: 1px -3px 0 0;
+}
+
+/* Fix for IE 7: */
+*+html .fileinput-button {
+  margin: 1px 0 0 0;
+}
+
+@media (max-width: 480px) {
+  .files .btn span {
+    display: none;
+  }
+  .files .preview * {
+    width: 40px;
+  }
+  .files .name * {
+    width: 80px;
+    display: inline-block;
+    word-wrap: break-word;
+  }
+  .files .progress {
+    width: 20px;
+  }
+  .files .delete {
+    width: 60px;
+  }
+}
+
+.template-upload{
+	width: 300px;
+	border:1px solid #D9E4FF;
+	font-weight: 10px;
+}
+.template-upload .template-title{
+	position : relative;
+	top : -10px;
+	left: 25px;
+	width: 60px;
+	color: #AFE14C;
+	background-color: #ffffff;
+}
+.template-upload .fileupload-body{
+	margin: 10px;
+}
+.template-upload .fileupload-div{
+	height: 50px;
+	width: 280px;
+	font-size: 1px;
+	margin-top: 10px;
+}
+.fileupload-div .content{
+	width : 260px;
+	height: 30px;
+	position: relative;
+	top:10px;
+	left:10px;
+}
+.fileupload-div .content .filepro{
+	font-size: 14px;
+	float: left;
+	margin-right: 5px;
+}
+.fileupload-div .content .start{
+	float: right;
+	height: 14px;
+	width: 14px;
+	margin-right:10px;
+	background: url("images/fileupload/startbutton.gif") no-repeat;
+	overflow: hidden;
+}
+.fileupload-div .content .cancel{
+	float: right;
+	height: 14px;
+	width: 14px;
+	background: url("images/fileupload/cancelbutton.gif") no-repeat -14px 0px;
+	overflow: hidden;
+}
+.fileupload-loading {
+	background: #EBFFEB;
+}

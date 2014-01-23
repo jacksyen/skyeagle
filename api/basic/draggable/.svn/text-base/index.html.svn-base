@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<!-- <script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.panel.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.layout.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.accordion.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.menu.js"></script> -->
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<!-- <link rel="stylesheet" href="../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.tabs.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.layout.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.accordion.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.menu.css" /> -->
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'draggable',
+						content : ['基于jqueryUI，可拖动的插件，通过鼠标拖动选中的元素']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['disabled', 'Boolean', '是否禁用组件。如果禁用，则不可以进行任何操作。', 'false'],
+								['addClasses','Boolean',
+									'用来设置是否给draggable元素通过ui-draggable样式才装饰它.<br/>' +
+									'主要为了在通过.draggable()初始化很多(成百个)元素的时候优化性能考虑, 但是,<br/>' +
+									'这个选项的设置, 不会影响ui-draggable-dragging样式改变拖动过程样式.<br/>' +
+									'true表示ui-draggable样式被添加到该元素.<br/>' +
+									'false表示ui-draggable样式不被添加到该元素.' + 
+									'','true'],
+								['appendTo', 'Element,Selector', '用来指定控件在拖动过程中ui.helper的容器, 默认情况下, ui.helper使用和初始定义的draggable相同的容器, 也就是其父元素.', '"parent"'],
+								['axis', 'String', '设置为false时, 既可以水平, 也可以垂直拖动.x: 表示只能在水平方向拖动. y: 表示只能在垂直方向拖动.', 'false'],
+								['cancel', 'Selector', '通过选择器指定这类元素不能被渲染成draggable控件.', '":input,option"'],
+								['connectToSortable', 'Selector', '指定排序的容器对象选择器.', 'false'],
+								['containment', 'Selector,Element,String,Array', '只能在选择器约束的元素内拖动 元素 只能在给定的元素内拖动 , <br/>' +
+									'字符串 parent:只能在父容器内拖动 , <br/>' +
+									'document: 在当前html文档的document下可拖动, 超出浏览器窗口范围时,自动出现滚动条  <br/>' +
+									'window: 只能在当前浏览器窗口的内容区域拖动, 拖动超出当前窗口范围, 不会导致出现滚动条<br/>' +
+									'数组: [x1, y1, x2, y2]以开始水平坐标, 开始垂直坐标, 结束水平坐标, 结束垂直坐标]的方式划定一个区域, <br/>' +
+									'只能在此区域内拖动. 这种方式指定时, 值是相对当前浏览器窗口内容区域左上角的偏移值.  <br/>' +
+									'布尔型 false: 不限制拖动的活动范围..', 'false'],
+								['cursor', 'String', '影响指定可拖动控件在拖动过程中的鼠标样式.', '"auto"'],
+								['cursorAt', 'Object', '对象通过设置对象的top, left, right, bottom的属性值中的一个或两个来确定位置.<br/>' +
+									'描述: 在拖动控件的过程中, 鼠标在控件上显示的位置, 值为false(默认)时, <br/>' + 
+									'从哪里点击开始拖动, 鼠标位置就在哪里, 如果设置了, 就会在一个相对控件自身左上角偏移位置处, <br/>' + 
+									'比如: <br/>' +
+									'<pre class="code">$(".selector").draggable("option", "cursorAt", {left: 8, top: 8});</pre>' + 
+									'那么拖动过程中, 鼠标就会在自身的左上角向下向右各偏移8像素处.', '"auto"'],
+								['delay', 'Integer', '可拖动控件从鼠标左键按下开始, 到拖动效果产生的延时. <br/>' +
+									'该选项可以被用来阻止一些不期望的点击带来的无效拖动.<br/>' +
+									'具体效果是: 一次拖动, 从鼠标左键按下, 到delay指定的时间, 如果鼠标左键还没有松开,<br/>' +
+									' 那么就认为这次拖动有效,否则, 认为这次拖动无效.', '0'],
+								['distance', 'Integer', '可拖动控件从鼠标左键按下开始, 到拖动效果产生的时鼠标必须产生的位移. <br/> ' +
+									'该选项可以被用来阻止一些不期望的点击带来的无效拖动. 具体效果是: 一次拖动, 从鼠标左键按下, <br/>' +
+									'只有当鼠标产生的位移达到distance指定的值时, 才认为是有效的拖动.', '1'],
+								['grid', 'Array', '[x, y], x代表水平大小, y代表垂直大小, 单位是像素<br/>' +
+									'描述: 可拖动控件拖动时采用grid的方式拖动, 也就是说拖动过程中的单位是guid选项指定的数组描述的格子那么大.', 'false'],
+								['handle', 'Element,Selector', '选择器选定的内部元素为控制拖动的部件元素,指定的元素为控制拖动的部件<br/>' +
+									'描述: 指定触发拖动的元素. <br/>' +
+									'用法: 将一个id=window的div设置为可拖动控件, 设置它的handle是该div中的一个id=title的span, <br/>' +
+									'那么, 就只有在id=title的span上点击拖动才是有效的. 注意: 该元素一定要是可拖动控件的子元素.', 'false'],
+								['helper', 'String,Function', '拖动过程中帮助用户知道当前拖动位置的元素. 也就是拖动过程中随鼠标显示的元素.<br/>' +
+									'字符串:original: 可拖动控件本身移动 clone: 将可拖动控件自身克隆一个移动, 自身在原始位置不变<br/>'+
+									'函数则必须返回一个DOM元素: 以函数返回的DOM元素移动展现拖动的过程.', '"original"'],
+								['iframeFix', 'Boolean,Selector', '阻止拖动过程中由于鼠标指针在iframe区域移动, iframe对鼠标移动事件的默认响应.<br/>'+
+									'如果设置为true, 将会阻止拖动过程中当前页面上所有的iframe的mousemove事件, <br/>'+
+									'如果设置一个选择器, 将会阻止指定的iframe的mousemove事件.', 'false'],
+								['opacity', 'Float', '拖动过程中helper(拖动时跟随鼠标移动的控件)的不透明度.', 'false'],
+								['refreshPositions', 'Boolean', '该选项主要用于解决高级动态页面展现问题. 慎用.<br/>' +
+									'如果设置为true, 所有的droppable位置会在每次mousemove事件中进行计算..', 'false'],
+								['revert', 'Boolean,String', '影响一次拖动之后是否回归到原始位置.<br/>' +
+									'布尔值:true: 每次拖动停止之后, 元素自动回到原始位置 false: 拖动之后不会自动回到原始位置.<br/>' +
+									'字符串:invalid: 除非是一个droppable并且被drop(放)成功了, 才不将元素返回到原始位置. <br/>' +
+									'valid: 除非是放入一个droppable并且被drop(放)成功了, 才不将元素返回到原始位置.', 'false'],
+								['revertDuration', 'Integer', 'revert(回归到原始位置)整个过程需要的时间, 单位是毫秒. <br/>' +
+									'如果设置revert选项设置为false, 则忽略此属性.', '500'],
+								['scope', 'String', '该选项描述一个范围, 和droppable的同名选项结合使用, <br/>' +
+									'droppable的accept选项用来设置可以接受的draggable控件, 同时, <br/>' + 
+									'可接受的drggable控件受scope选项约束, 必须是同一个scope中的draggable和droppable才可以互相拖放.', '"default"'],
+								['scroll', 'Boolean', '如果设置为true, 在拖动过程中超出可拖动控件容器的时候, 容器自动增加滚动条.', 'true'],
+								['scrollSensitivity', 'Integer', '滚动条的敏感度.下面所属的鼠标指针是指在draggable控件移动过程中, <br/>' +
+									'鼠标所处位置.鼠标指针和与draggable控件所在容器的边距离为多少的时候, 滚动条开始滚动.', '20'],
+								['scrollSpeed', 'Integer', '由于scrollSensitivity导致的滚动发生时, 滚动条一次滚动多少像素值.', '20'],
+								['snap', 'Boolean, Selector', '吸附功能, 设置为true等价与设置选择器.ui-draggable, <br/> ' +
+									'具体效果是在选择器指定的所有元素上,<br/> ' +
+									'当前的draggable控件都可以实现吸附功能, 吸附就是拖动过程中, <br/>' +
+									'靠近但是还没有挨上目标组件是, 自动的将正在拖动的组件吸过去.<br/>' +
+									'布尔值,设置为true等价与设置选择器.ui-draggable, 注意, 只有在addCleasses为true的时候, <br/> ' +
+									'才会为draggable控件添加该样式.<br/>' +
+									'选择器指定的所有元素上, 当前的draggable控件都可以实现吸附功能', 'false'],
+								['snapMode', 'String', '设定吸附时候的模式.字符串.inner: 在指定的元素内部可以吸附 <br/> ' +
+									'outer: 在指定元素外部可以吸附 both: 里面外面都可以吸附', '"both"'],
+								['snapTolerance', 'Integer', '设定离目标对象的边多少像素的时候, 进行吸附.', '20'],
+								['stack', 'Selector', '一次初始化一组draggable控件的时候, 将其中的一些draggable控件以给定选择器选择, <br/>' +
+									'作为一组, 这时, 这一组draggable控件就可以实现当前被拖动的始终在最前效果, <br/>' +
+									'min用来指定这一组的z-index值的最小值.', 'false'],
+								['zIndex', 'Integer', '拖动时的helper(跟随鼠标移动的控件)的z-index值. z-index就是css中的层叠层数, 数值越大, 越在上层', 'false']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['destroy', 'null', '完全移除一个可拖动控件, 使其回退到该元素被初始化成可拖动控件之前的状态.', ''],
+								['enable', 'null', '将可拖动控件样式改变为允许, 与disable对应.', ''],
+								['disable', 'null', '将可拖动控件样式改变成为失效, 与enable对应.', ''],
+								['option', 'optionName , [value]', '获取或设置可拖动控件的选项, 第二个参数是选项名, 第三个参数是值. 如果不指定值, 就是获取, 指定值, 就是设置.', ''],
+								['option', 'options', '给拖动控件设置多个属性', ''],
+								['widget', 'null', '返回 .ui-draggable元素.', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['create', 'event, ui', '被创建时触发'],
+								['start', 'event, ui', '拖动开始, 指鼠标按下, 开始移动'],
+								['drag', 'event, ui', '拖动过程中鼠标移动'],
+								['stop', 'event, ui', '拖动结束']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

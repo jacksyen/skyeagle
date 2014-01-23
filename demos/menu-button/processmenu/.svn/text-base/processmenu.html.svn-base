@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>processmenu</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.button.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.form.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.processmenu.js"></script>
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.button.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.processmenu.css" />
+
+		<script>
+			var json = {
+				total : 7,
+				rows : [{
+					title : '意见',
+					href : '#demo1',
+					content : '',
+					isJump : false
+				}, {
+					title : '申报1',
+					href : '#demo2',
+					content : '',
+					isJump : true
+				}, {
+					title : '申报2',
+					href : '#demo3',
+					content : '',
+					isJump : false
+				}, {
+					title : '申报3',
+					href : '',
+					content : '',
+					isJump : false
+				}, {
+					title : '申报4',
+					href : '',
+					content : '',
+					isJump : false
+				}, {
+					title : '申报5',
+					href : '',
+					content : '',
+					isJump : false
+				}, {
+					title : '竣工',
+					href : '',
+					content : '',
+					isJump : false
+				}]
+			};
+			$(document).ready(function() {
+				$('#name1').validatebox({
+					required : true
+				});
+				$('#number1').validatebox({
+					required : true
+				});
+				$('#demo1 form').form({
+					url : 'xxx.action',
+					onSubmit : function (){
+						return $(this).form('validate');
+					},
+					onSuccess : function (ui, data){
+						alert('success' + data);
+					}
+				})
+				
+				$('#name2').validatebox({
+					required : true
+				});
+				$('#number2').validatebox({
+					required : true
+				});
+				$('#demo2 form').form({
+					url : 'xxx.action',
+					onSubmit : function() {
+						return $(this).form('validate');
+					},
+					onSuccess : function(ui, data) {
+						alert('success' + data);
+					}
+				});
+
+				$('#name3').validatebox({
+					required : true
+				});
+				$('#number3').validatebox({
+					required : true
+				});
+				$('#demo3 form').form({
+					url : 'xxx.action',
+					onSubmit : function() {
+						return $(this).form('validate');
+					},
+					onSuccess : function(ui, data) {
+						alert('success' + data);
+					}
+				});
+				$('#processmenu1').processmenu({
+					data : json,
+					onNext : function (ui, index){
+						// alert('index:' + index);
+					},
+					onEnd : function (){
+						alert('end');
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="processmenu1" style="border:1px solid #ccc;">
+
+		</div>
+
+		<div id="demo1">
+			<form>
+				名称1：<input type="text" id="name1"/>
+				<br/>
+				<br />
+				身份证1：<input type="text" id="number1"/>
+			</form>
+
+		</div>
+
+		<div id="demo2">
+			<form>
+				名称2：<input type="text" id="name2"/>
+				<br/>
+				<br />
+				身份证2：<input type="text" id="number2"/>
+			</form>
+
+		</div>
+
+		<div id="demo3">
+			<form>
+				名称3：<input type="text" id="name3"/>
+				<br/>
+				<br />
+				身份证3：<input type="text" id="number3"/>
+			</form>
+
+		</div>
+	</body>
+</html>

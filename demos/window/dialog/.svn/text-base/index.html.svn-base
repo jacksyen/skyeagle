@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.draggable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.position.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.dialog.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script> -->
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.dialog.css" />
+
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				/**
+				 * demo 1 
+				 */
+				$('#showD1').bind('click', function (){
+					$( "#dialog1" ).dialog({});
+				});
+				
+				
+				/**
+				 * demo 2 
+				 */
+				$('#showD2').bind('click', function (){
+					$( "#dialog2" ).dialog({
+						height: 140,
+						modal: true
+					});
+				});
+				
+				/**
+				 * demo 3 
+				 */
+				$('#showD3').bind('click', function (){
+					$( "#dialog3" ).dialog({
+						resizable: false,
+						height:180,
+						modal: true,
+						buttons: {
+							"Delete all items": function() {
+								$( this ).dialog( "close" );
+							},
+							Cancel: function() {
+								$( this ).dialog( "close" );
+							}
+						}
+					});
+				});
+				
+				
+				// 代码高亮
+				DlHighlight.HELPERS.highlightByName("dialog", "pre");
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+							<li><a href="#demo2">模态窗口</a></li>
+							<li><a href="#demo3">确认窗口</a></li>
+						</ul>
+					</div>
+					<div class="block" id="demo1">
+						
+						<h1>示例一（默认功能）</h1>
+						<div class="line-block" >
+							<button id="showD1">非模态窗口</button>
+							<div id="dialog1" title="默认功能">
+							</div>
+							<div class="code">
+<pre name="dialog" class="js">
+$( "#dialog1" ).dialog({
+		
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo1 -->
+					<div class="block" id="demo2">
+						<h1>示例二（模态窗口）</h1>
+						<div class="line-block" >
+							<button id="showD2">模态窗口</button>
+							<div id="dialog2" title="模态窗口">
+							</div>
+							<div class="code">
+<pre name="dialog" class="js">
+$( "#dialog2" ).dialog({
+	height: 140,
+	modal: true
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo2 -->
+					<div class="block" id="demo3">
+						<h1>示例三（确认窗口）</h1>
+						<div class="line-block" >
+							<button id="showD3">确认窗口</button>
+							<div id="dialog3" title="确认窗口">
+							</div>
+							<div class="code">
+<pre name="dialog" class="js">
+$( "#dialog3" ).dialog({
+	resizable: false,
+	height:180,
+	modal: true,
+	buttons: {
+		"Delete all items": function() {
+			$( this ).dialog( "close" );
+		},
+		Cancel: function() {
+			$( this ).dialog( "close" );
+		}
+	}
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo3 -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+/* numberspinner.scss*/
+.numberspinner {
+  position: relative;
+  border: 1px solid #a4bed4;
+  display: inline-block;
+  z-index: 9990; }
+  .numberspinner .numsp {
+    font-size: 12px;
+    border: 0;
+    line-height: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0; }
+  .numberspinner .spinner-arrow {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 0; }
+    .numberspinner .spinner-arrow .spinner-arrow-up {
+      display: block;
+      background: url("../images/numberspinner/spinner_arrow_up.gif") no-repeat 5px 2px #e0ecf9 scroll;
+      height: 10px;
+      font-size: 1px;
+      cursor: pointer;
+      opacity: .6;
+      margin: 0;
+      padding: 2px 0 0 0; }
+      .numberspinner .spinner-arrow .spinner-arrow-up:hover {
+        opacity: 1.0; }
+    .numberspinner .spinner-arrow .spinner-arrow-down {
+      display: block;
+      background: url("../images/numberspinner/spinner_arrow_down.gif") no-repeat 5px 2px #e0ecf9 scroll;
+      height: 10px;
+      font-size: 1px;
+      vertical-align: top;
+      cursor: pointer;
+      opacity: .6;
+      margin: 0;
+      padding: 0; }
+      .numberspinner .spinner-arrow .spinner-arrow-down:hover {
+        opacity: 1.0; }

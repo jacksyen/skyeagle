@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<!-- <script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.panel.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.layout.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.accordion.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.menu.js"></script> -->
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<!-- <link rel="stylesheet" href="../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.tabs.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.layout.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.accordion.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.menu.css" /> -->
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'droppable',
+						content : ['基于jqueryUI，可以将选择的元素放入,接受通过拖拽放入的组件']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['disabled', 'Boolean', '是否禁用组件。如果禁用，则不可以进行任何操作.', 'false'],
+								['accept', 'Selector, Function', '用来设置可以接收的droggable元素的选择器或过滤器.', '"*"'],
+								['activeClass', 'String', '指定一个样式的名称, 在所有当前droppable控件可接收的draggable控件<br/>'+
+									'中任意一个拖动的时候,就将该droppable控件的样式改变为这里设置的样式. <br/>' +
+									'相当于用于提示用户,现在正在拖动的控件可以被放到什么地方.', 'false'],
+								['addClasses','Boolean',
+									'用来设置是否给draggable元素通过ui-draggable样式才装饰它.<br/>' +
+									'主要为了在通过.draggable()初始化很多(成百个)元素的时候优化性能考虑, 但是,<br/>' +
+									'这个选项的设置, 不会影响ui-draggable-dragging样式改变拖动过程样式.<br/>' +
+									'true表示ui-draggable样式被添加到该元素.<br/>' +
+									'false表示ui-draggable样式不被添加到该元素.' + 
+									'','true'],
+								['greedy', 'Boolean', '如果设置为true, 在嵌套droppable时会阻止事件向上传播.', 'false'],
+								['hoverClass', 'String', '通过指定一个样式名, 来给定当一个当前droppable控件可接受的draggable控件移动到它上面的时候, 使用的样式. ', 'false'],
+								['scope', 'String', '该选项描述一个范围, 和droppable的同名选项结合使用, <br/>' +
+									'droppable的accept选项用来设置可以接受的draggable控件, 同时, <br/>' + 
+									'可接受的drggable控件受scope选项约束, 必须是同一个scope中的draggable和droppable才可以互相拖放.', '"default"'],
+								['tolerance', 'String', '字符串:<br/>' +
+									'fit: draggable完全进入droppable<br/>' +
+									'intersect: draggable至少50%进入droppable<br/>' +
+									'pointer: 鼠标指针进入droppable<br/>' +
+									'touch: draggable进入droppable任意多', '"intersect"']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['destroy', 'null', '完全移除一个可拖动控件, 使其回退到该元素被初始化成可拖动控件之前的状态.', ''],
+								['enable', 'null', '将可拖动控件样式改变为允许, 与disable对应.', ''],
+								['disable', 'null', '将可拖动控件样式改变成为失效, 与enable对应.', ''],
+								['option', 'optionName , [value]', '获取或设置可拖动控件的选项, 第二个参数是选项名, 第三个参数是值. 如果不指定值, 就是获取, 指定值, 就是设置.', ''],
+								['option', 'options', '给拖动控件设置多个属性', ''],
+								['widget', 'null', '返回 .ui-droppable元素.', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['create', 'event, ui', '被创建时触发'],
+								['activate', 'event, ui', '可接受的任意draggable开始活动(被拖动了) '],
+								['deactivate', 'event, ui', '可接受的任意draggable的拖动停止了 '],
+								['over', 'event, ui', '可接受的任意draggable到达了当前droppable的上面 '],
+								['out', 'event, ui', '可接受的任意draggable从当前droppable上面出去了 '],
+								['drop', 'event, ui', '一个可接受的draggable控件放到了当前droppable中, 注意, 这里是放入成功, <br/>'+
+									'也就是说到达了通过tolerance选项设置的认为over的位置并放开鼠标 ']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

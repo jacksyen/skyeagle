@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>总测试页面</title>
+		<script type="text/javascript" language="JavaScript" src="../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../plugins/skyeagle.ui.mini.js"></script>
+		<!-- <script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.menu.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.draggable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.droppable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.position.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.button.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.menubutton.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.searchbox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.progressbar.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.dialog.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.messagebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.spotlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.portal.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.desktop.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.window.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.layout.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.tree.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.pagination.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.toolbar.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.datagrid.js"></script>
+		
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.ratingbox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.combo.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.autocomplete.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.slider.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.calendar.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.numberbox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.numberspinner.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.timespinner.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.datepicker.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.datetimepicker.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.autocomplete.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.combogrid.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.combotree.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.form.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/form/jquery.ui.linkagebox.js"></script> -->
+
+		<link rel="stylesheet" href="../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/resizable.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/panel.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/layout.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/tabs.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/tree.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/ratingbox.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/slider.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/validatebox.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/combo.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/calendar.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/numberspinner.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/button.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/datepicker.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/datetimepicker.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/pagination.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/toolbar.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/datagrid.css" />
+		<link rel="stylesheet" href="../skins/sass-OK/linkagebox.css" />
+		<style>
+			body {
+				width: 100%;
+				height: 600px;
+			}
+			.testContent {
+				height : 350px;
+			}
+		</style>
+		<script>
+			$(document).ready(function() {
+				// layout布局
+				var element = $('#page').layout({
+					fit : true,
+					
+					panels : [{
+						id : "north-panel",
+						title : "This is north panel",
+						region : "north",
+						resizable : true,
+						collapsible : true,
+						closable : true,
+						height : 50
+					}, {
+						id : "south-panel",
+						title : "This is south panel",
+						region : "south",
+						resizable : true,
+						collapsible : true,
+						height : 50
+					}, {
+						id : "center-panel",
+						header : false,
+						region : "center"
+					}, {
+						id : "west-panel",
+						resizable : true,
+						collapsible : true,
+						title : "This is west panel",
+						region : "west",
+						width : 250
+					}, {
+						id : "east-panel",
+						resizable : true,
+						collapsible : true,
+						title : "This is east panel",
+						region : "east",
+						width : 150
+					}]
+				});
+				// center中间添加tabs
+				$("#tabs").tabs({
+					//disabled: [1, 2],
+					collapsible : false,
+					closable : true
+				});
+				// west panel 中添加树
+				$('#tt').tree({
+					url : 'test_data.json',
+					onClick : function(event, ui) {
+						switch(ui.text) {
+							case "autocomplete" : 
+								var s = {
+									total : 9,
+									data : [
+										'中国',
+										'密码',
+										'是中。。。',
+										'dddd',
+										'eeee',
+										'f#ff',
+										'asdxzcv',
+										'abaasl',
+										'a!asd'
+									]
+								};
+								var autocom = $('<div id="autocomplete"></div>').autocomplete({
+									data : s
+								});
+								autocom.autocomplete('autocomplete').appendTo('.testContent');
+								break;
+							case "calendar" : 
+								var cal = $('<div id="calendar"></div>').datepicker({
+								
+								});
+								cal.appendTo('.testContent');
+								break;
+							case "combo" : 
+								var combo = $('<div id="combo"><div class="select">Select a language</div><div class="sp">Java</div><div class="sp">C#</div><div class="sp">Ruby</div><div class="sp">Basic</div><div class="sp">Fortran</div></div>').combo({
+									width : 150,
+									panelWidth : 150,
+									editable : true,
+									radioable : false,
+									multiable : true,
+									required : true,
+									value : 'Java'
+								});
+								combo.combo('combo').appendTo('.testContent');
+								break;
+							case "combogrid" :
+								var combog = $('<div id="combogrid"></div>').combogrid({
+									// combogrid
+									idField : 'name',
+									// combo
+									width : 300,
+									panelWidth : 600,
+									// datagrid
+									pagination : true,
+									pageSize : 10,
+									pageList : [5,10],
+									rownumbers: true,
+									singleSelect : true,
+									sortName : 'code',
+									sortOrder : 'desc',
+									url : 'test_datagrid_data.json',
+									columns:[[{
+											title : '合并列',
+											colspan : 2
+										},{
+											field:'code',
+											title:'Code',
+											width:80,
+											rowspan: 2,
+											editor : {type: 'numberbox' }
+										}
+									],[
+										{
+											field:'name',
+											title:'Name',
+											width:120,
+											editor : {type: 'combo' }
+										},
+										{
+											field:'addr',
+											title:'Addr',
+											width:80,
+											align:'right',
+											sortable : true,
+											sorter : function(a, b) {
+												return (a > b ? 1 : -1);
+											}
+										}
+									]]
+								});
+								combog.combo('combo').appendTo('.testContent');
+								break;
+							case "combotree" : 
+								var combot = $('<div id="combotree"></div>').combotree({
+									// combo
+									width : 200,
+									panelWidth : 200,
+									// tree   checkbox关系到combotree能否多选
+									url : 'test_tree_data.json',
+									animate : true,
+									checkbox : true,
+									cascadeCheck : true
+								});
+								combot.combo('combo').appendTo('.testContent');
+								break;
+							case "datepicker" : 
+								var datep = $('<input type="text" id="datepicker">').datepicker({
+									
+								});
+								datep.appendTo('.testContent');
+								break;
+							case "datetimepicker" :
+								var datetp = $('<input type="text" id="datetimepicker">').datetimepicker({
+									
+								});
+								datetp.appendTo('.testContent');
+								break;
+							case "form" :
+								var form = $('<form id="myform"><input type="text" id="validatebox" /><br/><input type="submit" /></form>');
+								form.find('#validatebox').validatebox({
+									required : true
+								});
+								form.form({
+									url : 'xxx.action',
+									onSubmit : function (){
+										return $(this).form('validate');
+									},
+									onSuccess : function (ui, data){
+										alert('success' + data);
+									}
+								});
+								form.appendTo('.testContent');
+								break;
+							case "linkagebox" :
+								var json = {
+									count : 4,	// 级联的层级
+									data : [
+										['美国', '中国', '英国'],			// data[0]
+										{								// data[1]
+											'美国' : ['华盛顿', '洛杉矶'],		
+											'中国' : ['安徽', '海南'],
+											'英国' : ['伦敦', '利物浦']
+										},
+										{								// data[2]
+											'华盛顿' : ['hua1', 'hua2'],
+											'洛杉矶' : ['lo1', 'lo2'],
+											'安徽' : ['合肥', '安庆'],
+											'海南' : ['三亚', '东方'],
+											'伦敦' : ['lun1', 'lun2'],
+											'利物浦' : ['li1', 'li2']
+										},
+										{
+											'合肥' : ['肥东', '肥西', '庐江', '长丰'],
+											'安庆' : ['望江', '太湖', '宿松', '潜山']
+										}
+									]
+								};
+								var link = $('<div id="linkagebox1">国家：<span></span>省份：<span></span>市区：<span></span>地区：<span></span></div>').linkagebox({
+									data : json
+								});
+								link.linkagebox('linkagebox').appendTo('.testContent');
+								break;
+							case "numberbox" :
+								var numb = $('<input type="text" id="numberbox" />').numberbox({
+									width : 500,
+									required : true,
+									max : 100,
+									min : 5
+								});
+								numb.numberbox('numberbox').appendTo('.testContent');
+								break;
+							case "numberspinner" :
+								var numsp = $('<input type="text" id="numberspinner" />').numberspinner({
+									initnumber : 10,
+									addnumber  : 5,
+									parseable  : true,
+									precision : 2,
+									width : 300
+								});
+								numsp.numberspinner('numberspinner').appendTo('.testContent');
+								break;
+							case "rating" :
+								var rat = $('<div id="rating"></div>').ratingbox({
+									
+								});
+								rat.appendTo('.testContent');
+								break;
+							case "slider" :
+								var sd = $('<div id="slider" style="margin-left: 200px; margin-right: 200px;"></div>').slider({
+									
+								});
+								sd.appendTo('.testContent');
+								break;
+							case "timespinner" :
+								var timesp = $('<input type="text" id="timespinner" />').timespinner({
+									width : 500
+								});
+								timesp.timespinner('timespinner').appendTo('.testContent');
+								break;
+							case "validatebox" :
+								var valbox = $('<input type="text" id="validatebox" />').validatebox({
+									required : true,
+									width    : 400
+								});
+								valbox.appendTo('.testContent');
+								break;
+							case "panel" :
+								var panel = $('<div id="panel"></div>').panel({
+									width : 300,
+									height: 150,
+									title : 'panel',
+									draggabled : true,
+									closable : true
+								});
+								panel.panel('panel').appendTo('.testContent');
+								break;
+							case 'treeTab' :
+								alert(ui.attributes);
+								// $.ajax({
+					        		// url : '../demos/menu-button/button/button.back.html',
+					        		// async : false,
+					        		// success : function (data){
+					        			// $('.testContent').html(data);
+					        		// }
+					        	// });
+					        	
+								//$('.testContent').load('../demos/menu-button/button/button.back.html')
+								$("#tabs").tabs('add',{
+									title : 'mmm',
+									// content : 'xxxxxx'
+									url : ui.attributes
+								});
+								break;
+							default :
+								alert('default');
+						}
+					}
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div id="page">
+
+			<div id="north-panel">
+				north
+			</div>
+
+			<div id="center-panel">
+				<div id="tabs">
+					<ul>
+						<li>
+							<a href="#tabs-1">test tab</a>
+						</li>
+					</ul>
+					<div id="tabs-1">
+						<div class="testContent" style="margin-top: 50px; margin-left: 50px;"></div>
+					</div>
+				</div>
+			</div>
+
+			<div id="east-panel">
+				east
+			</div>
+
+			<div id="west-panel">
+				<ul id="tt"></ul>
+			</div>
+
+			<div id="south-panel">
+				sorth
+			</div>
+		</div>
+
+	</body>
+</html>

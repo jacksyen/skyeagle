@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>datepicker</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.numberbox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.numberspinner.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.button.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.timespinner.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.datepicker.js"></script>
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.numberspinner.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.button.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.datepicker.css" />
+		<style>
+		</style>
+		<script>
+			$(document).ready(function() {
+				// addtimesp();
+				$('#datepicker').datepicker({
+				});
+				
+				$('#datepicker2').datepicker({
+				});
+				
+				$('#destroy').click(function (){
+					$('#datepicker').datepicker( "destroy" );
+				});
+				$('#disable').click(function (){
+					$('#datepicker').datepicker( "disable" );
+				});
+				$('#enable').click(function (){
+					$('#datepicker').datepicker( "enable" );
+				});
+				$('#show').click(function (){
+					$('#datepicker').datepicker( "show" );
+				});
+				$('#getDate').click(function (){
+					var date = $('#datepicker').datepicker( "getDate" );
+					alert('getDate:' + date);
+				});
+				$('#setDate').click(function (){
+					$('#datepicker').datepicker( "setDate", "2012-08-25" );
+				});
+			});
+			// function addtimesp() {
+				// var timesp = $('<input class="date-timespinner"/>').insertAfter('.ui-datepicker-calendar');
+				// $('.date-timespinner').timespinner({
+// 					
+				// });
+			// };
+		</script>
+	</head>
+	<body>
+		<button id="destroy">destroy</button>
+		<button id="disable">disable</button>
+		<button id="enable">enable</button>
+		<button id="show">show</button>
+		<button id="getDate">getDate</button>
+		<button id="setDate">setDate</button>
+		<div class="demo">
+			<p style="float:left;width:300px;">
+				Date:
+				<input type="text" id="datepicker">
+			</p>
+			
+			<br/>
+			<p style="float:right;width:400px;">
+				<input type="text" id="datepicker2">
+			</p>
+		</div><!-- End demo -->
+	</body>
+</html>

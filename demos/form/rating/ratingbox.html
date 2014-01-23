@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Ratingbox</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.ratingbox.js"></script>
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.ratingbox.css" />
+		<script>
+			$(document).ready(function() {
+				$('#rating_1').ratingbox({
+				});
+				
+				$('#destroy').click(function (){
+					$('#rating_1').ratingbox('destroy');
+				});
+				$('#disable').click(function (){
+					$('#rating_1').ratingbox('disable');
+				});
+				$('#enable').click(function (){
+					$('#rating_1').ratingbox('enable');
+				});
+ 				$('#getValue').click(function (){
+					var val = $("#rating_1").ratingbox('getValue');
+					alert('getVlaue :' + val);
+				});
+				$('#setValue').click(function (){
+					var val = $('#rating_1').ratingbox('setValue','5');
+				});
+				
+				$('#rating_2').ratingbox({
+				});
+				
+			});
+		</script>
+	</head>
+	
+	<body>
+	
+		<br />
+		<br />
+		<button id="destroy">destroy</button>
+		<button id="disable">disable</button>
+		<button id="enable">enable</button>
+		<button id="getValue">getValue</button>
+		<button id="setValue">setValue</button>
+		<br />
+		<br />
+	
+		<div id="rating_1">
+			
+		</div>
+		<br />
+		<br />
+		<br />
+		<div id="rating_2"></div>
+	</body>
+</html>
+

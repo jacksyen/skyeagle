@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.numberbox.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/highlight.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-js.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-xml.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-html.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/lang-css.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/hl/helpers.js"></script>
+		<!-- 		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script> -->
+
+		
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" />
+
+		<link rel="stylesheet" href="../../js/hl/style.css" />
+		
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				/**
+				 * demo 1 
+				 */
+				$('#numberbox1').numberbox({
+					max : 100,			// 设置能显示的最大值
+					min : 1,			// 设置能显示的最小值
+					precision : 2,		// 精度设置
+					parseable : true	// 是否需要处理精度
+				});
+				/**
+				 * demo 2 
+				 */
+				$('#numberbox2').numberbox({
+					required : true,    // 是否需要验证
+					max : 100,			// 设置能显示的最大值
+					min : 1,			// 设置能显示的最小值
+					precision : 2,		// 精度设置
+					parseable : true	// 是否需要处理精度
+				});
+				$('#validate').click(function (){
+					var validate = $('#numberbox2').numberbox('validate');
+					alert('validate:' + validate);
+				});
+				$('#clear').click(function (){
+					$('#numberbox2').numberbox('clear');
+				});
+				$('#setValue').click(function (){
+					var val = $('#numberbox2').numberbox('setValue','56');
+				});
+				
+				
+				// 代码高亮
+				DlHighlight.HELPERS.highlightByName("numberbox", "pre");
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<div class="block" id="demos-nav">
+						<h4>Examples</h4>
+						<ul>
+							<li class="demo-config-on"><a href="#demo1">默认功能</a></li>
+							<li><a href="#demo2">方法示例</a></li>
+							<!-- <li><a href="#demo3">显示按钮</a></li> -->
+						</ul>
+					</div>
+					<div class="block" id="demo1">
+						<h1>示例一（默认功能）</h1>
+						<div class="line-block" >
+								<input type="text" id="numberbox1" />
+							<div class="code">
+<pre name="numberbox" class="js">
+$('#numberbox1').numberbox({
+	max : 100,		// 设置能显示的最大值
+	min : 1,		// 设置能显示的最小值
+	precision : 2,		// 精度设置
+	parseable : true	// 是否需要处理精度
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<div class="block" id="demo2">
+						<h1>示例二（方法示例）</h1>
+						<div class="line-block" >
+								<input type="text" id="numberbox2" />
+							<div class="code">
+<button id="validate">validate</button>
+<button id="clear">clear</button>
+<button id="setValue">setValue</button>								
+<pre name="numberbox" class="js">
+$('#numberbox2').numberbox({
+	required : true,    // 是否需要验证
+	max : 100,		// 设置能显示的最大值
+	min : 1,		// 设置能显示的最小值
+	precision : 2,		// 精度设置
+	parseable : true	// 是否需要处理精度
+});
+$('#validate').click(function (){
+	var validate = $('#numberbox2').numberbox('validate');
+	alert('validate:' + validate);
+});
+$('#clear').click(function (){
+	$('#numberbox2').numberbox('clear');
+});
+$('#setValue').click(function (){
+	var val = $('#numberbox2').numberbox('setValue','56');
+});
+</pre>
+							</div>
+						</div>
+					</div>
+					<!-- end of demo1 -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

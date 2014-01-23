@@ -1,0 +1,124 @@
+/* panel.scss */
+@import "include.scss";
+
+.panel{
+  overflow : $ov-hi;
+  font-size: $main-size;
+}
+.panel-header{
+  font : {
+    weight : bold;
+    size   : $main-size;
+  }
+  padding    : 5px;
+  line-height: 15px;
+  color      : $main-color1;
+  position   : $ov-re;
+  border     : $main-border1;
+  @include main-bg('panel_title.gif', repeat-x);
+}
+.panel-title{
+  @include main-bg('blank.gif');
+}
+.panel-title-vertical{
+  color: $main-color1;
+  border:0px solid red;
+  writing-mode:tb-rl;
+  @include main-trans;
+  white-space:nowrap;
+  display:block;
+  bottom:0;
+  width:20px;
+  height:20px;
+  font : {
+    family : sans-serif;
+    size   : $main-size;
+    weight : 700;
+  }
+  position: $ov-re;
+  top:15px;
+  left:-2px;
+}
+.panel-header-noborder{
+  border-width:0px;
+  border-bottom: $main-border1;
+}
+.panel-body{
+  border: $main-border1;
+  border-top-width:0px;
+  overflow-y:auto !important;
+}
+.panel-body-noheader{
+  border-top-width:1px;
+}
+.panel-body-noborder{
+  border-width:0px;
+}
+.panel-with-icon{
+  padding-left:18px;
+}
+.panel-icon{
+  position:$ov-ab;
+  left:5px;
+  top:4px;
+  @include main-wh;
+}
+
+.panel-tool{
+  position:$ov-ab;
+  right:5px;
+  top:4px;
+  a {
+    display:inline-block;
+    margin-left:2px;
+    @include main-wh;
+    @include main-filter(0.6, 60);
+    &:hover {
+      @include main-filter;
+    }
+    
+  }
+}
+.panel-tool-close{
+  @include main-bg('panel_tools.gif',no-repeat,-16px 0px);
+}
+.panel-tool-collapse{
+  @include main-bg('panel_tool_collapse.gif');
+}
+.panel-tool-collapse-left{
+  @include main-bg('panel_tool_collapse_left.gif');
+}
+.panel-tool-expand{
+  @include main-bg('panel_tool_expand.gif');
+}
+.panel-tool-expand-right{
+  @include main-bg('panel_tool_expand_right.gif');
+}
+.panel-loading{
+  padding:11px 0px 10px 30px;
+  @include main-bg('panel_loading.gif',no-repeat,10px 10px);
+}
+.panel-noscroll{
+  overflow: $ov-hi;
+}
+.panel-layout-expand{
+  padding:0px;
+  @include main-bg('panel_title_v.gif',repeat-y);
+  font-size:1px;
+  cursor:pointer;
+  z-index:1;
+  border : $main-border1;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  .panel-header {
+    background:transparent;
+    border-bottom-width: 0;
+    border-right-width:0;
+    .panel-tool {
+      top: 5px;
+    }
+  }
+  .panel-body{
+    overflow:$ov-hi;
+  }
+}

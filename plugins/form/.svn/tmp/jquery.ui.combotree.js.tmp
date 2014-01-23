@@ -1,0 +1,95 @@
+(function($) {
+<<<<<<< .mine
+	// $.extend($.ui.datagrid.overlay, $.ui.combotree.overlay, {
+	// create : function (options){
+// 		
+	// }
+// });
+
+	$.widget('ui.combotree', $.ui.tree, {
+=======
+	$.widget('ui.combotree', $.ui.tree, {
+>>>>>>> .r278
+		options : {
+			
+		},
+		destroy : function (){
+			return $.data(this.element, 'combotree').comboTree.each(function() {
+				this.outerHTML = '';
+			});		},
+		resize : function (options){
+			this.element.combo('resize', options);
+		},
+		disable : function (){
+			this.element.combo('disable');
+		},
+		enable : function (){
+			this.element.combo('enable');
+		},
+		getValue : function (){
+			return $.data(this.element, 'combotree').comboTree.find('.combo-input').val();
+		},
+		setValue : function (val){
+			$.data(this.element, 'combotree').comboTree.find('.combo-input').val(val);
+		},
+		_create : function() {
+			var self = this,
+				ele  = self.element;
+			var combo = new $.ui.combo();
+			var opts = $.extend(combo.options, this.options);
+			var optss = $.extend($.ui.tree.options, this.options);
+			
+			var combo = new $.ui.combo();
+			
+			
+			alert('bbbb');
+			
+			$.data(ele, 'combotree', {
+				val : [],
+				comboTree : ''
+			});
+			
+			// 添加生成tree的对象
+			ele.append($('<ul></ul>').attr('id', 'tree-' + new Date().getTime()));
+			
+			if(opts.checkbox) {
+				// 生成combo
+				ele.combo(opts);
+				// 在combo下面生成tree
+				ele.children().tree(
+					$.extend(this.options, {						onCheck : function(event, ui) {
+							var val = ui.node.text;
+							if(ui.checked) {
+								$.data(ele, 'combotree').val.push(val);
+							} else {
+								var temp = $.data(ele, 'combotree').val;
+								var index = $.inArray(val, temp);
+								temp.splice(index, 1);
+								$.data(ele, 'combotree').val = temp;
+							}
+							ele.combo('setValue', $.data(ele, 'combotree').val);						}
+					})
+				);
+			} else {
+				// 生成combo
+				ele.combo(opts);
+				// 在combo下面生成tree
+				ele.children().tree(
+					$.extend(this.options, {
+						onClick : function(event, node) {
+							ele.combo('setValue', node.text);							ele.panel('close');
+						}
+					})
+				);
+			}
+			$.data(ele, 'combotree').comboTree = ele.parent().parent();
+		},
+		_init : function() {
+			
+		},
+		_bindEvents : function() {
+			
+		}
+	});
+
+})(jQuery);

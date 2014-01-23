@@ -1,0 +1,161 @@
+/* tree.scss*/
+@import "include.scss";
+
+$mid: middle;
+@mixin mar-pad() {
+  margin: 0;
+  padding: 0;
+}
+@mixin wid-hei() {
+  width: 16px;
+  height: 18px;
+}
+
+.tree {
+	font-size: 12px;
+	@include mar-pad();
+	list-style-type: $none;
+	li { 
+	  white-space: nowrap;
+	  ul {
+	    list-style-type: $none;
+      @include mar-pad();
+	  }
+	}
+}
+.tree-node{
+	height: 18px;
+	white-space: nowrap;
+	cursor: $cur-po;
+}
+.tree-indent{
+	display: $dis-il;
+	@include wid-hei();
+	vertical-align: $mid;
+}
+.tree-hit{
+	cursor: $cur-po;
+}
+.tree-expanded{
+	display: $dis-il;
+	@include wid-hei();
+	vertical-align: $mid;
+	@include Func-bg( 'tree/tree_arrows.gif', no-repeat, -18px 0);
+}
+.tree-expanded-hover{
+	@include Func-bg( 'tree/tree_arrows.gif', no-repeat, -50px 0);
+}
+.tree-collapsed{
+	display: $dis-il;
+	@include wid-hei();
+	vertical-align: $mid;
+	@include Func-bg( 'tree/tree_arrows.gif');
+}
+.tree-collapsed-hover{
+	@include Func-bg( 'tree/tree_arrows.gif', no-repeat, -32px 0);
+}
+.tree-lines {
+  .tree-expanded { @include Func-bg( 'tree/tree_elbow.png', no-repeat, -36px -54px);}
+  .tree-collapsed { @include Func-bg( 'tree/tree_elbow.png', no-repeat, 0 -36px);}
+  .tree-node-last {
+    .tree-expanded { @include Func-bg( 'tree/tree_elbow.png', no-repeat, -18px 0);}
+    .tree-collapsed { @include Func-bg( 'tree/tree_elbow.png', no-repeat, -36px -36px);}
+  }
+  .tree-root-first {
+    .tree-expanded { @include Func-bg( 'tree/tree_elbow.png', no-repeat, -18px -54px);}
+    .tree-collapsed { @include Func-bg( 'tree/tree_elbow.png', no-repeat, -18px -36px);}
+  }
+  .tree-root-one {
+    .tree-expanded { @include Func-bg( 'tree/tree_elbow.png', no-repeat, 0 -18px);}
+    .tree-collapsed { @include Func-bg( 'tree/tree_elbow.png', no-repeat, 0 -72px);}
+  }
+}
+.tree-line{
+	@include Func-bg( 'tree/tree_elbow.png', no-repeat, 0 -54px);
+}
+.tree-join{
+	@include Func-bg( 'tree/tree_elbow.png', no-repeat, -18px -18px);
+}
+.tree-joinbottom{
+	@include Func-bg( 'tree/tree_elbow.png');
+}
+.tree-folder{
+	display: $dis-il;
+	@include Func-bg( 'tree/tree_folder.gif');
+	@include wid-hei();
+	vertical-align: $mid;
+}
+.tree-folder-open{
+	@include Func-bg( 'tree/tree_folder_open.gif');
+}
+.tree-file{
+	display: $dis-il;
+	@include Func-bg( 'tree/tree_leaf.gif');
+	@include wid-hei();
+	vertical-align: $mid;
+}
+.tree-loading{
+	@include Func-bg( 'tree/tree_loading.gif');
+}
+.tree-title{
+	display: $dis-il;
+	text-decoration: $none;
+	vertical-align: $mid;
+	padding: 1px 2px 1px 2px;
+	white-space: nowrap;
+}
+
+.tree-node-hover{
+	border-color: #ddd;
+	background-color: #efefef
+}
+.tree-node-selected{
+	border-color: #a3bae9;
+	background-color: #dfe8f6 !important
+}
+.tree-checkbox{
+	display: $dis-il;
+	@include wid-hei();
+	vertical-align: $mid;
+}
+.tree-checkbox0{
+	@include Func-bg( 'tree/tree_checkbox_0.gif');
+}
+.tree-checkbox1{
+	@include Func-bg( 'tree/tree_checkbox_1.gif');
+}
+.tree-checkbox2{
+	@include Func-bg( 'tree/tree_checkbox_2.gif');
+}
+.tree-node-proxy{
+	font-size: 12px;
+	padding: 1px 2px 1px 18px;
+	background: #fafafa;
+	@include basic-bd(#ccc);
+	z-index: 9900000;
+}
+.tree-dnd-yes{
+	@include Func-bg( 'tree/tree_dnd_yes.png', no-repeat, 0 center);
+}
+.tree-dnd-no{
+	@include Func-bg( 'tree/tree_dnd_no.png', no-repeat, 0 center);
+}
+.tree-node-top{
+	border-top: 1px dotted red;
+}
+.tree-node-bottom{
+	border-bottom: 1px dotted red;
+}
+.tree-node-append {
+  .tree-title {
+    border: 1px dotted red;
+  }
+}
+.tree-editor{
+	@include basic-bd(#ccc);
+	font-size: 12px;
+	line-height: 16px;
+	width: 80px;
+	position: $pos-ab;
+	top: 0;
+}

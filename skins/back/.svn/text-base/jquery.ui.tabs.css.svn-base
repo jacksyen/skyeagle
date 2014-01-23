@@ -1,0 +1,74 @@
+/*!
+ * jQuery UI Tabs @VERSION
+ *
+ * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Tabs#theming
+ */
+/*.ui-tabs { position: relative; padding: .2em; zoom: 1; }*/ /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+.ui-tabs { position: relative; zoom: 1; }
+.ui-tabs .ui-tabs-nav { margin: 0; padding: .1em .1em 6px;}
+.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 0; margin: 1px .2em 0 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }
+.ui-tabs .ui-tabs-nav li a { float: left; padding: .1em .5em; text-decoration: none; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-active { margin-bottom: -1px; padding-bottom: 1px; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-tabs-loading a { cursor: text; outline: medium none;}
+.ui-tabs .ui-tabs-nav li a, .ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+/*.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 1.4em; background: none; }*/
+.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: .5em 1.4em; background: none; }
+
+.ui-tabs .ui-tabs-nav li a.ui-icon-close{
+	background: url("images/tabs/tabs-default-close.gif") no-repeat; 
+	display: block; 
+	height: 11px; 
+	width: 11px; 
+	padding: 0; 
+	margin: 3px 3px 0 0; 
+	opacity: .6;
+	filter:alpha(opacity=60);
+}
+.ui-tabs .ui-tabs-nav li a.ui-icon-close:hover{
+	opacity:1;
+	filter:alpha(opacity=100);
+	cursor:hand;
+	cursor:pointer;
+}
+.ui-tabs .tabs-scroller-left{
+	position:absolute;
+	left:0px;
+	top:-1px;
+	width:18px;
+	height:21px!important;
+	height:23px;
+/*	border:1px solid #8DB2E3;*/
+	font-size:1px;
+	display:none;
+	cursor:pointer;
+	background:#E0ECFF url('images/tabs/tabs_leftarrow.gif') no-repeat 0 0;
+}
+.ui-tabs .tabs-scroller-right{
+	position:absolute;
+	right:0;
+	top:-1px;
+	width:18px;
+	height:21px!important;
+	height:23px;
+/*	border:1px solid #8DB2E3;*/
+	font-size:1px;
+	display:none;
+	cursor:pointer;
+	background:#E0ECFF url('images/tabs/tabs_rightarrow.gif') no-repeat 0 0;
+}
+.ui-tabs .tabs-wrap{
+	position:relative;
+	left:0px;
+	overflow:hidden;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+.ui-tabs .tabs-scrolling{
+	margin-left:18px;
+	margin-right:18px;
+}

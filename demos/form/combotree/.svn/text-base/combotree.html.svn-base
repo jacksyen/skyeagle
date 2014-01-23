@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>combotree</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.draggable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.droppable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.combo.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.tree.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.combotree.js"></script>
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.combo.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.tree.css" />
+		<script>
+			$(document).ready(function() {
+				$('#combotree').combotree({
+					// combo
+					width : 200,
+					// tree   checkbox关系到combotree能否多选
+					url : 'tree_data.json',
+					animate : true,
+					checkbox : true,
+					cascadeCheck : true
+				});
+				$('#destroy').click(function (){
+					$('#combotree').combotree('destroy');
+				});
+				$('#resize').click(function (){
+					$('#combotree').combotree('resize',{
+						width : 300
+					});
+				});
+				$('#disable').click(function (){
+					$('#combotree').combotree('disable');
+				});
+				$('#enable').click(function (){
+					$('#combotree').combotree('enable');
+				});
+				$('#getValue').click(function (){
+					var val = $('#combotree').combotree('getValue');
+					alert('getVlaue :' + val);
+				});
+				$('#setValue').click(function (){
+					var val = $('#combotree').combotree('setValue','File1');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<p>
+				22
+			</p>
+			<p>
+				22
+			</p>
+			<button id="destroy">destroy</button>
+			<button id="resize">resize</button>
+			<button id="disable">disable</button>
+			<button id="enable">enable</button>
+			<button id="getValue">getValue</button>
+			<button id="setValue">setValue</button>
+		</div>
+		<div id="combotree">
+		</div>
+	</body>
+</html>

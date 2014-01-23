@@ -1,0 +1,28 @@
+$main-size  : 12px;
+$main-color1: #15428b;
+$main-color2: #99BBE8;
+$main-border1: 1px solid #99BBE8;
+$ov-hi : hidden;
+$ov-re : relative;
+$ov-ab : absolute;
+
+@mixin main-bg($img, $rep: no-repeat, $pos: 0 0){
+  background : {
+    image    : url('../images/'+$img);
+    repeat   : $rep;
+    position : $pos
+  }
+}
+@mixin main-trans {
+  -webkit-transform:rotate(90deg);
+  -moz-transform:rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+@mixin main-filter($op: 1, $val: 100){
+  opacity : $op;
+  filter  : alpha(opacity=$val);
+}
+@mixin main-wh {
+  width : 16px;
+  height: 16px;
+}

@@ -1,0 +1,66 @@
+/* pagination.scss*/
+.pagination {
+  zoom: 1; }
+  .pagination .ui-button-text {
+    padding: 0 0; }
+  .pagination table {
+    float: left;
+    height: 30px; }
+  .pagination span {
+    font-size: 12px; }
+
+.pagination-btn-separator {
+  float: left;
+  height: 24px;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid white;
+  margin: 3px 1px; }
+
+.pagination-num {
+  border: 1px solid #cccccc;
+  margin: 0 2px; }
+
+.pagination-page-list {
+  margin: 0 6px; }
+
+.pagination-info {
+  float: right;
+  padding-right: 6px;
+  padding-top: 8px;
+  font-size: 12px; }
+
+.pagination-first, .ui-widget-content .pagination-first {
+  background: url("../images/pagination/pagination_first.gif") no-repeat 0 0 transparent scroll;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px; }
+
+.pagination-prev, .ui-widget-content .pagination-prev {
+  background: url("../images/pagination/pagination_prev.gif") no-repeat 0 0 transparent scroll;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px; }
+
+.pagination-next, .ui-widget-content .pagination-next {
+  background: url("../images/pagination/pagination_next.gif") no-repeat 0 0 transparent scroll;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px; }
+
+.pagination-last, .ui-widget-content .pagination-last {
+  background: url("../images/pagination/pagination_last.gif") no-repeat 0 0 transparent scroll;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px; }
+
+.pagination-load, .ui-widget-content .pagination-load {
+  background: url("../images/pagination/pagination_load.png") no-repeat 0 0 transparent scroll;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px; }
+
+.pagination-loading, .ui-widget-content .pagination-loading {
+  background: url("../images/pagination/pagination_loading.gif") no-repeat 0 0 transparent scroll;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px; }

@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<!-- <script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.panel.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.layout.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.accordion.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.menu.js"></script> -->
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<!-- <link rel="stylesheet" href="../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.tabs.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.layout.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.accordion.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.menu.css" /> -->
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'datepicker',
+						content : ['基于jqueryUI，通过鼠标选择需要的日期']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['altField','String','使用备用的输出字段，即将选择的日期以另一种格式，输出到另一个控件中，值为选择符，即要输出的控件','""'],
+								['altFormat','String','altField输出的格式，详细格式见formatDate方法','""'],
+								['appendText','String','指定每个日期字段后面显示的文本','""'],
+								['autoSize','Boolean','是否自动调整控件大小，以适应当前的日期格式的输入','false'],
+								['buttonImage','String','指定弹出按钮图像的URL，若设置则buttonText将成为alt值','""'],
+								['buttonImageOnly','Boolean','是否将图像放在控件后面，作为触发器','false'],
+								['buttonText','String','指定触发按钮上显示的文本，showOn属性应设置为button或both','"..."'],
+								['changeMonth','Boolean','是否使用下拉列表选择月份','false'],
+								['changeYear','Boolean','是否使用下拉列表选择年份','false'],
+								['closeText','String','指定关闭链接显示的文本','"Done"'],
+								['dateFormat','String','指定显示日期的格式','"yy-mm-dd"'],
+								['defaultDate','Date,String,Number','首次打开显示的日期，可以用Date对象指定一个实际日期，或指定距离今天的天数（如+7）、字符串（y表示年、m表示月、w表示周、d表示天，如"+1m+7d"）默认为null，表示今天','null'],
+								['duration','Number,String','日期选择器呈现的速度，可以为毫秒数','"normal"'],
+								['firstDay','Number','设置每周的第一天，0表示星期日，1表示星期一等','0'],
+								['maxDate','Date,Number,String','可以选择的最大日期。null表示无限制格式见defaultDate','null'],
+								['minDate','Date,Number,String','可以选择的最小日期。null表示无限制格式见defaultDate','null'],
+								['numberOfMonths','Number,Array','设置一次要显示几个月。可以为包含两个数字的数组，表示显示的行数和列数','1'],
+								['selectOtherMonths','Boolean','是否可以选择非当前月的日期，showOtherMonths属性必须为true','false'],
+								['shortYearCutoff','String,Number','设置截止的年份的值，若为数字（0~99）则直接使用其值，若是字符串，则转化为数字并与当前年份相加。当超过截止年份时，则被认为是上个世纪','"+10"'],
+								['showAnim','String','设置显示或隐藏的动画名','"show"'],
+								['showButtonPanel','Boolean','是否显示按钮面板','false'],
+								['showCurrentAtPos','Number','指定在多月份显示时，当前月份位于何处，从左上方0算起','0'],
+								['showMonthAfterYear','Boolean','是否在标题中的年份后显示月份','false'],
+								['showOn','String','设置触发选择器的事件名称','"focus"'],
+								['showOtherMonths','Boolean','是否显示其他月份','false'],
+								['stepMonths','Number','指定单击上月下月链接时，移动几个月','1'],
+								['yearRange','String','设置下拉列表框中显示的年份范围，可以是相对今年（-nn:+nn）或相对于选择的年份（c-nn:c+nn）或绝对年份（nnnn:nnnn）','c-10:c+10']]
+						},
+						{
+							id : 'methods',
+							content : [['destroy', 'null', '完全移除一个可拖动控件, 使其回退到该元素被初始化成可拖动控件之前的状态.', ''],
+								['enable', 'null', '将可拖动控件样式改变为允许, 与disable对应.', ''],
+								['disable', 'null', '将可拖动控件样式改变成为失效, 与enable对应.', ''],
+								['option', 'optionName , [value]', '获取或设置可拖动控件的选项, 第二个参数是选项名, 第三个参数是值. 如果不指定值, 就是获取, 指定值, 就是设置.', ''],
+								['option', 'options', '给拖动控件设置多个属性', ''],
+								['widget', 'null', '返回 .ui-draggable元素.', ''],
+								['isDisabled', 'null', '是否被禁用', ''],
+								['hide','speed','关闭选择器，speed为速度',''],
+								['show','null','调用先前的选择器',''],
+								['getDate','null','获取选择器中的当前日期',''],
+								['setDate','date','设置当前日期可以为：02/26/2011 或 +1m+7d等','']]
+						},
+						{
+							id : 'events',
+							content : [
+								['beforeShowDay','date','当选择器上的每一天显示之前，将触发此事件'],
+								['onChangeMonthYear','year, month, inst','当选择器移动到新的年份或月份时触发'],
+								['onClose','dateText, inst','当选择器关闭时触发'],
+								['onSelect','dateText, inst','当选择一个日期时触发']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery UI Resizable - Default functionality</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.resizable.css" />
+		<style>
+			#resizable {
+				width: 150px;
+				height: 150px;
+				padding: 0.5em;
+			}
+			#resizable h3 {
+				text-align: center;
+				margin: 0;
+			}
+			div {
+				font-size : 12px;
+			}
+		</style>
+		<script>
+			$(function() {
+				$("#resizable").resizable();
+			});
+		</script>
+	</head>
+	<body>
+
+		<div class="demo">
+
+			<div id="resizable" class="ui-widget-content">
+				<h3 class="ui-widget-header">Resizable</h3>
+			</div>
+
+		</div><!-- End demo -->
+	</body>
+</html>

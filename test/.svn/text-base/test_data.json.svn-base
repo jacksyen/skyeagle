@@ -1,0 +1,43 @@
+[{
+	"text":"form控件",
+	"iconCls":"icon-ok",
+	"children":[{
+		"text":"autocomplete",
+		"checked":true
+	},{
+		"text":"calendar"
+	},{
+		"text":"combo"
+	},{
+		"text":"combogrid"
+	},{
+		"text":"combotree"
+	},{
+		"text":"datepicker"
+	},{
+		"text":"datetimepicker"
+	},{
+		"text":"fileupload **"
+	},{
+		"text":"form"
+	},{
+		"text":"linkagebox"
+	},{
+		"text":"numberbox"
+	},{
+		"text":"numberspinner"
+	},{
+		"text":"rating"
+	},{
+		"text":"slider"
+	},{
+		"text":"timespinner"
+	},{
+		"text":"validatebox"
+	},{
+		"text":"panel"
+	},{
+		"text":"treeTab",
+		"attributes" :"../demos/menu-button/button/button.back.html"
+	}]
+}]

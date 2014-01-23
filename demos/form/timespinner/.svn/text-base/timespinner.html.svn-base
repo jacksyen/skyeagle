@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>timespinner</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.numberbox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.numberspinner.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.timespinner.js"></script>
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.numberspinner.css" />
+		<style>
+		</style>
+		<script>
+			$(document).ready(function() {
+				$('#t_spinner1').timespinner({
+					width : 500
+					// initnumber : 10,
+					// addnumber  : 2
+				});
+				$('#v2').timespinner({
+					// initnumber : 50,
+					// addnumber  : 4
+				});
+				// $('#v3').numberspinner({
+					// initnumber : 100,
+					// addnumber  : 1
+				// });
+				// $('#v4').numberspinner({
+					// initnumber : 500,
+					// addnumber  : 10
+				// });
+				
+				
+				
+				$('#destroy').click(function (){
+					$('#t_spinner1').timespinner('destroy');
+				});
+				$('#resize').click(function (){
+					$('#t_spinner1').timespinner('resize', 100);
+				});
+				$('#disable').click(function (){
+					$('#t_spinner1').timespinner('disable');
+				});
+				$('#enable').click(function (){
+					$('#t_spinner1').timespinner('enable');
+				});
+				$('#clear').click(function (){
+					$('#t_spinner1').timespinner('clear');
+				});
+ 				$('#getValue').click(function (){
+					var val = $("#t_spinner1").timespinner('getValue');
+					alert('getVlaue :' + val);
+				});
+				// $('#setValue').click(function (){
+					// var val = $('#t_spinner1').timespinner('setValue','15:12:20');
+				// });
+				
+				
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		<br />
+		<br />
+		<button id="destroy">destroy</button>
+		<button id="resize">resize</button>
+		<button id="disable">disable</button>
+		<button id="enable">enable</button>
+		<button id="clear">clear</button>
+		<button id="getValue">getValue</button>
+<!-- 		<button id="setValue">setValue</button> -->
+		<br />
+		<input type="text" id="t_spinner1"  />
+		<br/>
+
+		<br/>
+		<br />
+		<input type="text" id="v2" />
+		<br /><br /><br /><br /><br />
+		<input type="text" id="v3" />
+		<br /><br /><br /><br /><br />
+		<input type="text" id="v4" />
+	</body>
+</html>

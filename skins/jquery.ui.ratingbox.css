@@ -1,0 +1,26 @@
+.rating {
+	position: relative;
+	white-space: nowrap;
+	font-size: 1px;
+	z-index: 9990;
+}
+.star-uncheck {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	background: url(../skins/images/rating/star-uncheck.png) no-repeat 0 0;
+}
+.star-checked {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	background: url(../skins/images/rating/star-checked.png) no-repeat 0 0;
+}
+.disable {
+	opacity: .5;
+	filter: alpha(opacity=50);
+}
+.enable {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}

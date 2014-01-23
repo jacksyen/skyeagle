@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/skyeagle-webui/!svn/ver/88/skins/images/pagination
+END
+pagination_last.gif
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/skyeagle-webui/!svn/ver/88/skins/images/pagination/pagination_last.gif
+END
+pagination_first.gif
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/skyeagle-webui/!svn/ver/88/skins/images/pagination/pagination_first.gif
+END
+pagination_prev.gif
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/skyeagle-webui/!svn/ver/88/skins/images/pagination/pagination_prev.gif
+END
+pagination_loading.gif
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/skyeagle-webui/!svn/ver/88/skins/images/pagination/pagination_loading.gif
+END
+pagination_load.png
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/skyeagle-webui/!svn/ver/88/skins/images/pagination/pagination_load.png
+END
+pagination_next.gif
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/skyeagle-webui/!svn/ver/88/skins/images/pagination/pagination_next.gif
+END

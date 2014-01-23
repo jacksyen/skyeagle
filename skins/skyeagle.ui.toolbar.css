@@ -1,0 +1,66 @@
+.toolbar {
+	background: #D9E5F3 url(images/toolbar/toolbar-bg.gif) repeat-x scroll left top;
+	border: 1px solid #99BCE8;
+	heigth: 26px;
+	padding: 2px 3px;
+	overflow: hidden;
+	position: relative;
+}
+.toolbar-items {
+	width: 5000px;
+	font-size: 12px;
+	position: relative;
+}
+.toolbar .toolbar-scroll-left {
+	background: url(images/tabs/tabs_leftarrow.gif) no-repeat;
+	height: 24px;
+	left: 0;
+	position: absolute;
+	top: 1px;
+	width: 18px;
+	cursor: pointer;
+	z-index: 100;
+}
+.toolbar .toolbar-scroll-right {
+	background: url(images/tabs/tabs_rightarrow.gif) no-repeat;
+	height: 24px;
+	right: 0;
+	position: absolute;
+	top: 1px;
+	width: 18px;
+	cursor: pointer;
+	z-index: 100;
+}
+.toolbar .toolbar-scroll-right:hover {
+	background-position: -18px 0;
+}
+.toolbar .toolbar-scroll-left:hover {
+	background-position: -18px 0;
+}
+.toolbar .toolbar-scroll-disabled {
+	background-position: 0 0 !important;
+	cursor: default;
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+}
+.toolbar .ui-button {
+	border: 1px solid #99BCE8;
+}
+.toolbar .ui-button-text-only {
+	background: url('');
+}
+
+.toolbar .ui-button-text-only:hover {
+	background: url(images/tabs/tabs_enable.gif) repeat-x scroll 0 0 #DEECFD;
+	border: 1px solid #99BCE8;
+}
+.toolbar .ui-button-text-only .ui-button-text {
+	padding: 1px 0.9em;
+}
+.toolbar .line-separator {
+	border-left: 1px solid #9AC6FF;
+	border-right: 1px solid white;
+	height: 18px;
+	margin: 0 8px 1px;
+}

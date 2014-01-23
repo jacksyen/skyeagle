@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>desktop</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.draggable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.desktop.js"></script>
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.desktop.css" />
+
+		<script>
+			var json = {
+					total : 8,
+					rows  : [
+						{ 
+							title : 'Test',
+							icon : '',
+							href : '#click1'
+						},
+						{ 
+							title : 'Window',
+							icon : '',
+							href : '#click2'
+						},
+						{ 
+							title : 'IFrame Window',
+							icon : '',
+							href : '#click3'
+						},
+						{ 
+							title : 'Grid Window',
+							icon : '',
+							href : '#click4'
+						},
+						{ 
+							title : 'Splitter Window',
+							icon : '',
+							href : '#click5'
+						},
+						{ 
+							title : 'Tabs Window',
+							icon : '',
+							href : '#click6'
+						},
+						{ 
+							title : 'Map Window',
+							icon : '',
+							href : '#click7'
+						},
+						{ 
+							title : 'Chart Window',
+							icon : '',
+							href : '#click8'
+						}
+					]				
+				}
+			$(document).ready(function() {
+				$('#desktop1').desktop({
+					data : json
+				});
+				$('#btn').click(function() {
+					$('#desktop1').desktop('addModule', {
+						title : 'Fuck Window',
+						icon  : '',
+						href  : '#click9'
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button id="btn" style="position : absolute; float : left; background: #ccc;  z-index: 99999;">按钮</button>
+		<div id="desktop1">
+			
+		</div>
+		<div id="click1" style="display : none">
+			<p>
+				111111
+			</p>
+		</div>
+		<div id="click2" style="display : none">
+			<p>
+				2222222
+			</p>
+		</div>
+		<div id="click3" style="display : none">
+			<p>
+				333333
+			</p>
+		</div>
+		<div id="click4" style="display : none">
+			<p>
+				44444
+			</p>
+		</div>
+		<div id="click5" style="display : none">
+			<p>
+				555555
+			</p>
+		</div>
+		<div id="click6" style="display : none">
+			<p>
+				6666666
+			</p>
+		</div>
+		<div id="click7" style="display : none">
+			<p>
+				7777
+			</p>
+		</div>
+		<div id="click8" style="display : none">
+			<p>
+				888
+			</p>
+		</div>
+		<div id="click9" style="display : none">
+			<p>
+				fuck
+			</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<script type="text/javascript" language="JavaScript" src="../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/skyeagle.ui.panel.2.0.js"></script>
+
+		<link rel="stylesheet" href="../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../skins/skyeagle.ui.panel.css" />
+		<style>
+			.tool-costom {
+				background-color: #CC9933;
+				width: 30px;
+				height: 10px;
+			}
+			.cls {
+				border: 5px solid #CC9933;
+			}
+		</style>
+		<script>
+			$(function() {
+				var panel = $("#panel").panel({
+					width : 'fit',
+					height : 'fit',
+					iconCls : "apple",
+					header : true,
+					title : '苹果公司简介',
+					collapsed : false,
+					collapsible : true,
+					closable : true,
+					url : 'http://www.baidu.com',
+					onOpen : function() {
+						$("#log").html("<li>触发了打开事件。---onOpen</li>");
+					},
+					onClose : function() {
+						$("#log").html("<li>触发了关闭事件。---onClose</li>");
+					},
+					onExpand : function() {
+						$("#log").html("<li>触发了展开事件。---onExpand</li>");
+					},
+					onCollapse : function() {
+						$("#log").html("<li>触发了收起事件。---onCollapse</li>");
+					}
+				});
+				
+				$('#panel2').panel({
+					width : 500,
+					height: 200,
+					title : 'draggable panel'
+				});
+			});
+			function closeA() {
+				$('#panel').panel('close');
+			}
+
+			function reloadA() {
+				$('#panel').panel('reload', '../include.html');
+			}
+
+			function openA() {
+				$('#panel').panel('open');
+			}
+
+			function destroyA() {
+				$('#panel').panel('destroy');
+			}
+
+			function resizeA() {
+				$('#panel').panel('resize', {
+					width : 300,
+					height : 200
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<button onclick="closeA()">
+				Close
+			</button>
+			<button onclick="reloadA()">
+				reload
+			</button>
+			<button onclick="openA()">
+				open
+			</button>
+			<!-- 			<button onclick="destroyA()">destroy</button> -->
+			<button onclick="resizeA()">
+				resize(300,200)
+			</button>
+
+		</div>
+		<div id="panel">
+			<p>
+				sss
+			</p>
+			<p>
+				sss
+			</p>
+			<p>
+				sss
+			</p>
+			<p>
+				sss
+			</p>
+			<p>
+				sss
+			</p>
+			<p>
+				sss
+			</p>
+			<p>
+				sss
+			</p>
+			<p>
+				sss
+			</p>
+			<p>
+				sss
+			</p>
+			<p>
+				sss
+			</p>
+			<p>
+				sss
+			</p>
+		</div>
+		<br/>
+		<div id="panel2">
+			<p>
+				sss
+			</p>
+			<p>
+				sss
+			</p>
+			<p>
+				sss
+			</p>
+		</div>
+	</body>
+</html>

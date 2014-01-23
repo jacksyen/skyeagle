@@ -1,0 +1,29 @@
+/* ratingbox.scss*/
+@import "include.scss";
+
+.rating {
+	position: $pos-re;
+	white-space: nowrap;
+	font-size: 1px;
+	z-index: $z-axis;
+}
+.star-uncheck {
+	display: $dis-il;
+	width: 19px;
+	height: 19px;
+	@include Func-bg( 'rating/star-uncheck.png');
+}
+.star-checked {
+	display: $dis-il;
+	width: 19px;
+	height: 19px;
+	@include Func-bg( 'rating/star-checked.png');
+}
+.disable {
+	opacity: .5;
+	filter: alpha(opacity=50);
+}
+.enable {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}

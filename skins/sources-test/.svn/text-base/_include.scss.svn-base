@@ -1,0 +1,28 @@
+$pos-re: relative;
+$pos-ab: absolute;
+$of-hi: hidden;
+$of-vis: visible;
+$of-aut: auto;
+$cur-po: pointer;
+$dis-no: none;
+$dis-bl: block;
+$dis-il: inline-block;
+$flo-le: left;
+$flo-ri: right;
+$z-axis: 9990;
+$none: none;
+$bg-pos: position;
+@mixin Func-bg( $img: none, $rep: no-repeat, $pos: 0 0, $col: transparent, $att: scroll){
+  background: url('../images/'+$img) $rep $pos $col $att;
+}
+@mixin basic-bd($color) {
+  border: 1px solid $color;
+}
+@mixin around($width, $height, $top, $right, $bottom, $left) {
+  width: $width;
+  height: $height;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

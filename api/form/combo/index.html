@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<!-- <script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.resizable.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.panel.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.layout.2.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/jquery.ui.accordion.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../plugins/jquery-ui/skyeagle.ui.menu.js"></script> -->
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<!-- <link rel="stylesheet" href="../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.resizable.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.tabs.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.layout.css" />
+		<link rel="stylesheet" href="../skins/jquery.ui.accordion.css" />
+		<link rel="stylesheet" href="../skins/skyeagle.ui.menu.css" /> -->
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'combo',
+						content : ['基于jqueryUI，下拉列表单选项显示']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : ['panel','validatebox']
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['required', 'Boolean', '验证框是否需要输入，不需要则无空输入错误提示', 'false'],
+								['missMsg', 'String', '验证失败提示信息', '"不能为空"'],
+								['width','Integer','整个框体的宽度','null'],
+								['panelWidth','Integer','下拉窗口的宽度','null'],
+								['editable','Boolean','是否可编辑，不可编辑则不能手动输入文本','false'],
+								['multiable', 'Boolean','是否可以多选','false']
+								['radioable','Boolean','是否带有radio单选按钮，是则在文本前有按钮','true']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['getOptions', 'null', '返回选项属性 .', ''],
+								['panel', 'null', '返回控制面板对象 .', ''],
+								['destroy', 'null', '销毁整个面板', ''],
+								['resize', 'options', '重置整个面板的宽度尺寸', ''],
+								['showPanel', 'null', '显示下拉面板', ''],
+								['hidePanel', 'null', '隐藏下拉面板', ''],
+								['disable', 'null', '禁用整个面板', ''],
+								['enable', 'null', '启用整个面板', ''],
+								['validate', 'null', '是否验证成功', ''],
+								['clear', 'null', '清空输入面板内的内容', ''],
+								['getValue', 'null', '获取输入面板内的内容', ''],
+								['setValue', 'val', '给输入面板重新赋值', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['onShowPanel', 'null', '在下拉面板展示出来的时候触发'],
+								['onHidePanel', 'null', '在下拉面板隐藏起来的时候触发'],
+								['onChange', 'event, data', '在输入面板内容改变的时候触发']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

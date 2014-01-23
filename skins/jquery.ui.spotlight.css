@@ -1,0 +1,12 @@
+.spotlight {
+	padding: 30px 0px;
+	position: relative;
+	zoom:1; /*为了解决ie下面的margin的bug*/
+}
+.spotShadow {
+	position: absolute;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+	background-color: #ccc;
+	z-index: 8999;
+}

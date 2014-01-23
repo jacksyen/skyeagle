@@ -1,0 +1,33 @@
+*{
+				padding: 0;
+				margin: 0;
+				font: 12px 宋体;
+				color: #333;
+			}
+			
+			.topInput{
+				border: 1px solid #ccc;
+				margin: 5px;
+				padding: 2px;
+			}
+			.topInput .info{
+				margin: 15px;
+				float : left;
+			}
+			.topInput .input{
+				margin: 15px;
+				
+			}
+			.topInput .input input{
+				width: 320px;
+			}
+			.topInput div p{
+				margin-top: 8px;
+			}
+			.init{
+				margin:5px;
+			}
+			.init div{
+				float: left;
+				margin-right: 10px;
+			}

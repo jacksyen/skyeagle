@@ -1,0 +1,91 @@
+@charset 'UTF-8';
+.fileupload-container {
+	font: 13px/1.5 tahoma, arial, 宋体, sans-serif;
+}
+.template-upload {
+	width: 300px;
+	border: 1px solid #D9E4FF;
+	font-weight: 10px;
+}
+.template-upload .template-title {
+	position: relative;
+	top: -10px;
+	left: 25px;
+	width: 60px;
+	color: #AFE14C;
+	background-color: #ffffff;
+}
+.template-upload .fileupload-body {
+	margin: 10px;
+}
+.template-upload .fileupload-div {
+	height: 50px;
+	width: 280px;
+	margin-top: 10px;
+}
+.fileupload-div .content {
+	width: 260px;
+	height: 30px;
+	position: relative;
+	top: 10px;
+	left: 10px;
+}
+.fileupload-div .content .filepro {
+	font-size: 14px;
+	float: left;
+	margin-right: 5px;
+}
+.fileupload-div .content .start {
+	float: right;
+	height: 14px;
+	width: 14px;
+	margin-right: 10px;
+	background: url(images/fileupload/startbutton.gif) no-repeat;
+	overflow: hidden;
+}
+.fileupload-div .content .cancel {
+	float: right;
+	height: 14px;
+	width: 14px;
+	background: url(images/fileupload/cancelbutton.gif) no-repeat -14px 0;
+	overflow: hidden;
+}
+.fileupload-loading {
+	background: #EBFFEB;
+}
+body {
+	padding-top: 60px;
+}
+.fileupload {
+	font-size: 12px;
+	overflow: hidden;
+	position: relative;
+	background: url(../skins/images/panel/panel-header-bg.gif) repeat-x 0 0;
+	width: 100px;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 29px;
+	height: 29px;
+	padding: 0 10px;
+	text-align: center;
+	vertical-align: middle;
+	color: #000;
+}
+.fileupload input {
+	margin: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-color: transparent;
+	border-image: none;
+	border-style: solid;
+	border-width: 0 0 100px 200px;
+	cursor: pointer;
+	direction: ltr;
+}
+.fileupload input[type="file"] {
+	height: 29px;
+	line-height: 29px;
+}

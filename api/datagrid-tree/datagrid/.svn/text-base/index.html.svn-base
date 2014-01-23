@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'datagrid',
+						content : ['基于jqueryUI，可拖动的插件，通过鼠标拖动选中的元素']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties', 
+							content : [
+								['width', 'Integer', '设置数据表格的宽度', ''],
+								['height', 'Integer', '设置数据表格的高度', ''],
+								['columns', 'Array', '数据表格列配置对象', 'null'],
+								['frozenColumns','Array', '跟列属性一样，但是这些列固定在左边，不会滚动','null'],
+								['fitColumns', 'Boolean', '设置为true将自动使列适应表格宽度以防止出现水平滚动', 'false'],
+								['autoRowHeight', 'Boolean', '自动根据行的内容填充高度', 'true'],
+								['toolbar', 'Array,(Selector)', '面板顶部的工具栏.', 'null'],
+								['striped', 'Boolean', '设置为true将交替显示行背景.', 'false'],
+								['method', 'String', '请求远程数据的方法类型', 'get'],
+								['nowrap', 'Boolean', '设置为true，当数据长度超出列宽时将会自动截取.', 'true'],
+								['idField', 'String', '表明该列是一个唯一列', 'null'],
+								['url', 'String', '一个用以从远程站点请求数据的超链接地址.', '"请稍候，正在加载中..."'],
+								['loadMsg', 'String', '当从远程站点载入数据时，显示的一条快捷信息.', '1'],
+								['pagination', 'Boolean', '设置true将在数据表格底部显示分页工具栏.', 'false'],
+								['rownumbers', 'Boolean', '设置为true将显示行数.', 'false'],
+								['singleSelect', 'Boolean', '设置为true将只允许选择一行.', 'false'],
+								['pageNumber', 'Number', '当设置分页属性时，初始化分页码.', '1'],
+								['pageSize', 'Number', '当设置分页属性时，初始化每页记录数.', '10'],
+								['pageList', 'Array', '当设置分页属性时，初始化每页记录数列表', '[10,20,30,40,50]'],
+								['queryParams', 'Object', '当请求远程数据时，发送的额外参数.', '{}'],
+								['sortName', 'String', '当数据表格初始化时以哪一列来排序.', 'null'],
+								['sortOrder', 'String', '定义排序顺序，可以是"asc"或者"desc"（正序或者倒序）.', '"default"'],
+								['remoteSort', 'Boolean', '定义是否通过远程服务器对数据排序.', 'true'],
+								['showHeader', 'Boolean', '是否显示行头.', 'true'],
+								['showFooter', 'Boolean', '定义是否显示行底.', 'false'],
+								['scrollbarSize', 'Number', '滚动条的宽度或高度', '18'],
+								['rowStyler', 'Function', '返回样式，如："background:red"，function有2个参数： <br/> ' +
+									'index：行索引，从0开始<br/>' +
+									'row：对应于该行记录的对象', ''],
+								['loader', 'Function', '定义请求远程数据时返回的数据，return false终止操作,参数：<br/>' +
+									'param: 请求远程数据时参数<br/>' +
+									'success(data): 成功时返回<br/>' +
+									'error(data): 失败时返回', ''],
+								['loadFilter', 'Function', '返回用以显示的已过滤数据，function有一个参数"data"表示原始数据, <br/>' +
+									'你可以将原始数据改变为规范的数据格式, <br/>' +
+									'该函数必须返回包含 "total"和"rows"属性的标准数据对.', ''],
+								['editors', 'Object', '定义当编辑一行时的编辑模式', ''],
+								['view', 'Object', '定义数据表格的视图', '']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['getOptions', 'null', '返回属性对象.', ''],
+								['getPager', 'null', '返回页面对象.', ''],
+								['getPanel', 'null', '返回控制面板对象.', ''],
+								['getColumnFields', 'frozen', '返回列字段，如果设置了frozen属性为true，将返回固定列的字段名.', ''],
+								['getColumnOption', 'field', '返回特定的列属性', ''],
+								['resize', 'param', '缩放和布局.', ''],
+								['load', 'param', '载入并显示第一页的记录，如果传递了"param"参数，它将会覆盖查询参数属性的值.', ''],
+								['reload', 'param', '重载记录，跟"load"方法一样但是重载的是当前页的记录而非第一页.', ''],
+								['reloadFooter', 'footer', '重载行底记录.', ''],
+								['loading', 'null', '显示载入状态', ''],
+								['loaded', 'null', '隐藏载入状态.', ''],
+								['fitColumns', 'null', '让列宽自动适应数据表格的宽度.', ''],
+								['fixColumnSize', 'field', '固定列尺寸.', ''],
+								['fixRowHeight', 'index', '固定特定列的高度.', ''],
+								['autoSizeColumn', 'field', '自动适应列大小', ''],
+								['loadData', 'data', '载入本地数据，旧记录将被移除', ''],
+								['getData', 'null', '返回已载入数据', ''],
+								['getRows', 'null', '返回当前页的记录', ''],
+								['getFooterRows', 'null', '返回行底记录', ''],
+								['getRowIndex', 'row', '返回指定行的索引，row参数可以是行记录或者是一个id字段的值', ''],
+								['getSelected', 'null', '返回第一个被选择的行记录或null', ''],
+								['getSelections', 'null', '返回所有被选择的行，当没有记录被选择时，将返回一个空数组', ''],
+								['clearSelections', 'null', '取消所有的已选择项', ''],
+								['selectAll', 'null', '全选', ''],
+								['unselectAll', 'null', '取消全选', ''],
+								['selectRow', 'index', '选择一行，行索引从0开始', ''],
+								['selectRecord', 'idValue', '通过传递id参数来选择一行', ''],
+								['unselectRow', 'index', '取消选择一行', ''],
+								['beginEdit', 'index', '开始编辑一行', ''],
+								['endEdit', 'index', '结束编辑', ''],
+								['cancelEdit', 'index', '取消编辑', ''],
+								['getEditors', 'index', '获取指定行的编辑器，每个编辑器有如下属性：<br/>' +
+									'actions：编辑器可以做的行为<br/>' +
+									'target：目标编辑器jQuery对象<br/>' +
+									'field：字段名<br/>' +
+									'type：编辑器类型', ''],
+								['getEditor', 'options', '获取特定的编辑器，options参数有2个属性：<br/>' +
+									'index：行索引<br/>' +
+									'field:字段名', ''],
+								['refreshRow', 'index', '刷新一行', ''],
+								['validateRow', 'index', '校验指定的行，如果有效返回true', ''],
+								['updateRow', 'param', '更新指定的行，param参数包含如下属性：<br/>' +
+									'index：要更新的行索引<br/>' +
+									'row：新的行数据', ''],
+								['appendRow', 'row', '添加一行', ''],
+								['insertRow', 'param', '插入一个新行，param参数包含如下属性：<br/>' +
+									'index：要插入的行索引，如果没有定义则在最后面添加一个新行<br/>' +
+									'row：行数据', ''],
+								['deleteRow', 'index', '删除一行', ''],
+								['getChanges', 'type', '获取从最后一次提交开始的被修改的所有行，type参数表明修改的类型,<br/>' +
+									'可选值：inserted，deleted，updated等 .<br/>' +
+									'当没有传递type参数时，返回所有被修改的行', ''],
+								['acceptChanges', 'null', '提交所有修改的数据，提交后的数据将不能再修改或者回滚', ''],
+								['rejectChanges', 'null', '回滚所有被删除的行', ''],
+								['mergeCells', 'options', '合并单元格，options参数包含如下属性：<br/>' +
+									'index：行索引<br/>' +
+									'field：字段名<br/>' +
+									'rowspan：整合单元格要跨的行数<br/>' +
+									'colspan：整合单元格要跨的列数', ''],
+								['showColumn', 'field', '显示特定的列', ''],	
+								['hideColumn', 'field', '隐藏特定的列', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['onLoadSuccess', 'event, data', '当数据载入成功时触发'],
+								['onLoadError', 'event, ui', '当载入远程数据发生错误时触发'],
+								['onBeforeLoad', 'event, param', '在请求载入数据之前触发，如果返回false将取消载入'],
+								['onClickRow', 'event, ui', '当用户点击行时触发，参数如下：<br/>' +
+									'ui.rowIndex：被点击的行索引，从0开始。<br/>' +
+									'ui.rowData：对应于被点击的行的记录'],
+								['onDblClickRow', 'event, ui', '当用户双击一行时触发，参数如下：<br/>' +
+									'ui.rowIndex：被点击的行索引，从0开始。<br/>' +
+									'ui.rowData：对应于被点击的行的记录'],
+								['onClickCell', 'event, ui', '当用户点击单元格时触发，参数如下：<br/>' +
+									'ui.rowIndex：被点击的行索引，从0开始。<br/>' +
+									'ui.field：被点击的列名<br/>' +
+									'ui.value: 被点击的值'],
+								['onDblClickCell', 'event, ui', '当用户双击单元格时触发，参数如下：<br/>' +
+									'ui.rowIndex：被点击的行索引，从0开始。<br/>' +
+									'ui.field：被点击的列名<br/>' +
+									'ui.value: 被点击的值'],	
+								['onSortColumn', 'event, ui', '当用户对列排序时触发，参数如下：<br/>' +
+									'ui.sort：排序字段名称<br/>' +
+									'ui.order：排序顺序'],
+								['onResizeColumn', 'event, ui', '当用户调整列宽时触发，参数如下：<br/>' +
+									'ui.field: 列名<br/>' +
+									'ui.width: 宽度'],
+								['onSelect', 'event, ui', '当用户选择一行是触发，参数如下：<br/>' +
+									'ui.rowIndex：被选择的行索引，从0开始<br/>' +
+									'ui.rowData: 对应于被选择行的记录'],
+								['onUnselect', 'event, ui', '当用户取消选择一行时触发，参数如下：<br/>' +
+									'ui.rowIndex：被选择的行索引，从0开始<br/>' +
+									'ui.rowData: 对应于被选择行的记录'],
+								['onSelectAll', 'event, ui', '当用户选择所有行时触发,参数如下：<br/>' +
+									'ui.rows: 所有行数据'],
+								['onUnselectAll', 'event, ui', '当用户取消选择所有行时触发,参数如下：<br/>' +
+									'ui.rows: 所有行数据'],
+								['onBeforeEdit', 'event, data', '当用户开始编辑一行时触发，参数如下：<br/>' +
+									'ui.rowIndex：正在编辑的行索引，从0开始<br/>' +
+									'ui.rowData: 对应于正在编辑的行的记录'],
+								['onAfterEdit',  'event, data', '当用户编辑完成时触发，参数如下：<br/>' +
+									'ui.rowIndex：正在编辑的行索引，从0开始<br/>' +
+									'ui.rowData: 对应于正在编辑的行的记录<br/>' +
+									'ui.changes：被改变的字段内容，对应方式为字段：值。'],
+								['onCancelEdit', 'event, data', '当用户取消编辑行时触发，参数如下：<br/>' +
+									'ui.rowIndex：正在编辑的行索引，从0开始<br/>' +
+									'ui.rowData: 对应于正在编辑的行的记录'],
+								['onHeaderContextMenu', 'event, field', '当数据表格的列标题被鼠标右键单击时触发'],	
+								['onRowContextMenu', 'event, ui', '当一行被鼠标右键单击时触发，参数如下：<br/>' +
+									'ui.rowIndex：右击的行索引，从0开始<br/>' +
+									'ui.rowData: 右击行数据']
+								]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

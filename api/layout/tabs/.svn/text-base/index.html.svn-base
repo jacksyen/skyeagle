@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'tabs',
+						content : ['基于jqueryUI，选项卡插件']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : ['panel']
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['width', 'Number,String', '控件布局的宽度', '"auto"'],
+								['height','Number,String','控件布局的高度', '"auto"'],
+								['border', 'Boolean', '是否显示页签正文区的边框', 'true'],
+								['tabWidth', 'Number,String', '单个页签头部的宽度', '"auto"'],
+								['tabHeight', 'Number,String', '单个页签头部的高度.', '18'],
+								['disabled', 'Boolean', '是否禁用组件.', 'false'],
+								['scrollable', 'Boolean', '当页签超过组件宽度时是否出现左右滚动箭头', 'true'],
+								['closable', 'Boolean,Array', '页签是否可关闭，当本属性为true时，所有页签都可以关闭。当属性值为数组时，<br/>' +
+									'只有数组中指定的index的页签可以关闭，index从0开始.', 'false'],
+								['position', 'String', '页签头部的位置，可为top和left', '"top"'],
+								['switchMode', 'String', '页签切换的模式。可为click(鼠标点击切换)，mouseover(鼠标滑过切换).', '"click"'],
+								['autoPlay', 'Boolean', '是否自动循环切换页签', 'false'],
+								['interval', 'Number', '自动切换页签的时间间隔，单位为毫秒。 该属性在 switchMode 为auto时才生效', '1000'],
+								['active', 'Number,String', '初始化时被激活页签的索引（从0开始计数）或者tabId', '0'],
+								['lazyLoad', 'Boolean', '是否懒加载，当该属性为true时，只有在页签被单击选中时才尝试加载页签正文区', 'false']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['add', 'options', '在index处增加一个tab页签。参数为json格式的配置项。 调用该方法会触发 add事件.<br/>' +
+									'配置参数：<br/>' +
+									'index：新增页签的位置（从0开始计数,默认在末尾增加页签），可设置为"last" <br/>' +
+									'title：新增页签的标题，默认值为 "New Title“ + 全局唯一字符串<br/>' +
+									'content：新增页签的内容，默认值为 "New Content" + 全局唯一字符串<br/>' +
+									'url：新增页签的数据源为url。如果同时设置了content和url，则优先使用url<br/>' +
+									'tabId：设置tabId，作为唯一标识，可以通过此标识唯一确定一个tab页签，tabId不能重复<br/>' +
+									'closable：该新增的页签是否可关闭', ''],
+								['close', 'index', '关闭特定的页签,默认关闭当前页签,index可为页签的索引（从0开始计数），或者页签的tabId', ''],
+								['closeAll', 'null', '关闭所有页签，由于该操作只关注于删除所有页签，因此只会触发 onCloseAll事件，<br/>' +
+									'而不会逐个触发每个页签的onClose事件', ''],
+								['activate', 'index', '选中特定的页签，触发activate事件.index可为页签的索引（从0开始计数），或者页签的tabId', ''],
+								['getAlter', 'id', '页签索引和tabId的转换器。传入其中的一个值，获取另一个值.<br/>' +
+									'如果id为数字，则表示页签的索引，函数返回页签的tabId；如果id为字符串，<br/>' +
+									'则表示该页签的tabId，函数返回页签的索引<br/>'+
+									'如果索引不合法或者id作为tabId时找不到，则统一返回null', ''],
+								['getActivated', 'null', '返回当前选中的页签的tabId', ''],
+								['getLength', 'null', '获得所有页签的数目', ''],
+								['setDataSource', 'options', '设置第n个页签的数据源，可为普通文本或者url。<br/>' +
+									'注意该方法只是会重置一个当前页签是否已被加载的标记，而不负责实际加载数据。<br/>' +
+									'在非懒加载的情况下，需要手动加载数据。在懒加载的情况下，<br/>' +
+									'当页签被点击选中时会检查是否已经加载的标记，从而尝试重新加载内容。<br/>' +
+									'配置参数：<br/>' +
+									'index 被操作页签的索引(从0开始计数)<br/>' +
+									'content 设置了该属性则表示数据源为普通文本<br/>' +
+									'url 设置了该属性表示数据源是远程url，如果同时设置了content和url，则优先使用url', ''],
+								['reload', 'index , url , content', '根据新的数据源重新加载某个页签的内容。<br/>' +
+									'index 页签的索引<br/>' +
+									'url 页签为远程取数时的url，此属性优先级高于content<br/>' +
+									'content 页签的文本内容', ''],
+								['doLayout', 'null', '对组件重新布局，主要操作是刷新页签滚动箭头', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['onBeforeActivate', 'event, n', '当页签被选中之前执行的方法, n 选中页签的索引，从0开始计数.'],
+								['onActivate', 'event, n', '当页签被选中后执行的方法, n 选中页签的索引，从0开始计数.'],
+								['onBeforeClose', 'event, n', '当页签被关闭之前执行的方法。'],
+								['onClose', 'event, n', '当页签被关闭之后执行的方法。'],
+								['onBeforeCloseAll', 'null', '当关闭所有页签之前执行的方法。'],
+								['onCloseAll', 'null', '当关闭所有页签之后执行的方法。。'],
+								['onAdd', 'event, config', '当新页签被添加之后执行的方法。config配置参数，包含title, content, url, closable , index'],
+								['onBeforeAdd', 'event, config', '当新页签被添加之前执行的方法。'],
+								['onLoadComplete', 'event, tabId', '当页签使用ajax方式加载内容，加载完成后执行的方法, tabId 刚加载完成的页签的tabId']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

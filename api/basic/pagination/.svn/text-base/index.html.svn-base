@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'pagination',
+						content : ['基于jqueryUI，分页插件']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['total', 'Integer', '总记录数，当创建分页时必须设置.', '1'],
+								['pageSize', 'Integer', '每页显示多少条.', '10'],
+								['pageNumber', 'Integer', '当前第几页.', '1'],
+								['pageList', 'Array', '可选择的每页记录数.', '[10, 20, 30, 50]'],
+								['buttons', 'Array', '自定义按钮，每个按钮包含两个属性，iconCls,handler', 'null'],
+								['showPageList', 'Boolean', '显示可选择的每页记录数.', 'true'],
+								['showRefresh', 'Boolean', '定义是否显示刷新按钮.', 'true'],
+								['beforePageText', 'String', '在输入框之前显示的符号.', '"第"'],
+								['afterPageText', 'String', '在输入框之后显示的符号.', '"共{pages}页"'],
+								['displayMsg', 'String', '在插件右上方显示分页信息.', '"显示{from}到{to},共{total}记录"']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['getOptions', 'null', '返回分页属性对象.', ''],
+								['loading', 'null', '提醒分页插件正在载入.', ''],
+								['loaded', 'null', '提醒分页插件已经载入.', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['onSelectPage', 'event, ui', '当用户进行翻页时触发,ui.pageNumber： 下一页的页码; ui.pageSize： 下一页的显示记录数'],
+								['onBeforeRefresh', 'event, ui', '刷新之前触发, 返回false将取消刷新 ,ui.pageNumber： 下一页的页码; ui.pageSize： 下一页的显示记录数'],
+								['onRefresh', 'event, ui', '刷新之后触发,ui.pageNumber： 下一页的页码; ui.pageSize： 下一页的显示记录数'],
+								['onChangePageSize', 'event, pageSize', '当用户修改每页显示记录数时触发,pageSize: 下一页的显示记录数']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

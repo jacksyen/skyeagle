@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>combox</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.validatebox.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/form/jquery.ui.combo.js"></script>
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.validatebox.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.combo.css" />
+		<script>
+			$(document).ready(function() {
+				$('#combo').combo({
+					width : 150,
+					panelWidth : 300,
+					// tipwidth : 50,
+					editable : true,
+					radioable : false,
+					multiable : true,
+					required : true,
+					value : 'Java',
+					missMsg : 'mmmmmmmmmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggmmmmmmsdfsafgadfgsdfgsdffffffffffggggggggggggggggmm',
+					onShowPanel : function() {
+						
+					},
+					onHidePanel : function() {
+						
+					},
+					onChange : function() {
+						
+					}
+				});
+				//$('#combo').combo('setWidth',100);
+				
+
+				$('#combo2').combo({
+					width : 200,
+					editable : true,
+					radioable : true
+				});
+
+				$('#getPanel').click(function (){
+					var panel = $('#combo').combo('panel');
+					alert(panel.html());
+				});
+				$('#destroy').click(function (){
+					$('#combo').combo('destroy');
+				});
+				$('#resize').click(function (){
+					$('#combo').combo('resize',{
+						comboWidth : 300,
+						panelWidth : 600
+					});
+				});
+				$('#showPanel').click(function (){
+					$('#combo').combo('showPanel');
+				});
+				$('#hidePanel').click(function (){
+					$('#combo').combo('hidePanel');
+				});
+				$('#disable').click(function (){
+					$('#combo').combo('disable');
+				});
+				$('#enable').click(function (){
+					$('#combo').combo('enable');
+				});
+				$('#validate').click(function (){
+					var validate = $('#combo').combo('validate');
+					alert('validate:' + validate);
+				});
+				$('#clear').click(function (){
+					$('#combo').combo('clear');
+				});
+				$('#getValue').click(function (){
+					var val = $('#combo').combo('getValue');
+					alert('getVlaue :' + val);
+				});
+				$('#setValue').click(function (){
+					var val = $('#combo').combo('setValue','Cxxx');
+					// alert('setValue :' + val);
+				});
+				$('#setData').click(function (){
+					$('#combo2').combo('setData',['Hello','XXX','SsSS']);
+				});
+				
+				
+			});
+			
+			function mySubmit(){
+				return true;
+			}
+
+		</script>
+	</head>
+	<body>
+		<input type='text' readonly="readonly" autocomplete="off" />
+		<div>
+			<p>
+				22
+			</p>
+			<p>
+				22
+			</p>
+			<button id="getPanel">getPanel</button>
+			<button id="destroy">destroy</button>
+			<button id="resize">resize</button>
+			<button id="showPanel">showPanel</button>
+			<button id="hidePanel">hidePanel</button>
+			<button id="disable">disable</button>
+			<button id="enable">enable</button>
+			<button id="validate">validate</button>
+			<button id="clear">clear</button>
+			<button id="getValue">getValue</button>
+			<button id="setValue">setValue</button>
+			<button id="setData">setData</button>
+		</div>
+
+		<div id="combo">
+			<div class="select">
+				Select a language
+			</div>
+			<div class="sp">Java</div>
+			<div class="sp">C#</div>
+			<div class="sp">Ruby</div>
+			<div class="sp">Basic</div>
+			<div class="sp">Fortran</div>
+		</div>
+		<div>
+			<p>
+				22
+			</p>
+			<p>
+				22
+			</p>
+			<p>
+				22
+			</p>
+			<p>
+				22
+			</p>
+			<p>
+				22
+			</p>
+			<p>
+				22
+			</p>
+			<p>
+				22
+			</p>
+
+		</div>
+	
+<DIV ID="MMM"></DIV>
+		<form action="http://www.baidu.com" method="post" onsubmit="return mySubmit()">
+			姓名:
+			<input type="text" id="name" name="name2" value="syen" />
+			<br />
+			年龄：
+			<input type="text" id="age" />
+			<br />
+			性别：
+			<div id="combo2">
+				<div id="select">
+					Select a language
+				</div>
+				<div class="sp">Java</div>
+				<div class="sp">C#</div>
+				<div class="sp">Ruby</div>
+				<div class="sp">Basic</div>
+				<div class="sp">Fortran</div>
+			</div>
+			
+			<input type="submit" value="submit" />
+		</form>
+	</body>
+</html>

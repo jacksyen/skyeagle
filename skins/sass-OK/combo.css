@@ -1,0 +1,60 @@
+/* combo.scss*/
+.comboBox {
+  position: relative;
+  z-index: 9990; }
+
+.combo {
+  border: 1px solid #a4bed4;
+  display: inline-block;
+  white-space: nowrap;
+  z-index: 9990; }
+  .combo .combo-input {
+    font-size: 12px;
+    border: 0;
+    line-height: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    float: left;
+    z-index: 9990; }
+  .combo .combo-warn {
+    background: url("../images/combo/validatebox_warning.png") no-repeat right #ffffee scroll;
+    float: left; }
+  .combo .combo-arrow {
+    background: url("../images/combo/combo_arrow.gif") no-repeat 3px 4px #e0ecf9 scroll;
+    height: 20px;
+    overflow: hidden;
+    vertical-align: top;
+    cursor: pointer;
+    opacity: .6;
+    display: inline-block;
+    float: right;
+    padding: 0;
+    margin: 0; }
+
+.tip {
+  display: none;
+  width: 200px;
+  height: auto;
+  font-size: 12px;
+  position: absolute; }
+  .tip .tip-content {
+    display: inline-block;
+    padding: 1px 5px;
+    border: 1px solid #cc9933;
+    border-left-width: 0;
+    background: #FFC; }
+  .tip .tip-pointer {
+    background: url("../images/combo/validatebox_pointer.gif") no-repeat left top transparent scroll;
+    width: 10px;
+    height: 20px;
+    float: left; }
+
+.select {
+  color: #99BBE8;
+  background: #fafafa;
+  padding: 5px; }
+
+.heightlight {
+  background-color: #00ff00; }

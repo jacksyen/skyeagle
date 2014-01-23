@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>spotlight</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.mouse.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../../plugins/jquery-ui/jquery.ui.spotlight.js"></script>
+
+		<link rel="stylesheet" href="../../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../../skins/jquery.ui.spotlight.css" />
+		
+		<script>
+			var json = {
+				total : 4,
+				rows : [{
+					title : 'p1',
+					href : '#panel1',
+					content : ''
+				}, {
+					title : 'p2',
+					href : '#panel2',
+					content : ''
+				}, {
+					title : 'p3',
+					href : '#panel3',
+					content : ''
+				}, {
+					title : 'p4',
+					href : '#panel4',
+					content : ''
+				}]
+			};
+			$(document).ready(function() {
+				$('#spotlight1').spotlight({
+					data : json
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<button class="startBut">开始</button>
+		<div id="spotlight1">
+			<div id="panel1" style="display: block;">
+				111
+			</div>
+			<div id="panel2" style="display: block;">
+				222
+			</div>
+			<div id="panel3" style="display: block;">
+				333
+			</div>
+			<div id="panel4" style="display: block;">
+				444
+			</div>
+		</div>
+	</body>
+</html>

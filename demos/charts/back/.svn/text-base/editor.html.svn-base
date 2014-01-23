@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>combox</title>
+		<script type="text/javascript" language="JavaScript" src="../../lib/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/jquery.ui.button.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/skyeagle.ui.panel.4.0.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/jquery-ui/jquery.ui.tabs.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/charts/json2.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../plugins/charts/skyeagle.chart.parser.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#tabs1').tabs({
+					border : false
+				});
+
+				var parser = new Skyeagle.Chartparser({
+					globalJs : ["../../plugins/charts/skyeagle.charts.src.js"]
+				});
+				$('button').button({});
+				$('.run').click(function() {
+					// var data = parser.parseXML({
+						// xmlFile : 'index.xml'
+					// });
+					var data = parser.parseXML({
+						xmlStr : ''
+					})
+					// var head = '<script src="../../plugins/charts/highcharts.src.js"><\/script>';
+					// var body = '<div id="container2"></div>';
+					$('#body').css('display', 'none');
+					$('#output').children().each(function (){
+						if($(this).attr('id') =='back'){
+							return;
+						}
+						$(this).remove();
+					});
+					$('#output').html(data);
+					
+					$('#back').css('display','block').click(function() {
+						$('#output').children().each(function() {
+							$(this).remove();
+						});
+						$(this).css('display','none');
+						$('#body').css('display', 'block');
+					});
+				});
+			});
+		</script>
+		<link rel="stylesheet" href="../../skins/jquery.ui.core.css" />
+		<link rel="stylesheet" href="../../skins/jquery.ui.theme.css" />
+		<link rel="stylesheet" href="../../skins/jquery.ui.button.css" />
+		<link rel="stylesheet" href="../../skins/skyeagle.ui.panel.css" />
+		<link rel="stylesheet" href="../../skins/jquery.ui.tabs.css" />
+		<style>
+			.run {
+				border: 1px solid #147BAA;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="back" style="display: none; margin:5px 10px;">返回</button>
+		<div id="output">
+			
+		</div>
+		<div id="body">
+			<div id="tabs1">
+				<ul>
+					<li>
+						<a href="#tabs-1">编辑XML字符串</a>
+					</li>
+					<li>
+						<a href="#tabs-2">导入XML文件</a>
+					</li>
+				</ul>
+				<div id="tabs-1">
+					<textarea rows="19" style="margin: 5px; width:98%">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</textarea>
+				</div>
+			</div>
+			<button class="run">
+				生成报表
+			</button>
+		</div>
+	</body>
+</html>

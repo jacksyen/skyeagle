@@ -1,0 +1,52 @@
+.processmenu {
+	float : left;
+/*	border : solid 1px #212121;*/
+	text-align: center;
+}
+.title {
+	display : inline-block;
+	height : 30px;
+	margin : 10px 0px;
+	text-align: center;
+	padding-top: 10px;
+}
+.title_first_selected {
+	width : 85px;
+	background : url('images/processmenu/selected1.jpg') no-repeat;
+}
+.title_first_unselected {
+	width : 85px;
+	background : url('images/processmenu/unselected1.jpg') no-repeat;
+}
+.title_middle_selected {
+	width : 86px;
+	background : url('images/processmenu/selected2.jpg') no-repeat;
+}
+.title_middle_unselected {
+	width : 86px;
+	background : url('images/processmenu/unselected2.jpg') no-repeat;
+}
+.title_last_selected {
+	width : 76px;
+	background : url('images/processmenu/selected3.jpg') no-repeat;
+}
+.title_last_unselected {
+	width : 76px;
+	background : url('images/processmenu/unselected3.jpg') no-repeat;
+}
+.contents {
+/*	text-align: center;*/
+	overflow: auto;
+}
+.buttons {
+	text-align: center;
+}
+.button {
+	margin-right : auto;
+	margin-left : auto;
+}
+.end {
+	margin-right : auto;
+	margin-left : auto;
+	display : none;
+}

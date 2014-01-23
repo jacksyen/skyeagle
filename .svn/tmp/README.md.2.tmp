@@ -1,0 +1,82 @@
+[jQuery UI](http://jqueryui.com/) - Interactions and Widgets for the web
+================================
+@auth     jacksyen
+@created  2012.05.25
+
+=============================
+	version 1.0
+	@singed 2012.12.26
+	JS组件基本完成，使用uglifyjs压缩
+=============================
+
+=============================
+	version 2.0
+	@singed 2012.12.26
+	在tabs的js中480行添加'width:options.width,'
+	在combo的css中28行的'width: 18px;'移到js中210行设置
+	在numberspinner的css中20、25、39行的width移到js中91行设置
+	在autocomplete的js中删除87、88行
+	@singed 2012.12.27
+	在timespinner的js中10行，修改原为null的默认的宽度值为150
+	在tree的js中142行增加onBeforeCheck()事件
+	在combotree的js中51行增加onBeforeCheck()事件
+	接上，在combotree的js中更改onCheck事件
+	接上，在combotree的js中增加_getChildren()方法
+	@singed 2013.01.07
+	将desktop的js中的数组的全局max方法改为局部方法
+	使用uglifyjs重新压缩，生成skyeagle.ui.mini.2.0.js版本
+=============================
+
+=============================
+	version 3.0
+	[需要解决的问题]
+	1. datagrid合并
+	
+	[修复的bug]
+	1. datagrid设置宽度导致pagination无法显示
+	2. 修改jquery.ui.core.css中的L31: display:block -> display: inline-block;	 [2013.01.15]
+	3. 注释jquery.ui.accordion中的L337~L341，兼容外部高度设置及自适应高度  [2013.01.25];
+	4. 修改jquery.ui.form.js中的L67: frameBody.html() -> frameBody.text();
+	5. 删除jquery.ui.tabs.js中的L967行  alert(cfg.content);
+	6. 修改jquery.ui.tabs.js中的L971行  '<div>'+(config.content || '')+'</div>' -> '<div></div>';
+	7. 增加jquery.ui.tabs.js中的L987行；
+	
+=============================
+	version 4.0
+	[修复的bug]
+	1. datagrid合并问题解决
+	2. 替换jqueryUI 1.9.2核心引擎文件：jquery.ui.mouse.js、jquery.ui.position.js、
+		jquery.ui.widget.js、jquery.ui.core.js
+	3. 修改jquery.ui.slider.js L126: this._bind -> this._on
+	4. 修改jquery.ui.accordion.js中的 this._bind为 this._on
+	5. 在jquery.ui.tabs.jsL950中添加： width  : $uitabs.width(),
+	
+<<<<<<< .mine
+	
+=======
+=============================
+	version 5.0
+	[修复的bug]
+	1. 增加jquery.ui.form.js中 L75行，成功提交后清空input内的数据
+>>>>>>> .r394
+
+
+
+
+
+1. 基于easyUI实现的layout/panel/tabs组件
+
+2. 基于jqueryUI、operaMasksUI实现layout/panel/tabs组件
+
+
+================================
+@auth      jacksyen
+@created   2012.06.25
+1. 内容清理
+
+
+================================
+@created 	2012.07.16
+1.datagrid设计：
+	a) 基于panel控件添加样式
+	b) 只添加数据显示功能

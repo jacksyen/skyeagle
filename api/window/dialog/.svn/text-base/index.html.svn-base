@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天鹰WEB平台帮助文档</title>
+		<script type="text/javascript" language="JavaScript" src="../../../lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/left.js"></script>
+		<script type="text/javascript" language="JavaScript" src="../../js/main.js"></script>
+		<link rel="stylesheet" href="../../css/command.css" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script>
+			$(document).ready(function() {
+				var d = {
+					general : {
+						title   : 'dialog',
+						content : ['基于jqueryUI，弹出框插件']
+					},
+					definite: [
+						{
+							id : 'dependencies',
+							content : []
+						},
+						{
+							id : 'extend',
+							content : []
+						},
+						{
+							id : 'usage',
+							content : []
+						},
+						{
+							id : 'properties',
+							content : [
+								['disabled', 'Boolean', '是否禁用组件。如果禁用，则不可以进行任何操作。', 'false'],
+								['autoOpen','Boolean',
+									'实例化时是否自动显示对话框。设置为 false 时，使用 open 方法显示对话框','true'],
+								['buttons', 'Object', '设置对话框底部按钮，对象属性名为按钮文本，属性值为单击按钮时的回调函数', '{}'],
+								['buttons', 'Array', '设置多个底部按钮.', '[]'],
+								['closeOnEscape', 'Boolean', '是否在用户按 ESC 键时关闭对话框。（对话框需拥有输入焦点）', 'true'],
+								['connectToSortable', 'Selector', '指定排序的容器对象选择器.', 'false'],
+								['closeText', 'String', '指定关闭按钮的文本', '"close"'],
+								['dialogClass', 'String', '添加额外的对话框 CSS Class.', '""'],
+								['draggable', 'Boolean', '设定对话框是否可拖动', 'true'],
+								['height', 'Number', '设定对话框高度，像素单位.', '"auto"'],
+								['hide', 'String', '关闭对话框时使用的特效.', 'null'],
+								['hide', 'Object', '使用动画效果关闭对话框.', 'null'],
+								['maxHeight', 'Number', '调整对话框大小时最大高度.', 'false'],
+								['maxWidth', 'Number', '调整对话框大小时最大宽度', 'false'],
+								['minHeight', 'Number', '调整对话框大小时最小高度.', 'false'],
+								['minWidth', 'Number', '调整对话框大小时最小宽度.', 'false'],
+								['modal', 'Boolean', '是否为模态窗口，设置为 true 时，页面上其它元素将被覆盖且无法响应用户操作', 'false'],
+								['position', 'String, Array', '设置对话框显示位置，可选值："center","left","right","top","bottom"，<br/> ' +
+									'或者数组分别设置水平和垂直位置。数值偏移([20,30] 相对左上角便宜)或位置(["right","bottom"] 右下角).', '"center"'],
+								['resizable', 'Boolean', '设定对话框是否可以调整大小', 'false'],
+								['show', 'String', '显示对话框时使用的特效.', 'null'],
+								['show', 'Object', '使用动画效果显示对话框.', 'null'],
+								['stack', 'Boolean', '是否可覆盖其它对话框.', 'true'],
+								['title', 'String', '设置对话框标题.', '""'],
+								['width', 'Number', '设定对话框宽度，像素单位', '300'],
+								['zIndex', 'Integer', '设置对话框 CSS z-index 值', '1000']]
+						},
+						{
+							id : 'methods',
+							content : [
+								['destroy', 'null', '完全移除一个可拖动控件, 使其回退到该元素被初始化成可拖动控件之前的状态.', ''],
+								['enable', 'null', '将可拖动控件样式改变为允许, 与disable对应.', ''],
+								['disable', 'null', '将可拖动控件样式改变成为失效, 与enable对应.', ''],
+								['option', 'optionName , [value]', '获取或设置可拖动控件的选项, 第二个参数是选项名, 第三个参数是值. 如果不指定值, 就是获取, 指定值, 就是设置.', ''],
+								['option', 'options', '给拖动控件设置多个属性', ''],
+								['widget', 'null', '返回 .ui-dialog元素.', ''],
+								['close', 'null', '关闭对话框.', ''],
+								['isOpen', 'null', '对话框可见时返回 true.', ''],
+								['moveToTop', 'null', '使对话框处于最前方.', ''],
+								['open', 'null', '显示对话框.', '']]
+						},
+						{
+							id : 'events',
+							content : [
+								['create', 'event, ui', '被创建时触发'],
+								['beforeClose', 'event, ui', '对话框关闭前执行，返回 false 防止对话框关闭'],
+								['open', 'event, ui', '打开对话框时执行'],
+								['focus', 'event, ui', '对话框获得焦点时执行'],
+								['dragStart', 'event, ui', '开始对话框拖动时执行'],
+								['drag', 'event, ui', '拖动对话框时执行'],
+								['dragStop', 'event, ui', '结束对话框拖动时执行'],
+								['resizeStart', 'event, ui', '开始调整对话框大小时执行'],
+								['resize', 'event, ui', '调整对话框大小时执行'],
+								['resizeStop', 'event, ui', '结束调整对话框大小时执行'],
+								['close', 'event, ui', '关闭对话框时执行']]
+						}
+					]
+				}
+				var m = new MainPage();
+				m.init('.mainColumn', d);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="body">
+			<div class="top">
+
+			</div>
+			<div class="main">
+				<div class="leftColumn">
+					<!-- init command -->
+				</div>
+				<div class="mainColumn">
+					<!-- init command -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

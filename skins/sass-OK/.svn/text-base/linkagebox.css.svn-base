@@ -1,0 +1,4 @@
+/* linkagebox.scss*/
+.fuck {
+  display: inline-block;
+  width: 180px; }

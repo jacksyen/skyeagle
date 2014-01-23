@@ -1,0 +1,36 @@
+/* validatebox.scss*/
+.validate-text {
+  position: relative;
+  z-index: 9990; }
+
+.validatebox-invalid {
+  background: url("../images/validate/validatebox_warning.png") no-repeat right 1px #ffffee scroll; }
+
+.validatebox-tip {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  display: none;
+  z-index: 9990; }
+
+.validatebox-tip-content {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  padding: 3px 5px;
+  border: 1px solid #cc9933;
+  background: #FFFFCC;
+  z-index: 9991;
+  font-size: 12px;
+  word-break: break-all; }
+
+.validatebox-tip-pointer {
+  background: url("../images/validate/validatebox_pointer.gif") no-repeat left top transparent scroll;
+  display: inline-block;
+  width: 10px;
+  height: 19px;
+  position: absolute;
+  left: 1px;
+  top: 0;
+  z-index: 9992; }

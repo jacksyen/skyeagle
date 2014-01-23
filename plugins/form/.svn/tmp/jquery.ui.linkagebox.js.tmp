@@ -1,0 +1,101 @@
+(function($) {
+	$.widget('ui.linkagebox', {
+		options : {
+			data : ''
+		},
+		destroy : function() {
+<<<<<<< .mine
+			var self = this,
+				ele  = self.element,
+				arr  = $.data(this.element, 'linkagebox').comboArr;
+			return ele.each(function() {
+				this.outerHTML = '';
+			});
+=======
+			
+>>>>>>> .r221
+		},
+		resize : function(target) {
+			for(var i = 0; i < this.options.data.count; i++) {
+				$.data(this.element, 'linkagebox').comboArr[i].combo('resize', {
+					width : target
+				});
+			}
+			this.element.find('.fuck').css({
+				'width' : target
+			});
+		},
+		disable : function() {
+			for(var i = 0; i < this.options.data.count; i++) {
+				$.data(this.element, 'linkagebox').comboArr[i].combo('disable');
+			};
+		},
+		enable : function() {
+			for(var i = 0; i < this.options.data.count; i++) {
+				$.data(this.element, 'linkagebox').comboArr[i].combo('enable');
+			};
+		},
+		_create : function() {
+			var self = this,
+				ele  = self.element,
+				opts = self.options,
+				json = opts.data;
+			
+			$.data(ele, 'linkagebox',{
+				comboArr : []
+			});
+			
+			// 生成产生combo的div标签
+			ele.children().addClass('fuck').each(function(index) {
+		  		var div = $('<div></div>').addClass('link' + index);
+		  		$(this).append(div);
+		  		$.data(ele, 'linkagebox').comboArr.push(div);
+			});
+			
+			// 添加combo
+			ele.children().each(function (index){
+				$.data(ele, 'linkagebox').comboArr[index].combo({
+					width : 150,
+					editable : true,
+					radioable : true,
+					required : true,
+					value : '请选择',
+					onChange : function (event, data){
+						self._changeItem(index, data);
+					}
+				});
+			});
+			
+			$.data(ele, 'linkagebox').comboArr[0].combo('setData', json.data[0]);
+			// this._bindEvents();
+		},
+		_changeItem : function (selectIndex, itemVal){
+			var self = this,
+				ele  = self.element,
+				opts = self.options,
+				json = opts.data,
+				comboArr = 	$.data(ele, 'linkagebox').comboArr;
+			// 每次onchange之后将后面的combo设置成定值
+			for(var i = selectIndex+1; i < comboArr.length; i++){
+				comboArr[i].combo('setValue', '请选择');
+			}
+			// 每次选择之后将所有的panel关闭
+			for(var i = 0; i < comboArr.length; i++) {
+				comboArr[i].combo('hidePanel');
+			}
+			if(selectIndex === comboArr.length-1){
+				return;
+			}
+			var nextIndex = selectIndex +1;
+			var combo = comboArr[nextIndex];
+			
+			$.data(ele, 'linkagebox').comboArr[nextIndex].combo('setData', json.data[nextIndex][itemVal]);
+		},
+		_init : function() {
+			//some code
+		},
+		_bindEvents : function() {
+			
+		}
+	});
+})(jQuery);

@@ -1,0 +1,255 @@
+/* datagrid.scss*/
+@import "include.scss";
+
+$border-sc: 1px solid #ccc;
+$border-sf: 1px solid #fff;
+$border-dc: 1px dotted #ccc;
+$border-df: 1px dotted #fff;
+
+.datagrid {
+  .panel-body {
+    overflow: $of-hi;
+  }
+}
+.datagrid-wrap {
+	position: $pos-re;
+}
+.datagrid-view {
+	position: $pos-re;
+	overflow: $of-hi;
+}
+.datagrid-view1 {
+	position: $pos-ab;
+	overflow: $of-hi;
+	left: 0;
+	top: 0;
+	.datagrid-body-inner {
+    padding-bottom: 20px;
+  }
+  .datagrid-body {
+    overflow: $of-hi;
+  }
+}
+.datagrid-view2 {
+	position: $pos-ab;
+	overflow: $of-hi;
+	left: 210px;
+	top: 0;
+}
+.datagrid-mask {
+	position: $pos-ab;
+	left: 0;
+	top: 0;
+	background: #ccc;
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+	display: $dis-no;
+}
+.datagrid-mask-msg {
+	position: $pos-ab;
+	left: 100px;
+	top: 50px;
+	width: auto;
+	height: 16px;
+	padding: 12px 5px 10px 30px;
+	@include Func-bg( 'pagination/pagination_loading.gif', no-repeat, 5px 10px, #fff, scroll);
+	border: 2px solid #6593CF;
+	color: #222;
+	display: $dis-no;
+}
+.datagrid-sort-desc {
+  .datagrid-sort-icon {
+    padding: 2px 13px 3px 0;
+    @include Func-bg( 'datagrid/datagrid_sort_desc.gif', no-repeat, center center);
+  }
+}
+.datagrid-sort-asc {
+  .datagrid-sort-icon {
+    padding: 2px 13px 3px 0;
+    @include Func-bg( 'datagrid/datagrid_sort_asc.gif', no-repeat, center center);
+  }
+}
+.datagrid-toolbar {
+	height: 28px;
+	background: #efefef;
+	padding: 1px 2px;
+	border-bottom: $border-sc;
+}
+.datagrid-btn-separator {
+	float: $flo-le;
+	height: 24px;
+	border-left: $border-sc;
+	border-right: $border-sf;
+	margin: 2px 1px;
+}
+.datagrid-pager {
+	background: #efefef;
+	border-top: $border-sc;
+	position: $pos-re;
+}
+
+.datagrid-header {
+	overflow: $of-hi;
+	@include Func-bg( 'datagrid/datagrid_header_bg.gif', repeat-x, left bottom, #fafafa);
+	border-bottom: $border-sc;
+	cursor: default;
+	td {
+    border-right: $border-dc;
+    font-size: 12px;
+    font-weight: normal;
+    @include Func-bg( 'datagrid/datagrid_header_bg.gif', repeat-x, left bottom, #fafafa);
+    border-bottom: $border-dc;
+    border-top: $border-df;
+  }
+  td.datagrid-header-over {
+    background: #EBF3FD;
+  }
+  .datagrid-cell {
+    margin: 0;
+    padding: 3px 4px;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: $of-hi;
+    text-align: center;
+  }
+  .datagrid-cell-group {
+    margin: 0;
+    padding: 4px 2px 4px 4px;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: $of-hi;
+    text-align: center;
+  }
+}
+.datagrid-header-inner {
+	float: $flo-le;
+	width: 10000px;
+}
+.datagrid-header-rownumber {
+	width: 25px;
+	text-align: center;
+	margin: 0;
+	padding: 3px 0;
+}
+.datagrid-td-rownumber {
+	@include Func-bg( 'datagrid/datagrid_header_bg.gif', repeat-x, left bottom, #fafafa);
+}
+.datagrid-cell-rownumber {
+	width: 25px;
+	text-align: center;
+	margin: 0;
+	padding: 3px 0;
+	color: #000;
+}
+.datagrid-body {
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+	zoom: 1;
+}
+.datagrid-footer {
+	overflow: $of-hi;
+}
+.datagrid-footer-inner {
+	border-top: $border-sc;
+	width: 10000px;
+	float: $flo-le;
+}
+.datagrid-body, .datagrid-footer {
+  td {
+    font-size: 12px;
+    border-right: $border-dc;
+    border-bottom: $border-dc;
+    overflow: $of-hi;
+    padding: 0;
+    margin: 0;
+  }
+}
+.datagrid-body, .datagrid-footer {
+  .datagrid-cell {
+    overflow: $of-hi;
+    margin: 0;
+    padding: 0 4px;
+    white-space: nowrap;
+    word-wrap: normal;
+    height: 18px;
+    line-height: 18px;
+  }
+}
+.datagrid-row-editing {
+  .datagrid-cell {
+    height: auto;
+  }
+}
+.datagrid-header-check {
+	padding: 3px 6px;
+	input {
+    margin: 0;
+    padding: 0;
+    width: 15px;
+    height: 15px;
+  }
+}
+.datagrid-cell-check {
+	padding: 3px 6px;
+	font-size: 1px;
+	overflow: $of-hi;
+	input {
+    margin: 0;
+    padding: 0;
+    width: 15px;
+    height: 15px;
+  }
+}
+.datagrid-row {
+	height: 25px;
+}
+.datagrid-row-collapse {
+	background: url(images/datagrid/datagrid_row_collapse.gif) no-repeat center center;
+	@include Func-bg( 'datagrid/datagrid_row_collapse.gif', no-repeat, center center);
+}
+.datagrid-row-expand {
+	background: url(images/datagrid/datagrid_row_expand.gif) no-repeat center center;
+	@include Func-bg( 'datagrid/datagrid_row_expand.gif', no-repeat, center center);
+}
+.datagrid-row-alt {
+	background: #EEEEFF;
+}
+.datagrid-row-over {
+	background: #D0E5F5;
+	cursor: default;
+	font-weight: bold;
+}
+.datagrid-row-selected {
+	background: #FBEC88;
+}
+.datagrid-resize-proxy {
+	position: $pos-ab;
+	width: 1px;
+	top: 0;
+	height: 10000px;
+	background: red;
+	cursor: e-resize;
+	display: $dis-no;
+}
+.datagrid-body {
+  .datagrid-editable {
+    padding: 0;
+  }
+  .datagrid-editable table {
+    width: 100%;
+    height: 100%;
+  }
+  .datagrid-editable td {
+    border: 0;
+    padding: 0;
+  }
+  .datagrid-editable {
+    .datagrid-editable-input {
+      width: 100%;
+      font-size: 12px;
+      @include basic-bd(#A4BED4);
+      padding: 3px 2px;
+    }
+  }
+}
